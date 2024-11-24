@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# feh --bg-fill ~/Pictures/wallpaper/wallhaven-578rw7.png &
 feh --bg-fill ~/Pictures/wallpaper/ranni.jpg &
 picom --config ~/.config/picom/picom.conf &
 

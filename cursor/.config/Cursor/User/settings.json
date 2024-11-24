@@ -1,6 +1,6 @@
 {
   "window.commandCenter": 1,
-  "workbench.colorTheme": "Tokyo Night Storm"
+  "workbench.colorTheme": "Dracula Theme",
   "editor.lineNumbers": "relative",
   "explorer.confirmDelete": false,
   "security.workspace.trust.untrustedFiles": "open",
