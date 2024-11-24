@@ -200,3 +200,6 @@ install dunst (notification)
 2024.11.22
 install fcitx5-theme-wechat
 install stow (manage dotfiles)
+
+2024.11.24
+install onlyoffice
