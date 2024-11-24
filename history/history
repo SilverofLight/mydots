@@ -1,0 +1,202 @@
+2024.8.8
+download yay go
+download openjdk yarn v2raya 
+download firefox adobe-source-han-sans-cn-fonts
+download fcitx5-im fcitx5-chinese-addons fcitx5-material-color
+download brave-bin yay-localsend
+
+2024.8.9
+uninstall firfox
+download gnome-terminal-transparency(aur)
+download zsh oh-my-zsh-git
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+download appimagelauncher bottles code
+download neofetch htop jdk-openjdk obs-studio
+download gnome-tweaks httpfs2-2gbplus wget udftools
+uninstall httpfs2-2gbplus 
+add and edit /etc/systemed/system/v2raya and systemctl enable it, to start up with vps
+enabel multilib in /etc/pacman.conf
+download steam wine dkms
+download digimend-drivers-git-dkms
+
+2024.8.10
+download vlc neovim
+add a config file ~/xmodmap.sh
+download linuxqq-nt-bwrap xorg-xinit
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+config vim in ~/.vim/
+download python-pip wudao-d python-pipx
+
+2024.8.10
+download ranger
+export RANGER_LOAD_DEFAULT_RC=FALSE
+    also edit it in .zshrc
+:call mkdp#util#install, ran this command, don't know what is that mean.
+
+2024.8.11
+download wechat-uos-qt
+install npm
+
+2024.8.12
+download fonts: ttf-roboto noto-fonts noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts ttf-dejavu
+add a config: /etc/fonts/fonts.conf
+add a config: /etc/fonts/conf.d/64-language-selector-prefer.conf
+
+2024.8.14
+edit /etc/vconsole.conf deleted a # in it and add a line 
+FINALLY!!SUCCESS!! 
+NO, 还是失败了
+
+2024.8.15
+download feh and variety to desplay wallpaper
+download dmemnu
+download picom
+
+2025.8.16
+edit .xinitrc    IT WORKS!!!! no, it doesn't works
+download baidunetdisk andorid-studio
+download unrar
+download mariadb mariadb-lib (mySQL)
+use "mariadb -u silver -p" to login to the database
+add consul in /usr/local/bin/
+
+2024.8.17
+edit .zshrc add a xmodmap line, change my keyboard when I ofen hthe terminal
+
+2024.8.20
+install docker
+
+2024.8.26
+install linux-header 
+install scrcpy
+
+2024.8.27
+install ventoy
+
+2024-08-30
+install fzf
+install w3m
+
+2024-08-31
+install fcitx5-rime
+install st
+
+2024.9.1
+install xclip(nvim clipboard tool)
+
+2024.9.2
+install luarocks
+install typescript
+
+2024.9.3
+install caps
+install hplip-lite
+install hp-printer-app
+
+2024.9.6
+install fish
+
+2024.9.8
+add a desktop entry in /usr/share/xsessions/dwm
+install h-m-m-git
+
+2024.9.10
+install tmux
+install lazygit
+
+2024.9.11
+install calc
+
+2024.9.13
+install neovide
+install rime-flypy
+
+2024.9.18
+install nvidia-prime
+
+2024.9.19
+install cowsay
+
+2024.9.24
+install acpi
+install alsa-utils
+
+2024.9.25
+install ueberzugpp
+install numlockx
+
+2024.9.26
+install yazi
+
+2024.9.27
+install tk
+install python-virtualenv
+
+2024.9.28
+install ncdu
+add touchpad config in /etc/X11/xorg.conf.d/
+
+2024.9.29
+install exa
+
+2024.9.30
+install tomato.c-git
+
+2024.9.30
+install pacman-contrib
+
+2024.10.6
+install alacritty
+
+2024.10.6
+install mdpdf(npm) chrome(npx)
+
+2024.10.15
+install kitty
+install labplot (data analyze)
+
+2024.10.19
+edit /etc/ssh/sshd_config X11Forwarding yes
+
+2024.10.20
+add mouseless into /usr/local/bin/
+add mouseless.service to /etc/systemd/system/
+
+2024.10.23
+install bleachbit (clean tool)
+uninstall w3m
+
+2024.10.28
+install gimp
+
+2024.11.1
+install clash and clash-for-linux
+
+2024.11.7
+install netdiscover nmap
+
+2024.11.8
+install burpsuite
+
+2024.11.13
+install lxappearance
+
+2024.11.15
+edit /etc/systemd/logind.conf 没有注释的都是改过的
+
+2024.11.16
+install xdotool (move mouse use terminal)
+install net-tools ettercap dsniff
+install tcpdump
+
+2024.11.20
+curl -O https://blackarch.org/strap.sh 
+(black arch)
+
+2024.11.21
+install dunst (notification)
+
+2024.11.22
+install fcitx5-theme-wechat
+install stow (manage dotfiles)
