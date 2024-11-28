@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR --export GLFW_IM_MODULE:ibus
 SETUVAR --export GTK_IM_MODULE:fcitx
+# SETUVAR --export gtk_im_module:fcitx
 SETUVAR --export QT_IM_MODULE:fcitx
 SETUVAR --export SDL_IM_MODULE:fcitx
 SETUVAR --export XMODIFIERS:\x40im\x3dfcitx
