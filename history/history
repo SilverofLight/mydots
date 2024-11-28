@@ -203,3 +203,6 @@ install stow (manage dotfiles)
 
 2024.11.24
 install onlyoffice
+
+2024.11.28
+install xorg-xwayland wayland hyprland reflector
