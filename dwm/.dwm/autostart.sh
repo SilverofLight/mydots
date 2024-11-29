@@ -1,6 +1,6 @@
 #!/bin/bash
 
-feh --bg-fill ~/Pictures/wallpaper/1354305.jpeg
+feh --bg-fill ~/Pictures/wallpaper/old.png
 picom --config ~/.config/picom/picom.conf &
 
 fcitx5 &
