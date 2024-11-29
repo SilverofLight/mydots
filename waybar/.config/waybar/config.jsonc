@@ -11,7 +11,7 @@
     "modules-right": ["tray", "network", "pulseaudio", "battery", "clock"],
     // Modules configuration
 	"clock": {
-		"format": " {:%D-%H:%M}",
+		"format": " {:%y/%m/%d  %a  %H:%M}",
 		"tooltip": "true",
         	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         	"format-alt": " {:%d/%m}"
