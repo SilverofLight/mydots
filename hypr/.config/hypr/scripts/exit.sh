@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 定义菜单选项
-options=" ⏻ Shutdown\n  Reboot\n 󰿅 Logout\n 󰒲 Suspend\n 󰌾 Lock"
+options=" ⏻ Shutdown\n  Reboot\n 󰿅 Exit\n 󰒲 Suspend\n 󰌾 Lock"
 
 # 使用 rofi 提示选择
 chosen=$(echo -e "$options" | rofi -dmenu -i -p "Power options:")
@@ -14,7 +14,7 @@ case $chosen in
     "  Reboot")
         systemctl reboot
         ;;
-    " 󰿅 Logout")
+    " 󰿅 Exit")
         hyprctl dispatch exit
         ;;
     " 󰒲 Suspend")

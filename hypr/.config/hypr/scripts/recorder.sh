@@ -14,7 +14,7 @@ case $chosen in
         ;;
     *): 
         echo "Selected monitor: $chosen"
-        wf-recorder -f $(xdg-user-dir Videos)/$(date +'%H:%M:%S_%d-%m-%Y').mp4 -o $chosen
+        wf-recorder -a -f $(xdg-user-dir Videos)/$(date +'%H:%M:%S_%d-%m-%Y').mp4 -o $chosen
         ;;
     *)
         echo "Invalid option"
