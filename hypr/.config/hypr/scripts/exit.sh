@@ -15,7 +15,7 @@ case $chosen in
         systemctl reboot
         ;;
     " 󰿅 Logout")
-        hyprtcl dispatch exit
+        hyprctl dispatch exit
         ;;
     " 󰒲 Suspend")
         systemctl suspend
