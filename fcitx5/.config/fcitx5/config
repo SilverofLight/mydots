@@ -29,10 +29,10 @@ EnumerateSkipFirst=False
 0=Hangul_Romaja
 
 [Hotkey/PrevPage]
-0=Up
+0=minus
 
 [Hotkey/NextPage]
-0=Down
+0=equal
 
 [Hotkey/PrevCandidate]
 0=Shift+Tab
@@ -61,7 +61,7 @@ CompactInputMethodInformation=True
 # 显示第一个输入法的信息
 ShowFirstInputMethodInformation=True
 # 默认页大小
-DefaultPageSize=5
+DefaultPageSize=7
 # 覆盖 Xkb 选项
 OverrideXkbOption=False
 # 自定义 Xkb 选项
