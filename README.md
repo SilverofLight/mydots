@@ -58,6 +58,16 @@ ttf-jetbrains-mono ttf-icomoon-feather xdg-desktop-portal-hyprland-git xdotool  
 xwaylandvideobridge-cursor-mode-2-git cliphist qt5-imageformats qt5ct
 ```
 
+- Plagin: hyprsplit
+
+```sh
+hyprpm update
+
+hyprpm add https://github.com/shezdy/hyprsplit
+
+hyprpm enable hyprsplit
+```
+
 
 <summary><h3>Apps & More</h3></summary>
 
