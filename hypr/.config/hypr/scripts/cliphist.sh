@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
-roconf="~/.config/rofi/clipboard.rasi"
+# roconf="~/.config/rofi/clipboard.rasi"
+roconf="~/.config/rofi/config.rasi"
 
 case $1 in
     c)  cliphist list | rofi -dmenu -theme-str 'entry { placeholder: "Copy...";}' -config $roconf | cliphist decode | wl-copy
