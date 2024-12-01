@@ -17,6 +17,7 @@
     "disk"
   ],
   "modules-right": [
+    "custom/wf-recorder",
     "tray",
     "network",
     "custom/bluetooth",
@@ -182,7 +183,7 @@
     "exec": "echo ''",
     "tooltip": "false",
     "exec-if": "pgrep 'wf-recorder'",
-    "on-click": "exec ./scripks/wlrecord.sh",
+    "on-click": "bash $HOME/.config/rofi/scripts/wlrecord.sh",
     "signal": 8
   },
   "custom/hyprpicker": {
