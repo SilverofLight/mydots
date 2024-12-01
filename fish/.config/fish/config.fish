@@ -76,6 +76,13 @@ if status is-interactive
   alias cnnp="nmcli device wifi connect DIRECT-5C-HP\ DeskJet\ 2700\ series"
   alias cnnw="nmcli device wifi connect WHUT-DORM"
 
+  # 如果在使用 kitty, 则更改 ssh
+  if test "$TERM" = "xterm-kitty"
+    function ssh
+        kitty +kitten ssh $argv
+    end
+  end
+
   set -gx EDITOR nvim
   set -gx fish_greeting ''
 
