@@ -10,18 +10,26 @@ if pgrep -x "wf-recorder" > /dev/null; then
 fi
 
 monitors=$(hyprctl monitors all | grep Monitor | awk '{print $2}')
-audio_sources=$(pactl list sources | grep Name | cut -d: -f2)
+audio_sources=$(pactl list sources | grep Name | cut -d: -f2 | sed 's/^[[:space:]]*//')
 
 chosen_monitor=$(echo -e "$monitors" | rofi -dmenu -i -p "选择显示器:")
-[ -z "$chosen_monitor" ] && exit 1
+if [ -z "$chosen_monitor" ]; then
+    notify-send "Recording Cancelled" "No monitor selected"
+    exit 1
+fi
 
 # 选择音频源
-chosen_audio=$(echo -e "$audio_sources\n no audio" | rofi -dmenu -i -p "选择音频源:")
+chosen_audio=$(echo -e "$audio_sources\nno audio" | rofi -dmenu -i -p "选择音频源:")
+
+if [ -z "$chosen_audio" ]; then
+    notify-send "Recording Cancelled" "No audio selected"
+    exit 1
+fi
 
 record_cmd="wf-recorder"
 
-if [ "$chosen_audio" != " no audio" ] && [ -n "$chosen_audio" ]; then
-    record_cmd+=" -a --audio-source $chosen_audio"
+if [ "$chosen_audio" != "no audio" ] && [ -n "$chosen_audio" ]; then
+    record_cmd+=" --audio=$chosen_audio"
 fi
 
 pkill -RTMIN+8 waybar
