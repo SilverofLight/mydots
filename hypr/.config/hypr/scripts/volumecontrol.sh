@@ -24,6 +24,7 @@ function notify_vol
     else
         dunstify -i $ico "Volume: ${vol}%" -a "$sink" -u low -r 91190 -t 800
     fi
+    canberra-gtk-play -i dialog-error -d "error"
 }
 
 case $1 in

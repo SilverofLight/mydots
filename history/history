@@ -209,3 +209,6 @@ install xorg-xwayland wayland hyprland reflector
 
 2024.11.29
 install yesplaymusic
+
+2024-12-02
+edit /etc/mkinitcpio.conf, add a resume in hook, to enable hibernate
