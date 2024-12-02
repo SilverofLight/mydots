@@ -51,8 +51,8 @@ play = [
 openpdf = [
   { run = 'evince -- "$@"&', desc = "open pdf", for = "linux"},
 ]
-fehbg = [
-  { run = 'feh --bg-fill "$@"', desc = "set bg", for = "linux"},
+swwwbg = [
+  { run = 'swww img "$@"', desc = "set bg", for = "linux"},
 ]
 xournalpp = [
   { run = 'xournalpp "$@"&', desc = "xournalpp", for = "linux"},
@@ -68,7 +68,7 @@ rules = [
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
-	{ mime = "image/*", use = [ "open","fehbg", "reveal" ] },
+	{ mime = "image/*", use = [ "open","swwwbg", "reveal" ] },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
   # pdf
