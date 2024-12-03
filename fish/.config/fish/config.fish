@@ -82,9 +82,9 @@ if status is-interactive
         kitty +kitten ssh $argv
     end
   end
+
   function bg
-      eval "$argv" &
-      disown
+      eval "$argv & disown"
   end
 
   set -gx EDITOR nvim
