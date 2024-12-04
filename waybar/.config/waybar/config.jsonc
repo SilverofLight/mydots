@@ -19,6 +19,7 @@
   "modules-right": [
     "custom/wf-recorder",
     "tray",
+    "custom/clash",
     "network",
     "bluetooth",
     "pulseaudio",
@@ -185,6 +186,14 @@
     "exec-if": "pgrep 'wf-recorder'",
     "on-click": "bash $HOME/.config/rofi/scripts/wlrecord.sh",
     "signal": 8
+  },
+  "custom/clash": {
+    "format": "󰌆 ",
+    "interval": 5,
+    "exec": "$HOME/.config/waybar/scripts/get_proxy.sh",
+    "exec-if": "pgrep 'clash'",
+    "tooltip": true,
+    "tooltip-format": "connecting: {}",
   },
   "custom/hyprpicker": {
     "format": "󰈋",
