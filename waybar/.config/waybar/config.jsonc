@@ -39,7 +39,8 @@
     "disable-scroll": false,
     "on-scroll-up": "hyprctl dispatch workspace -1",
     "on-scroll-down": "hyprctl dispatch workspace +1",
-    "format": "{name}{icon}",
+    // "format": "{name}{icon}",
+    "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
       // "1": "1",
@@ -54,7 +55,7 @@
       // "10": "10",
       "urgent": "",
       "active": "",
-      "default": "",
+      "default": "",
       "sort-by-number": true
     },
   },
@@ -91,8 +92,8 @@
       "critical": 15
     },
     "format": "{icon}  {capacity}%",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
+    "format-charging": "{icon}  {capacity}% ",
+    "format-plugged": "{icon}  {capacity}% ",
     "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
