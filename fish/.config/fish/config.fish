@@ -68,7 +68,7 @@ if status is-interactive
   alias ta="tmux attach"
   alias tn="tmux new -s"
   alias tt="tmux attach -t"
-  alias en="~/.config/touchEtyma.sh"
+  alias en="~/.scripts/touchEtyma.sh"
   alias link="scrcpy"
   alias s="neofetch"
   alias dic="~/Documents/github/my_dict/dict"
