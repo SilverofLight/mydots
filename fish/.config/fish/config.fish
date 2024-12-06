@@ -77,6 +77,7 @@ if status is-interactive
   alias clash="/home/silver/Documents/github/clash-for-linux/start.sh"
   alias cnnp="nmcli device wifi connect DIRECT-5C-HP\ DeskJet\ 2700\ series"
   alias cnnw="nmcli device wifi connect WHUT-DORM"
+  alias con="/home/silver/.scripts/config.sh"
 
   # 如果在使用 kitty, 则更改 ssh
   if test "$TERM" = "xterm-kitty"
