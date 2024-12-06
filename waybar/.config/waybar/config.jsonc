@@ -7,6 +7,7 @@
   "margin-left": 0,
   "margin-right": 0,
   "modules-left": [
+    "custom/launcher",
     "hyprland/workspaces",
     "custom/playerctl",
     "custom/playerlabel"
@@ -173,10 +174,10 @@
     "on-click-right": "bash $HOME/.config/hypr/wall.sh"
   },
   "custom/launcher": {
-    "format": "󰈸",
-    "on-click": "bash $HOME/.config/rofi/launcher.sh",
+    "format": "󰣇",
+    "on-click": "rofi -show drun",
     //    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
-    "on-click-right": "bash $HOME/.config/rofi/run.sh"
+    "on-click-right": "rofi -show run"
     //    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
   },
   "custom/wf-recorder": {
