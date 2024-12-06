@@ -212,3 +212,6 @@ install yesplaymusic
 
 2024-12-02
 edit /etc/mkinitcpio.conf, add a resume in hook, to enable hibernate
+
+2024/12/06
+install cronie, use "crontab -e" to edit timed task

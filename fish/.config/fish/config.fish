@@ -78,6 +78,7 @@ if status is-interactive
   alias cnnp="nmcli device wifi connect DIRECT-5C-HP\ DeskJet\ 2700\ series"
   alias cnnw="nmcli device wifi connect WHUT-DORM"
   alias con="/home/silver/.scripts/config.sh"
+  alias checkkernel="/home/silver/.scripts/checkKernels.sh"
 
   # 如果在使用 kitty, 则更改 ssh
   if test "$TERM" = "xterm-kitty"
