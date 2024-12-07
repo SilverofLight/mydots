@@ -3,7 +3,7 @@
 roconf="~/.config/rofi/config.rasi"
 
 case $1 in
-    c)  cliphist list | rofi -dmenu -theme-str 'entry { placeholder: "Copy...";}' -config $roconf | cliphist decode | wl-copy
+    c)  cliphist list | rofi -dmenu -theme-str 'entry { placeholder: "Copy...";}' -config $roconf -mesg 'Clipboard' | cliphist decode | wl-copy
         ;; 
     d)  cliphist list | rofi -dmenu -theme-str 'entry { placeholder: "Delete...";}' -config $roconf | cliphist delete
         ;;

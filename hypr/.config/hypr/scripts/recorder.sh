@@ -12,14 +12,14 @@ fi
 monitors=$(hyprctl monitors all | grep Monitor | awk '{print $2}')
 audio_sources=$(pactl list sources | grep Name | cut -d: -f2 | sed 's/^[[:space:]]*//')
 
-chosen_monitor=$(echo -e "$monitors" | rofi -dmenu -i -p "选择显示器:")
+chosen_monitor=$(echo -e "$monitors" | rofi -dmenu -i -mesg "Select Monitor")
 if [ -z "$chosen_monitor" ]; then
     notify-send "Recording Cancelled" "No monitor selected"
     exit 1
 fi
 
 # 选择音频源
-chosen_audio=$(echo -e "$audio_sources\nno audio" | rofi -dmenu -i -p "选择音频源:")
+chosen_audio=$(echo -e "$audio_sources\nno audio" | rofi -dmenu -i -mesg "Select Audio")
 
 if [ -z "$chosen_audio" ]; then
     notify-send "Recording Cancelled" "No audio selected"
