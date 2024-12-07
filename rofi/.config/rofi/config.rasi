@@ -5,6 +5,8 @@
   background-color: #282738;
   text-color:       #bd93fa;
   font: "JetBrainsMono Bold 10";
+  prompt-enabled: true;
+  prompt-padding: 4px;
 }
 
 
@@ -20,6 +22,13 @@ window {
 mainbox {
   spacing: 0px;
   children: [message,inputbar,listview];
+}
+
+prompt {
+    enabled: true;
+    padding: 4px;
+    background-color: #282738;
+    text-color: #bd39fa;
 }
 
 message {
