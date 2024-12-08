@@ -10,8 +10,17 @@ fi
 
 # 切换壁纸的函数
 change_wallpaper() {
-    # 随机选择一张图片
-    WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) | shuf -n 1)
+    if [ -n "$1" ]; then
+        # 如果提供了具体路径，直接使用该路径
+        WALLPAPER="$1"
+        if [ ! -f "$WALLPAPER" ]; then
+            echo "错误：找不到指定的壁纸文件"
+            exit 1
+        fi
+    else
+        # 随机选择一张图片
+        WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) | shuf -n 1)
+    fi
     
     # 定义可用的过渡效果数组
     TRANSITIONS=("simple" "wipe" "grow" "center" "outer" "wave" "random" "any")
@@ -40,7 +49,10 @@ if [[ $1 == "daemon" ]]; then
         change_wallpaper
         sleep 1200
     done
+elif [[ -n "$1" && "$1" != "daemon" ]]; then
+    # 如果提供了文件路径参数，使用指定的壁纸
+    change_wallpaper "$1"
 else
-    # 直接运行则只更换一次壁纸
+    # 直接运行则只随机更换一次壁纸
     change_wallpaper
 fi

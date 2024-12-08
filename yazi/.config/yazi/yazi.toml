@@ -52,7 +52,7 @@ openpdf = [
   { run = 'evince -- "$@"&', desc = "open pdf", for = "linux"},
 ]
 swwwbg = [
-  { run = 'swww img "$@"', desc = "set bg", for = "linux"},
+  { run = '$HOME/.scripts/swww.sh "$@"', desc = "set bg", for = "linux"},
 ]
 xournalpp = [
   { run = 'xournalpp "$@"&', desc = "xournalpp", for = "linux"},
