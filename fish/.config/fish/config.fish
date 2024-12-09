@@ -10,6 +10,8 @@ if status is-interactive
 
   # ptyhon path
   set -gx PATH $HOME/.pyenv/bin $PATH
+
+  set -U fish_user_paths $HOME/.local/bin $fish_user_paths
   
   # Initialize pyenv
   status --is-interactive; and pyenv init --path | source
