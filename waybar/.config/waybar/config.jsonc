@@ -31,7 +31,7 @@
   ],
   // Modules configuration
   "clock": {
-    "format": " {:%y/%m/%d  %a  %H:%M}",
+    "format": "  {:%y/%m/%d  %a  %H:%M}",
     "tooltip": "true",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": " {:%d/%m}"
@@ -193,7 +193,7 @@
     "signal": 8
   },
   "custom/clash": {
-    "format": "󰌆 ",
+    "format": " ",
     "interval": 5,
     "exec": "$HOME/.config/waybar/scripts/get_proxy.sh",
     "exec-if": "pgrep 'clash'",

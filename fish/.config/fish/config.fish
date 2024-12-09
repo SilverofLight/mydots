@@ -74,11 +74,12 @@ if status is-interactive
   alias dic="~/Documents/github/my_dict/dict"
   alias mp="mdpdf --style=$HOME/Documents/github/mdpdf/github.css"
   alias baidu="/usr/lib/baidunetdisk/baidunetdisk --no-sandbox %U &"
-  alias clash="/home/silver/Documents/github/clash-for-linux/start.sh"
+  alias clash="$HOME/Documents/github/clash-for-linux/start.sh"
   alias cnnp="nmcli device wifi connect DIRECT-5C-HP\ DeskJet\ 2700\ series"
   alias cnnw="nmcli device wifi connect WHUT-DORM"
-  alias con="/home/silver/.scripts/config.sh"
-  alias checkkernel="/home/silver/.scripts/checkKernels.sh"
+  alias con="$HOME/.scripts/config.sh"
+  alias checkkernel="$HOME/.scripts/checkKernels.sh"
+  alias weather="$HOME/.scripts/weather.sh"
 
   # 如果在使用 kitty, 则更改 ssh
   if test "$TERM" = "xterm-kitty"
