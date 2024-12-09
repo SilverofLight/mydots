@@ -56,7 +56,7 @@ for path in "${search_path[@]}"; do
 done
 
 # 使用rofi显示文件列表并获取用户选择
-selected_file=$(echo -e "$files_list" | sed '/^$/d' | rofi -dmenu -i -p "选择要编辑的文件")
+selected_file=$(echo -e "$files_list" | sed '/^$/d' | rofi -dmenu -i -mesg "Wvim")
 
 # 如果用户选择了文件，需要将~重新替换回$HOME后再打开
 if [ -n "$selected_file" ]; then
