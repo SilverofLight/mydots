@@ -108,10 +108,15 @@ if status is-interactive
   function fzf-history-widget
       commandline -i (history | fzf)
   end
+
+  # vi mode
+  set -g fish_bind_mode fish_vi_key_bindings
   
   # 绑定快捷键
   function fish_user_key_bindings
       bind \ct fzf-file-widget  # Ctrl-T
       bind \cr fzf-history-widget  # Ctrl-R
+      bind -M insert jk 'if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char repaint-mode; end'
+      bind -M insert \cf forward-char
   end
 end
