@@ -24,6 +24,8 @@
     "network",
     "bluetooth",
     "pulseaudio",
+    "backlight",
+    "custom/brightnessctl",
     "battery",
     "clock"
   ],
@@ -139,15 +141,16 @@
     // "device": "acpi_video1",
     "format": "{icon} {percent}%",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      // "",
+      // "",
+      // "",
+      // "",
+      // "",
+      // "",
+      // "",
+      // "",
+      // ""
+      "󰛨 "
     ],
     //	"on-scroll-up":,
     //	"on-scroll-down":,

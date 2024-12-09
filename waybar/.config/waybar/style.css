@@ -41,7 +41,7 @@ window#waybar {
 	border-radius: 16px;
 }
 
-#custom-date, #clock, #battery, #pulseaudio, #network, #custom-randwall, #custom-launcher {
+#custom-date, #clock, #battery, #pulseaudio, #network, #backlight, #custom-randwall, #custom-launcher {
 	background: transparent;
 	padding: 3px 5px 3px 5px;
 	margin: 3px 5px 3px 5px;
@@ -101,14 +101,20 @@ window#waybar {
     border-radius: 5px 5px 5px 5px;
 }
 
-#backlight {
+/* #backlight {
     background-color: #24283b;
-    color: #db4b4b;
+    color: #ffd700;
     border-radius: 0px 0px 0px 0px;
     margin: 5px;
     margin-left: 0px;
     margin-right: 0px;
     padding: 0px 0px;
+}*/
+
+#backlight {
+    color: #ffd700;
+    border-radius: 8px;
+    margin-left: 0px;
 }
 
 #network {
