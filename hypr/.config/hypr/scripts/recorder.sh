@@ -4,6 +4,7 @@
 if pgrep -x "wf-recorder" > /dev/null; then
     pkill -RTMIN+8 waybar
     killall -s SIGINT wf-recorder
+    pkill -RTMIN+8 waybar
     pactl unload-module module-loopback
     pactl unload-module module-null-sink
     pkill -RTMIN+8 waybar
@@ -49,10 +50,17 @@ else
         pactl load-module module-null-sink sink_name=Combined
         pactl load-module module-loopback sink=Combined source=$chosen_output
         pactl load-module module-loopback sink=Combined source=$chosen_input
+        sleep 1
         chosen_audio="Combined.monitor"
     fi
 fi
 
+chosen_format=$(echo -e "mkv\nmp4" | rofi -dmenu -i -mesg "Choose format")
+
+if [ -z "chosen_format" ]; then
+    notify-send "Format Cancelled" "No format selected"
+    exit 1
+fi
 
 record_cmd="wf-recorder"
 
@@ -63,7 +71,7 @@ fi
 sleep 2
 
 pkill -RTMIN+8 waybar
-$record_cmd -f "$HOME/Videos/$(date +'%H:%M:%S_%d-%m-%Y').mp4" -o "$chosen_monitor" &
+$record_cmd -f "$HOME/Videos/$(date +'%H:%M:%S_%d-%m-%Y').$chosen_format" -o "$chosen_monitor" &
 pkill -RTMIN+8 waybar
 
 # notify-send "Recording Started" "Monitor: $chosen_monitor\nAudio: ${chosen_audio:-no audio}"
