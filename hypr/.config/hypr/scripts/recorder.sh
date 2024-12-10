@@ -28,7 +28,7 @@ fi
 
 chosen_format=$(echo -e "mkv\nmp4" | rofi -dmenu -i -mesg "Choose format")
 
-if [ -z "chosen_format" ]; then
+if [ -z "$chosen_format" ]; then
     notify-send "Format Cancelled" "No format selected"
     exit 1
 fi
