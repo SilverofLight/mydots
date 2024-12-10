@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# author: Silver Lee
+# date: 2024/10/12
+# description: use tmux open my etyma dir
+# requirements: tmux, wudao, nvim
+
 if tmux has-session -t etyma 2>/dev/null; then
   tmux attach -t etyma
 else 

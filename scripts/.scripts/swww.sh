@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# author: Silver Lee
+# date: 2024/12/1
+# description: use rofi to select a wallpaper in WALLPAPER_DIR, choose a random transition to display, Or use swww.sh daemon to change wallpaper every 20min
+# requirements: swww
+
 # 壁纸存放目录
 WALLPAPER_DIR="$HOME/Pictures/wallpaper"
 

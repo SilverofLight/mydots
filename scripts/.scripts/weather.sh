@@ -1,10 +1,15 @@
 #!/bin/bash
 
+# author: Silver Lee
+# date: 2024/12/9
+# description: weather reporter with dnust, default city is wuhan, also can use other cities
+# requirements: network, dnust
+
 # Default city is Wuhan, but can be overridden by command line argument
 CITY=${1:-"Wuhan"}
 
-# Get weather information
-weather=$(curl -s "wttr.in/$CITY?format=Location:%l\nTemp:%t\nWeather:%c" 2>/dev/null)
+# Get weather information (added &m for metric units - Celsius)
+weather=$(curl -s "wttr.in/$CITY?format=Location:%l\nTemp:%t\nWeather:%c&m" 2>/dev/null)
 
 # Debug output
 # echo "Debug: Weather info: $weather"

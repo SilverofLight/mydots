@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# author: Silver Lee
+# date: 2024/12/9
+# description: use rofi to select a config file, and use kitty + nvim open it
+# requirements: rofi, nvim, kitty
+
 search_path=("$HOME/mydots/dwm/.dwm/bar.sh"
             "$HOME/mydots/dwm/.dwm/autostart.sh"
             "$HOME/mydots/dwm/.dwm/reflashBar.sh"

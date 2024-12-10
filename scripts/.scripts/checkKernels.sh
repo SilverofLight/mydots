@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# author: Silver Lee
+# date: 2024/12/8
+# description: Check if my kernel is up to date
+# requirements: dunst
+
 # 获取当前运行的内核版本
 RUNNING_KERNEL=$(uname -r)
 

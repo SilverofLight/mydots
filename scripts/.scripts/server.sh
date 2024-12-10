@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# author: Silver Lee
+# date: 2024/12/5
+# description: use tmux to open my server
+# requirements: tmux
+
 if tmux has-session -t server 2>/dev/null; then
   tmux attach -t server
 else 
