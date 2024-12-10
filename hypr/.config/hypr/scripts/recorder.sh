@@ -32,6 +32,8 @@ if [ "$chosen_audio" != "no audio" ] && [ -n "$chosen_audio" ]; then
     record_cmd+=" --audio=$chosen_audio"
 fi
 
+sleep 2
+
 pkill -RTMIN+8 waybar
 $record_cmd -f "$HOME/Videos/$(date +'%H:%M:%S_%d-%m-%Y').mp4" -o "$chosen_monitor" &
 pkill -RTMIN+8 waybar
