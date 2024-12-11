@@ -15,6 +15,7 @@ bookmarks=(
     "3xUI | https://107.172.157.186:11451/Y1qibsv0kd0yjvp/panel/inbounds"
     "Clash | http://127.0.0.1:9090/ui/"
     "GiantessNight | https://giantessnight.com/"
+    "Hyprland WIki | https://wiki.hyprland.org/"
 )
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
