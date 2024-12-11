@@ -117,8 +117,8 @@ if status is-interactive
   
   # 绑定快捷键
   function fish_user_key_bindings
-      bind \ct fzf-file-widget  # Ctrl-T
-      bind \cr fzf-history-widget  # Ctrl-R
+      bind -M insert \ct fzf-file-widget  # Ctrl-T
+      bind -M insert \cr fzf-history-widget  # Ctrl-R
       bind -M insert jk 'if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char repaint-mode; end'
       bind -M insert \cf forward-char
   end
