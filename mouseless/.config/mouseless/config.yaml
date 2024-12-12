@@ -15,6 +15,7 @@ layers:
       # a: tap-hold a ; toggle-layer mouse ; 500
       # when leftalt+a, activate mouse layer
       leftalt+a: layer mouse
+      f+d: layer number
   # a layer for mouse movement
   - name: mouse
   # enterCommand: "notify-send 'mouseless' 'mouse layer entered'"
@@ -42,3 +43,21 @@ layers:
       s: button right
       _: layer initial
 
+  - name: number
+    enterCommand: "touch $HOME/Templates/number.tmp; pkill -RTMIN+6 waybar"
+    exitCommand: "rm $HOME/Templates/number.tmp; pkill -RTMIN+6 waybar"
+    passThrough: true
+
+    bindings:
+      k7: k7
+      k8: k8
+      k9: k9
+      u: k4
+      i: k5
+      o: k6
+      j: k1
+      k: k2
+      l: k3
+      n: k0
+      m: k0
+      q: layer initial

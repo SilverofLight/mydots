@@ -19,6 +19,7 @@
   ],
   "modules-right": [
     "custom/mouseless",
+    "custom/numbermode",
     "custom/wf-recorder",
     "tray",
     "custom/clash",
@@ -201,6 +202,14 @@
     "tooltip": "false",
     "exec-if": "test -f $HOME/Templates/mouse.tmp",
     "signal": 7
+  },
+  "custom/numbermode": {
+    "format": "{}",
+    "interval": "once",
+    "exec": "echo '󰬕 '",
+    "tooltip": "false",
+    "exec-if": "test -f $HOME/Templates/number.tmp",
+    "signal": 6
   },
   "custom/clash": {
     "format": " ",
