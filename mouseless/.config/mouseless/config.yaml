@@ -17,6 +17,10 @@ layers:
       leftalt+a: layer mouse
   # a layer for mouse movement
   - name: mouse
+  # enterCommand: "notify-send 'mouseless' 'mouse layer entered'"
+  # exitCommand: "notify-send 'mouseless' 'mouse layer exited'"
+    enterCommand: "touch $HOME/Templates/mouse.tmp; pkill -RTMIN+7 waybar"
+    exitCommand: "rm $HOME/Templates/mouse.tmp; pkill -RTMIN+7 waybar"
     # when true, keys that are not mapped keep their original meaning
     bindings:
       # quit mouse layer

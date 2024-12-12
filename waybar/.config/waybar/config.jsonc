@@ -18,6 +18,7 @@
     "disk"
   ],
   "modules-right": [
+    "custom/mouseless",
     "custom/wf-recorder",
     "tray",
     "custom/clash",
@@ -180,8 +181,9 @@
     "format": "󰣇",
     "on-click": "rofi -show drun",
     //    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
-    "on-click-right": "rofi -show run"
+    "on-click-right": "rofi -show run",
     //    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
+    "on-click-middle": "wlogout"
   },
   "custom/wf-recorder": {
     "format": "{}",
@@ -191,6 +193,14 @@
     "exec-if": "pgrep 'wf-recorder'",
     "on-click": "bash $HOME/.config/rofi/scripts/wlrecord.sh",
     "signal": 8
+  },
+  "custom/mouseless": {
+    "format": "{}",
+    "interval": "once",
+    "exec": "echo ' '",
+    "tooltip": "false",
+    "exec-if": "test -f $HOME/Templates/mouse.tmp",
+    "signal": 7
   },
   "custom/clash": {
     "format": " ",
