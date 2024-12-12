@@ -40,4 +40,5 @@ layers:
       f: button left
       d: button middle
       s: button right
+      _: layer initial
 
