@@ -3,10 +3,10 @@ if status is-interactive
     # function fish_prompt
     #   echo -n '@'':'(pwd)\n'>'' '
     # end
-  if test (xmodmap -pke | grep -c 'Control_L') -eq 1
-      xmodmap $HOME/.Xmodmap
-      echo "change keyboard layout successfully"
-  end
+    # if test (xmodmap -pke | grep -c 'Control_L') -eq 1
+    #     xmodmap $HOME/.Xmodmap
+    #     echo "change keyboard layout successfully"
+    # end
 
   # ptyhon path
   set -gx PATH $HOME/.pyenv/bin $PATH
