@@ -15,7 +15,7 @@ fi
 monitors=$(hyprctl monitors all | grep Monitor | awk '{print $2}')
 # audio_sources=$(pactl list sources | grep Name | cut -d: -f2 | sed 's/^[[:space:]]*//')
 
-chosen_monitor=$(echo -e "$monitors" | rofi -dmenu -i -mesg "Select Monitor")
+chosen_monitor=$(echo -e "$monitors\nmanual" | rofi -dmenu -i -mesg "Select Monitor")
 if [ -z "$chosen_monitor" ]; then
     notify-send "Recording Cancelled" "No monitor selected"
     exit 1
@@ -71,7 +71,11 @@ fi
 sleep 2
 
 pkill -RTMIN+8 waybar
-$record_cmd -f "$HOME/Videos/$(date +'%H:%M:%S_%d-%m-%Y').$chosen_format" -o "$chosen_monitor" &
+if [ $chosen_monitor != "manual" ]; then
+    $record_cmd -f "$HOME/Videos/$(date +'%H:%M:%S_%d-%m-%Y').$chosen_format" -o "$chosen_monitor" &
+else
+    $record_cmd -f "$HOME/Videos/$(date +'%H:%M:%S_%d-%m-%Y').$chosen_format" -g "$(slurp)" &
+fi
 pkill -RTMIN+8 waybar
 
 # notify-send "Recording Started" "Monitor: $chosen_monitor\nAudio: ${chosen_audio:-no audio}"
