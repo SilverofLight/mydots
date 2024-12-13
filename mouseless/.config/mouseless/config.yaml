@@ -16,6 +16,7 @@ layers:
       # when leftalt+a, activate mouse layer
       leftalt+a: layer mouse
       f+d: layer number
+      capslock: tap-hold esc ; leftctrl ; 100
   # a layer for mouse movement
   - name: mouse
   # enterCommand: "notify-send 'mouseless' 'mouse layer entered'"
@@ -41,6 +42,7 @@ layers:
       f: button left
       d: button middle
       s: button right
+      f+d: layer number
       _: layer initial
 
   - name: number
@@ -60,4 +62,5 @@ layers:
       l: k3
       n: k0
       m: k0
+      leftalt+a: layer mouse
       q: layer initial
