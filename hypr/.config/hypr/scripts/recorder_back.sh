@@ -21,6 +21,12 @@ if [ -z "$chosen_monitor" ]; then
     exit 1
 fi
 
+if [ "$chosen_monitor" == "manual" ]; then
+    chosen_monitor="-g $(slurp)"
+else
+    chosen_monitor="-o $chosen_monitor"
+fi
+
 output_audios=$(pactl list sources | grep "output" | grep Name | awk '{print $2}')
 chosen_output=$(echo -e "No output\n$output_audios" | rofi -dmenu -i -mesg "Select output audio")
 
@@ -71,11 +77,7 @@ fi
 sleep 2
 
 pkill -RTMIN+8 waybar
-if [ $chosen_monitor != "manual" ]; then
-    $record_cmd -f "$HOME/Videos/$(date +'%H:%M:%S_%d-%m-%Y').$chosen_format" -o "$chosen_monitor" &
-else
-    $record_cmd -f "$HOME/Videos/$(date +'%H:%M:%S_%d-%m-%Y').$chosen_format" -g "$(slurp)" &
-fi
+$record_cmd -f "$HOME/Videos/$(date +'%H:%M:%S_%d-%m-%Y').$chosen_format" "$chosen_monitor" &
 pkill -RTMIN+8 waybar
 
 # notify-send "Recording Started" "Monitor: $chosen_monitor\nAudio: ${chosen_audio:-no audio}"
