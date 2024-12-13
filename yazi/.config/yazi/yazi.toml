@@ -43,10 +43,11 @@ reveal = [
 extract = [
 	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
 ]
-play = [
-	# { run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+vlc = [
 	{ run = 'vlc "$@"&', orphan = true, for = "unix" },
-	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
+]
+mpv = [
+	{ run = 'mpv "$@"&', orphan = true, for = "unix" },
 ]
 openpdf = [
   { run = 'evince -- "$@"&', desc = "open pdf", for = "linux"},
@@ -70,7 +71,7 @@ rules = [
 	# Image
 	{ mime = "image/*", use = [ "open","swwwbg", "reveal" ] },
 	# Media
-	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
+	{ mime = "{audio,video}/*", use = [ "mpv", "vlc", "reveal" ] },
   # pdf
 	{ mime = "*/pdf", use = [ "openpdf","xournalpp", "brave", "reveal" ] },
 	# Archive
