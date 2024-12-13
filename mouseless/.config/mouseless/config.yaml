@@ -28,8 +28,7 @@ layers:
       # quit mouse layer
       q: layer initial
       i: layer initial
-      # keep the mouse layer active
-      space: layer mouse
+      # space: layer mouse
       l: move  1  0
       h: move -1  0
       j: move  0  1
@@ -62,5 +61,10 @@ layers:
       l: k3
       n: k0
       m: k0
+      enter: enter
+      comma: comma
+      kpcomma: kpcomma
+      dot: dot
+      backspace: backspace
       leftalt+a: layer mouse
-      q: layer initial
+      _: layer initial
