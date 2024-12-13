@@ -121,5 +121,7 @@ if status is-interactive
       bind -M insert \cr fzf-history-widget  # Ctrl-R
       bind -M insert jk 'if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char repaint-mode; end'
       bind -M insert \cf forward-char
+      bind -M default " "a beginning-of-line
+      bind -M default " "e beginning-of-line
   end
 end
