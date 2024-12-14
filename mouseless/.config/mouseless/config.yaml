@@ -2,7 +2,7 @@
 baseMouseSpeed: 750.0
 baseScrollSpeed: 20.0
 
-comboTime: 100
+comboTime: 50
 
 # the rest of the config defines the layers with their bindings
 layers:
