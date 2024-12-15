@@ -16,6 +16,9 @@ bookmarks=(
     "Clash | http://127.0.0.1:9090/ui/"
     "GiantessNight | https://giantessnight.com/"
     "Hyprland WIki | https://wiki.hyprland.org/"
+    "Xiao Ya | https://whut.ai-augmented.com/app/jx-web/mycourse"
+    "Desmos | https://www.desmos.com/calculator?lang=zh-CN"
+    "Whut | https://jwxt.whut.edu.cn/jwapp/sys/homeapp/home/index.html?av=1733997482198&contextPath=/jwapp#/"
 )
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
