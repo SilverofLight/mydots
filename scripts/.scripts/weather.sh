@@ -8,8 +8,13 @@
 # Default city is Wuhan, but can be overridden by command line argument
 CITY=${1:-"Wuhan"}
 
-# Get weather information (added &m for metric units - Celsius)
-weather=$(curl -s "wttr.in/$CITY?format=Location:%l\nTemp:%t\nWeather:%c&m" 2>/dev/null)
+# Check if it's Wuhan and local weather file exists
+if [ "$CITY" = "Wuhan" ] && [ -f "$HOME/Templates/weather" ]; then
+    weather=$(cat "$HOME/Templates/weather")
+else
+    # Get weather information (added &m for metric units - Celsius)
+    weather=$(curl -s "wttr.in/$CITY?format=Location:%l\nTemp:%t\nWeather:%c&m" 2>/dev/null)
+fi
 
 # Debug output
 # echo "Debug: Weather info: $weather"
