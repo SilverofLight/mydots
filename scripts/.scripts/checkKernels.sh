@@ -18,7 +18,9 @@ LATEST_KERNEL=${LATEST_KERNEL//.arch/-arch}
 if [ "$RUNNING_KERNEL" = "$LATEST_KERNEL" ]; then
     # 如果版本相同，发送正在运行最新版本的通知
     dunstify "Kernel Status" "Kernel is up to date" -u low
+    echo "Kernel is up to date"
 else
     # 如果版本不同，发送需要重启的通知
     dunstify "Kernel Status" "New kernel version detected!\nRunning: $RUNNING_KERNEL\nLatest: $LATEST_KERNEL\nPlease consider rebooting" -u critical
+    echo -e "New kernel version detected!\nRunning: $RUNNING_KERNEL\nLatest: $LATEST_KERNEL\nPlease consider rebooting"
 fi
