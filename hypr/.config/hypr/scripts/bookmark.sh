@@ -19,6 +19,9 @@ bookmarks=(
     "Xiao Ya | https://whut.ai-augmented.com/app/jx-web/mycourse"
     "Desmos | https://www.desmos.com/calculator?lang=zh-CN"
     "Whut | https://jwxt.whut.edu.cn/jwapp/sys/homeapp/home/index.html?av=1733997482198&contextPath=/jwapp#/"
+    "Miao Miao | https://xn--6krx87aehra.com/"
+    "New York Time | https://www.nytimes.com/"
+    "Yin He(ybhe) | https://nf.video/?sharedId=77066"
 )
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
