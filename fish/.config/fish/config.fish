@@ -73,7 +73,7 @@ if status is-interactive
   alias en="~/.scripts/touchEtyma.sh"
   alias link="scrcpy"
   alias s="neofetch"
-  alias f="neofetch"
+  alias f="fastfetch"
   alias dic="~/Documents/github/my_dict/dict"
   alias mp="mdpdf --style=$HOME/Documents/github/mdpdf/github.css"
   alias baidu="/usr/lib/baidunetdisk/baidunetdisk --no-sandbox %U &"
