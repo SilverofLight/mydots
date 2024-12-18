@@ -3,9 +3,20 @@
 echo -e "\033[94mWelcome to kd!\033[0m"
 
 while true; do
+    # Ctrl+D 退出
     if ! read -r -p "> " msg; then
-        echo "exit"
+        echo -e "exit"
         exit 0
+    fi
+
+    # 首先检查是否以 -l 开头, 完整模式
+    if [[ "$msg" =~ ^-l ]]; then
+        cmd="${msg#-l}"  # 移除开头的 -l
+        cmd="${cmd## }"  # 移除开头的空格
+        if [ -n "$cmd" ]; then
+            kd "$cmd"
+        fi
+        continue
     fi
 
     if [ "$msg" = "clear" ] || [ "$msg" = "c" ]; then
@@ -14,6 +25,7 @@ while true; do
         continue
     fi
     
+    # 默认为简洁模式
     if [ -n "$msg" ]; then
         # 第一行为红色，第二行如果是注音，则为绿色，倒数第二行为红色
         kd "$msg" | sed -e 's/    \[/\n    [/g' -e '/⸺⸺⸺⸺⸺/q' \
