@@ -58,14 +58,13 @@ ttf-jetbrains-mono ttf-icomoon-feather xdg-desktop-portal-hyprland-git xdotool  
 xwaylandvideobridge-cursor-mode-2-git cliphist qt5-imageformats qt5ct
 ```
 
-- Plagin: hyprsplit
+- Plagin: split-monitor-workspaces
 
 ```sh
 hyprpm update
-
-hyprpm add https://github.com/shezdy/hyprsplit
-
-hyprpm enable hyprsplit
+hyprpm add https://github.com/Duckonaut/split-monitor-workspaces # Add the plugin repository
+hyprpm enable split-monitor-workspaces # Enable the plugin
+hyprpm reload # Reload the plugins
 ```
 
 
@@ -73,19 +72,14 @@ hyprpm enable hyprsplit
 
 ```sh
 ## CLI & Tools
-paru -S btop cava neofetch noise-suppression-for-voice   \
+paru -S btop cava fastfetch noise-suppression-for-voice   \
 rofi-lbonn-wayland-git rofi-emoji starship zsh viewnior ocs-url
 ```
 
 ```sh
 ## Browser & File Explorer
 paru -S brave-bin file-roller noto-fonts noto-fonts-cjk  \
-noto-fonts-emoji thunar thunar-archive-plugin
-```
-
-```sh
-# VSCode
-paru -S code code-features code-marketplace
+noto-fonts-emoji nautilus
 ```
 
 ```sh
