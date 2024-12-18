@@ -12,6 +12,6 @@ while true; do
     fi
     
     if [ -n "$msg" ]; then
-        fanyi "$msg"
+        kd "$msg"
     fi
 done
