@@ -5,6 +5,11 @@ while true; do
         echo "exit"
         exit 0
     fi
+
+    if [ "$msg" = "clear" ] || [ "$msg" = "c" ]; then
+        clear
+        continue
+    fi
     
     if [ -n "$msg" ]; then
         fanyi "$msg"
