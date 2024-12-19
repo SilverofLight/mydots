@@ -48,7 +48,8 @@ fi
 sleep 2
 
 pkill -RTMIN+8 waybar
-$record_cmd -f "$HOME/Videos/$(date +'%H:%M:%S_%d-%m-%Y').$chosen_format" "$chosen_monitor" &
+cmd="$record_cmd -f "$HOME/Videos/$(date +'%H:%M:%S_%d-%m-%Y').$chosen_format" "$chosen_monitor" &"
+$cmd
 pkill -RTMIN+8 waybar
 
 # notify-send "Recording Started" "Monitor: $chosen_monitor\nAudio: ${chosen_audio:-no audio}"
