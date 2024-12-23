@@ -41,6 +41,7 @@ layers:
       f: button left
       d: button middle
       s: button right
+      leftalt: leftalt
       f+d: layer number
       _: layer initial
 
