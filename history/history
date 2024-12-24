@@ -215,3 +215,7 @@ edit /etc/mkinitcpio.conf, add a resume in hook, to enable hibernate
 
 2024/12/06
 install cronie, use "crontab -e" to edit timed task
+
+2024/12/24
+install mpd-mpris
+install udiskie
