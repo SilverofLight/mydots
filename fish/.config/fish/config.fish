@@ -11,6 +11,9 @@ if status is-interactive
     # ptyhon path
     set -gx PATH $HOME/.pyenv/bin $PATH
 
+    # lean path
+    set -gx PATH $PATH $HOME/.elan/bin
+
     # mount print
     set MNT /run/media/silver/
 

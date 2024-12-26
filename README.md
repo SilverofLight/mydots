@@ -58,12 +58,12 @@ ttf-jetbrains-mono ttf-icomoon-feather xdg-desktop-portal-hyprland-git xdotool  
 xwaylandvideobridge-cursor-mode-2-git cliphist qt5-imageformats qt5ct
 ```
 
-- Plagin: split-monitor-workspaces
+- Plagin: hyprsplit
 
 ```sh
 hyprpm update
-hyprpm add https://github.com/Duckonaut/split-monitor-workspaces # Add the plugin repository
-hyprpm enable split-monitor-workspaces # Enable the plugin
+hyprpm add https://github.com/Duckonaut/hyprsplit # Add the plugin repository
+hyprpm enable hyprsplit # Enable the plugin
 hyprpm reload # Reload the plugins
 ```
 
