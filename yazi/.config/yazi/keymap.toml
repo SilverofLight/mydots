@@ -136,6 +136,7 @@ keymap = [
 	{ on = [ "g", "n" ],       run = "cd ~/.config/nvim/lua/",   desc = "Goto nvim config" },
 	{ on = [ "g", "s" ],       run = "cd ~/mydots/",         desc = "Goto stow" },
 	{ on = [ "g", "m" ],       run = "cd /run/media/silver/",         desc = "Goto mount position" },
+	{ on = [ "g", "p" ],       run = "cd ~/Pictures/Screenshots/",         desc = "Goto Screenshots" },
 
   # plugins
 	{ on = [ "g", "i" ],       run = "plugin lazygit",   desc = "run lazygit" },
