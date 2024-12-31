@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -o pipefail
+export GRIMBLAST_EDITOR="drawing"
 
 # Directory
 _SCREENSHOT_DIR_=$HOME/Pictures/Screenshots
@@ -35,11 +36,12 @@ function take_screenshot() {
 }
 
 # Check parameters
-if [ -z "$1" ] || ([ "$1" != 'full' ] && [ "$1" != 'area' ]); then
+if [ -z "$1" ] || ([ "$1" != 'full' ] && [ "$1" != 'area' ] && [ "$1" != "edit" ]); then
     echo "
     Parameter required:
     area    - Area screenshot
     full    - Full screenshot
+    edit    - Edit screenshot
     Example:
     ./screensht area
     ./screensht full
@@ -50,4 +52,7 @@ elif [ "$1" = 'full' ]; then
 elif [ "$1" = 'area' ]; then
     msg='Area screenshot saved and copied to clipboard!'
     take_screenshot 'grimblast copysave area' "${msg}"
+elif [ "$1" = 'edit' ]; then
+    msg=''
+    take_screenshot 'grimblast edit area' "${msg}"
 fi
