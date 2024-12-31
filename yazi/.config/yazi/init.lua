@@ -1,20 +1,5 @@
-require("yaziline"):setup({
-  separator_style = "angly", -- "angly" | "curvy" | "liney" | "empty"
-  separator_open = "",
-  separator_close = "",
-  separator_open_thin = "",
-  separator_close_thin = "",
-  select_symbol = "",
-  yank_symbol = "󰆐",
-  filename_max_length = 24, -- trim when filename > 24
-  filename_trim_length = 6 -- trim 6 chars from both ends
-})
 require("git"):setup()
--- ~/.config/yazi/init.lua
-THEME.git = THEME.git or {}
-THEME.git.modified = ui.Style():fg("blue")
-THEME.git.deleted = ui.Style():fg("red"):bold()
-
+require("full-border"):setup()
 require("githead"):setup({
   show_branch = true,
   branch_prefix = "on",
@@ -52,9 +37,3 @@ require("githead"):setup({
   untracked_color = "blue",
   untracked_symbol = "?",
 })
-
--- full-forder
-require("full-border"):setup {
-	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
-	type = ui.Border.ROUNDED,
-}
