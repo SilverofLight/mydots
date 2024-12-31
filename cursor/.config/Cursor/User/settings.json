@@ -2654,6 +2654,10 @@
     },
   ],
   "vim.leader": " ",
+  "vim.useSystemClipboard": true,
   "editor.formatOnSave": true,
   "go.toolsManagement.autoUpdate": true,
+  "vim.flash.enable": true,
+  "vim.neovimConfigPath": "~/.config/nvim.lazy/init.lua",
+  "vim.neovimPath": "/use/bin/nvim",
 }
