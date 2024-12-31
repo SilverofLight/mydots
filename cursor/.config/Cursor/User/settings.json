@@ -199,22 +199,6 @@
       "before": [
         "J"
       ],
-      "commands": [
-        ":tabprevious"
-      ]
-    },
-    {
-      "before": [
-        "K"
-      ],
-      "commands": [
-        ":tabnext"
-      ]
-    },
-    {
-      "before": [
-        "<C-j>"
-      ],
       "after": [
         "5",
         "j"
@@ -222,7 +206,7 @@
     },
     {
       "before": [
-        "<C-k>"
+        "K"
       ],
       "after": [
         "5",
@@ -231,7 +215,7 @@
     },
     {
       "before": [
-        "<C-h>"
+        "H"
       ],
       "after": [
         "8",
@@ -240,7 +224,7 @@
     },
     {
       "before": [
-        "<C-l>"
+        "L"
       ],
       "after": [
         "8",
@@ -2609,7 +2593,7 @@
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": [
-        "<C-j>"
+        "J"
       ],
       "after": [
         "5",
@@ -2618,7 +2602,7 @@
     },
     {
       "before": [
-        "<C-k>"
+        "K"
       ],
       "after": [
         "5",
@@ -2627,7 +2611,7 @@
     },
     {
       "before": [
-        "<C-h>"
+        "H"
       ],
       "after": [
         "8",
@@ -2636,7 +2620,7 @@
     },
     {
       "before": [
-        "<C-l>"
+        "L"
       ],
       "after": [
         "8",
@@ -2660,4 +2644,5 @@
   "vim.flash.enable": true,
   "vim.neovimConfigPath": "~/.config/nvim.lazy/init.lua",
   "vim.neovimPath": "/use/bin/nvim",
+  "cursor.composer.cmdPFilePicker2": true,
 }
