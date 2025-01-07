@@ -24,7 +24,7 @@
 }
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "swaylock; hyprctl dispatch dpms off",
     "text" : "Lock",
     "keybind" : "l"
 }
