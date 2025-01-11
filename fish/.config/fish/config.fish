@@ -17,6 +17,10 @@ if status is-interactive
     # mount print
     set MNT /run/media/silver/
 
+    # deepseek key
+    set -l deep_key $(cat $HOME/Documents/deepseek_key)
+    set -g OPENAI_API_KEY $deep_key
+
     set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 
     # Initialize pyenv
