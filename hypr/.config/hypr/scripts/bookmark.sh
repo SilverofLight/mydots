@@ -23,6 +23,8 @@ bookmarks=(
     "New York Time | https://www.nytimes.com/"
     "Yin He(ybhe) | https://nf.video/?sharedId=77066"
     "Aur | https://aur.archlinux.org/"
+    "DeepSeek | https://chat.deepseek.com/"
+    "DeepSeekAPI | https://platform.deepseek.com/usage"
 )
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
