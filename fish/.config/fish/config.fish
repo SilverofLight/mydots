@@ -19,7 +19,7 @@ if status is-interactive
 
     # deepseek key
     set -l deep_key $(cat $HOME/Documents/deepseek_key)
-    export OPENAI_API_KEY=$deep_key
+    export DEEPSEEK_API_KEY=$deep_key
 
     set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 
