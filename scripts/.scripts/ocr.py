@@ -3,6 +3,7 @@ import re
 from PIL import Image
 import pytesseract
 import subprocess
+import shutil
 
 # 定义允许的字符集（仅小写字母）
 ALLOWED_CHARS = "0123456789abcdef@#-aliyun"
@@ -46,6 +47,8 @@ def main():
     if not args.no_clipboard:
         copy_to_clipboard(extracted_text)
         print("\n文字已复制到剪贴板")
+        if shutil.which('notify-send'):
+            subprocess.run(['notify-send', 'copyed'])
 
 if __name__ == "__main__":
     main()
