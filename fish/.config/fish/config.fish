@@ -91,6 +91,7 @@ if status is-interactive
     alias cnnw="nmcli device wifi connect WHUT-DORM"
     alias con="$HOME/.scripts/config.sh"
     alias cdd="cd /run/media/silver/"
+    alias hibernate="systemctl hibernate"
 
     # 如果在使用 kitty, 则更改 ssh
     if test "$TERM" = xterm-kitty
