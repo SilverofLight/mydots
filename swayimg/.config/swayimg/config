@@ -130,6 +130,7 @@ p = page_up
 n = page_down
 c = skip_file
 Return = mode
+o = mode
 Shift + a = antialiasing
 r = reload
 m = info
