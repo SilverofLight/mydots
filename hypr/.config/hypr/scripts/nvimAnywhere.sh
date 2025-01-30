@@ -5,7 +5,7 @@
 # description: use nvim to edit a temporary file and copy the content to clipboard
 # requirements: kitty, nvim, wl-copy || xclip || pbcopy
 
-temp_file=$(mktemp /tmp/nvimAnywhere.XXXXXX)
+temp_file=$(mktemp /tmp/nvimAnywhere.XXXXXX.md)
 
 kitty -T nvimAnywhere fish -c "nvim $temp_file"
 
