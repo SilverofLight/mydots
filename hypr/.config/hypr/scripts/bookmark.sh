@@ -25,6 +25,8 @@ bookmarks=(
     "Aur | https://aur.archlinux.org/"
     "DeepSeek | https://chat.deepseek.com/"
     "DeepSeekAPI | https://platform.deepseek.com/usage"
+    "wikipedia | https://en.wikipedia.org/wiki/Main_Page"
+    "whutvnp | https://webvpn.whut.edu.cn/login"
 )
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
