@@ -33,5 +33,10 @@ use = "yazi-rs/plugins:chmod"
 rev = "8945e54"
 hash = "f28138c2e11e87962b66d583fef724c3"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "8945e54"
+hash = "f3ade4dba8fb56b85e8363b66f677f9"
+
 [flavor]
 deps = []
