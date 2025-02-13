@@ -27,6 +27,7 @@ bookmarks=(
     "DeepSeekAPI | https://platform.deepseek.com/usage"
     "wikipedia | https://en.wikipedia.org/wiki/Main_Page"
     "whutvnp | https://webvpn.whut.edu.cn/login"
+    "colemak | https://colemak.com/Learn"
 )
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
