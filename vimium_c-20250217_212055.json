@@ -1,0 +1,30 @@
+{
+	"name": "Vimium C",
+	"@time": "2/17/2025, 9:20:55 PM",
+	"time": 1739798455704,
+	"environment": {
+		"extension": "2.11.3",
+		"platform": "linux",
+		"chromium": 133
+	},
+	"allBrowserUrls": true,
+	"exclusionRules": [],
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"map F LinkHints.activateOpenInNewForegroundTab",
+		"map n scrollDown",
+		"map e scrollUp",
+		"map i scrollRight",
+		"map u enterInsertMode",
+		"map l scrollPageUp",
+		"map k performFind",
+		"map K performBackwardsFind",
+		"map I goForward",
+		"map N previousTab",
+		"map E nextTab",
+		""
+	],
+	"searchUrl": "https://duckduckgo.com/?q=$s DuckDuckGo",
+	"vimSync": true
+}
