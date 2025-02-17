@@ -15,7 +15,7 @@ layers:
       # a: tap-hold a ; toggle-layer mouse ; 500
       # when leftalt+a, activate mouse layer
       leftalt+a: layer mouse
-      f+d: layer number
+      # f+d: layer number
       capslock: tap-hold esc ; leftctrl ; 100
   # a layer for mouse movement
   - name: mouse
