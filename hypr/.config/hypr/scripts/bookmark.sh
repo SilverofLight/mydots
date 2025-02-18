@@ -15,6 +15,7 @@ bookmarks=(
     "3xUI | https://107.172.157.186:11451/Y1qibsv0kd0yjvp/panel/inbounds"
     "Clash | http://127.0.0.1:9090/ui/"
     "GiantessNight | https://giantessnight.com/"
+    "https://giantesswaltz.org/index.php"
     "Hyprland WIki | https://wiki.hyprland.org/"
     "Xiao Ya(xn ya) | https://whut.ai-augmented.com/app/jx-web/mycourse"
     "Desmos | https://www.desmos.com/calculator?lang=zh-CN"
