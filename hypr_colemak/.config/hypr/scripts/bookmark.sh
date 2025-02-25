@@ -41,4 +41,4 @@ fi
 
 url=$(echo "$selected_bookmark" | cut -d'|' -f2 | tr -d ' ')
 
-brave "$url"
+env GTK_IM_MODULE=fcitx,QT_IM_MODULE=fcitx,XMODIFIERS=@im=fcitx /opt/zen-browser-bin/zen-bin "$url"
