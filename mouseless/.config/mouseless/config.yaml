@@ -15,7 +15,9 @@ layers:
       # a: tap-hold a ; toggle-layer mouse ; 500
       # when leftalt+a, activate mouse layer
       leftalt+a: layer mouse
+      # a: tap-hold-next a ; toggle-layer mouse ; 500
       # f+d: layer number
+      f: tap-hold-next f ; toggle-layer number ; 500
       capslock: tap-hold esc ; leftctrl ; 100
   # a layer for mouse movement
   - name: mouse
@@ -39,7 +41,8 @@ layers:
       e: speed 0.3
       capslock: speed 0.1
       f: button left
-      d: button middle
+      #d: button middle
+      d: speed 0.3
       s: button right
       leftalt: leftalt
       f+d: layer number
@@ -48,27 +51,25 @@ layers:
   - name: number
     enterCommand: "touch /home/silver/Templates/number.tmp; pkill -RTMIN+6 waybar"
     exitCommand: "rm /home/silver/Templates/number.tmp; pkill -RTMIN+6 waybar"
-    passThrough: true
+    # passThrough: true
 
     bindings:
       k7: k7
       k8: k8
       k9: k9
-      u: k4
-      i: k5
-      o: k6
-      j: k1
-      k: k2
-      l: k3
-      n: k0
-      m: k0
-      enter: enter
-      comma: comma
+      u: k7
+      i: k8
+      o: k9
+      j: k4
+      k: k5
+      l: k6
+      m: k1
+      comma: k2
+      dot: k3
+      enter: k0
       kpcomma: kpcomma
-      dot: dot
       backspace: backspace
       leftalt+a: layer mouse
-      _: layer initial
 
   - name: direction
     bindings:
