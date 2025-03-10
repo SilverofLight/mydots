@@ -133,7 +133,7 @@ keymap = [
 	{ on = [ "g", "o" ],       run = "cd ~/Study/Obsidian/", desc = "Goto Obsidian" },
 	{ on = [ "g", "e" ],       run = "cd ~/Study/etyma/",    desc = "Goto Etyma" },
 	{ on = [ "g", "y" ],       run = "cd ~/.config/yazi/",   desc = "Goto yazi config" },
-	{ on = [ "g", "w" ],       run = "cd ~/.local/share/WeChat_Data/Documents/xwechat_files",   desc = "Goto wechat" },
+	{ on = [ "g", "w" ],       run = "cd ~/.local/share/WeChat_Data/xwechat_files/",   desc = "Goto wechat" },
 	{ on = [ "g", "n" ],       run = "cd ~/.config/nvim/lua/",   desc = "Goto nvim config" },
 	{ on = [ "g", "s" ],       run = "cd ~/mydots/",         desc = "Goto stow" },
 	{ on = [ "g", "m" ],       run = "cd /run/media/silver/",         desc = "Goto mount position" },
