@@ -17,7 +17,7 @@ layers:
       leftalt+a: layer mouse
       # a: tap-hold-next a ; toggle-layer mouse ; 500
       # f+d: layer number
-      t: tap-hold-next t ; toggle-layer number ; 500
+      f: tap-hold-next f ; toggle-layer number ; 500
       capslock: tap-hold esc ; leftctrl ; 100
   # a layer for mouse movement
   - name: mouse
@@ -29,21 +29,21 @@ layers:
     bindings:
       # quit mouse layer
       q: layer initial
-      u: layer initial
+      i: layer initial
       # space: layer mouse
-      i: move  1  0
+      l: move  1  0
       h: move -1  0
-      n: move  0  1
-      e: move  0 -1
-      semicolon: scroll up
-      k: scroll down
+      j: move  0  1
+      k: move  0 -1
+      p: scroll up
+      n: scroll down
       c: speed 2.5
-      s: speed 0.3
-      leftctrl: speed 0.1
-      t: button left
+      e: speed 0.3
+      capslock: speed 0.1
+      f: button left
       #d: button middle
       d: speed 0.3
-      r: button right
+      s: button right
       leftalt: leftalt
       f+d: layer number
       _: layer initial
@@ -57,12 +57,12 @@ layers:
       k7: k7
       k8: k8
       k9: k9
-      l: k7
-      u: k8
-      y: k9
-      n: k4
-      e: k5
-      i: k6
+      u: k7
+      i: k8
+      o: k9
+      j: k4
+      k: k5
+      l: k6
       m: k1
       comma: k2
       dot: k3
@@ -74,7 +74,7 @@ layers:
   - name: direction
     bindings:
       h: left
-      n: down
-      e: up
-      i: right
+      j: down
+      k: up
+      l: right
       _: layer initial
