@@ -38,5 +38,10 @@ use = "yazi-rs/plugins:mount"
 rev = "beb586a"
 hash = "5c4d8080367dd2561a18c1cf5a1dd295"
 
+[[plugin.deps]]
+use = "macydnah/office"
+rev = "bcd9e9e"
+hash = "51ad32b80bc4cd496c55cd82fbfd238a"
+
 [flavor]
 deps = []
