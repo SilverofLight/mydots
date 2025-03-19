@@ -1,6 +1,5 @@
 # swayimg/config
-# @layout colemak
-# @author Silver
+# @author nate zhou
 # @since 2024,2025
 
 [general]
@@ -67,32 +66,32 @@ Shift + question = help
 g = first_file
 Shift+g = last_file
 p = prev_file
-k = next_file
-Shift+k = next_dir
+n = next_file
+Shift+n = next_dir
 comma = prev_frame
 period = next_frame
 c = skip_file
 Shift+s = slideshow
 a = animation
 Return = mode
-o = mode
 h = step_left 10
-i = step_right 10
-e = step_up 10
-n = step_down 10
+l = step_right 10
+k = step_up 10
+j = step_down 10
 Shift + H = step_left 1
-Shift + I = step_right 1
-Shift + E = step_up 1
-Shift + N = step_down 1
+Shift + L = step_right 1
+Shift + K = step_up 1
+Shift + J = step_down 1
 Equal = zoom +10
 Plus = zoom +10
-u = zoom +10
+i = zoom +10
 Minus = zoom -10
+o = zoom -10
 w = zoom width
-Shift+u = exec convert "%" -channel RGB -negate - | swayimg -
+Shift+i = exec convert "%" -channel RGB -negate - | swayimg -
 Shift+d = exec ~/.local/bin/swayimg-rm "%" && skip_file; reload
 Shift+w = exec ~/.local/bin/setwall "%";
-Shift+y = exec cp "%" ~/Public/;
+Shift+y = exec cp "%" ~/tmp;
 z = zoom fit
 f = zoom fill
 0 = zoom real
@@ -124,21 +123,20 @@ Shift + question = help
 g = first_file
 Shift+g = last_file
 h = step_left
-i = step_right
-e = step_up
-n = step_down
+l = step_right
+k = step_up
+j = step_down
 p = page_up
-semicolon = page_up
-k = page_down
+n = page_down
 c = skip_file
 Return = mode
 o = mode
 Shift + a = antialiasing
 r = reload
 m = info
-Shift+u = exec convert "%" -channel RGB -negate - | swayimg -
+Shift+i = exec convert "%" -channel RGB -negate - | swayimg -
 Shift+d = exec ~/.local/bin/swayimg-rm "%" && skip_file; reload
 Shift+w = exec ~/.local/bin/setwall "%";
-Shift+y = exec cp "%" ~/Public/;
+Shift+y = exec cp "%" ~/tmp;
 Escape = exit
 q = exit
