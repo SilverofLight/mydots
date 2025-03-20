@@ -39,8 +39,10 @@ layers:
       k: scroll down
       c: speed 2.5
       s: speed 0.3
+      rightalt: speed 0.3
       leftctrl: speed 0.1
       t: button left
+      o: button left
       #d: button middle
       d: speed 0.3
       r: button right
