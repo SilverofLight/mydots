@@ -23,11 +23,11 @@
     "custom/wf-recorder",
     "tray",
     "custom/clash",
+    "custom/update",
     "network",
     "bluetooth",
     "pulseaudio",
     "backlight",
-    "custom/brightnessctl",
     "battery",
     "clock"
   ],
@@ -235,5 +235,9 @@
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "on-click": "blueman-manager"
   },
-}
+  "custom/update": {
+    "format": "󱉙  {}",
+    "exec": "cat /home/silver/Templates/update",
+    "interval": 3600
+  }
 }

@@ -41,7 +41,7 @@ window#waybar {
 	border-radius: 16px;
 }
 
-#custom-date, #clock, #battery, #pulseaudio, #network, #backlight, #custom-randwall, #custom-launcher, #custom-mouseless{
+#custom-date, #clock, #battery, #pulseaudio, #network, #backlight, #custom-randwall, #custom-launcher, #custom-mouseless, #custom-update{
 	background: transparent;
 	padding: 3px 5px 3px 5px;
 	margin: 3px 5px 3px 5px;
