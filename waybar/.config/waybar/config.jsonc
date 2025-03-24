@@ -238,6 +238,6 @@
   "custom/update": {
     "format": "󱉙  {}",
     "exec": "cat /home/silver/Templates/update",
-    "interval": 3600
+    "interval": 10
   }
 }
