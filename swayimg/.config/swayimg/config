@@ -67,6 +67,7 @@ Shift + question = help
 g = first_file
 Shift+g = last_file
 p = prev_file
+semicolon = prev_file
 k = next_file
 Shift+k = next_dir
 comma = prev_frame
