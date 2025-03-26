@@ -12,7 +12,7 @@ def_key "b"
   seek_backward
 def_key "space"
     pause
-def_key "n"
+def_key "k"
     next
 def_key "p"
     previous
@@ -26,10 +26,10 @@ def_key "+"
     volume_up
 def_key "="
     volume_up
-def_key "i"
+def_key "j"
   show_song_info
 # search online
-def_key "I"
+def_key "J"
   show_artist_info
 def_key "."
   show_lyrics
@@ -52,33 +52,33 @@ def_key "S"
 # navigation
 def_key "o"
   jump_to_playing_song
-def_key "j"
+def_key "n"
     scroll_down
-def_key "k"
+def_key "e"
     scroll_up
 def_key "h"
     previous_column
-def_key "l"
+def_key "i"
     next_column
 def_key "h"
   jump_to_parent_directory
-def_key "l"
+def_key "i"
   enter_directory
-def_key "l"
+def_key "i"
   run_action
-def_key "l"
+def_key "i"
   play_item
 def_key "ctrl-p"
     page_up
-def_key "ctrl-n"
+def_key "ctrl-k"
     page_down
 def_key "G"
   move_end
 def_key "g"
   move_home
-def_key "n"
+def_key "k"
     next_found_item
-def_key "N"
+def_key "K"
     previous_found_item
 def_key "m"
   show_media_library
@@ -96,10 +96,10 @@ def_key "P"
   show_playlist
 
 # select
-def_key "K"
+def_key "E"
   select_item
   scroll_up
-def_key "J"
+def_key "N"
   select_item
   scroll_down
 def_key "v"
