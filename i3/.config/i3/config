@@ -45,6 +45,7 @@ exec_always --no-startup-id feh --bg-fill /home/silver/Pictures/wallpaper/old.pn
 exec_always --no-startup-id picom --config ~/.config/picom/picom.config
 exec_always --no-startup-id ~/.dwm/xdotool.sh
 exec_always --no-startup-id mouseless --config ~/.config/mouseless/config.yaml
+exec --no-startup-id ~/mydots/dwm/xdotool
 
 # Change blank time to 1 hour
 exec_always xset s 3600 3600
