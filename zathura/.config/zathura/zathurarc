@@ -1,0 +1,39 @@
+set selection-clipboard clipboard
+
+# keep several lines of text when
+# scrolling a screenful
+set scroll-full-overlap 0.2
+
+# see documentation for details
+set scroll-page-aware true
+set window-title-basename true
+set adjust-open width
+set statusbar-home-tilde true
+set vertical-center true
+set synctex true
+set zoom-step 3
+
+map [normal] n scroll down
+map [normal] e scroll up
+map [normal] i scroll right
+map [normal] h scroll left
+map [normal] <Left> scroll left
+map [normal] <Up> scroll up
+map [normal] <Down> scroll down
+map [normal] <Right> scroll right
+map [normal] k scroll full-down
+map [normal] <C-l> scroll full-up
+map [normal] p scroll full-up
+map [normal] d scroll full-down
+map [normal] l scroll full-up
+
+map [normal] gg goto top
+map [normal] G goto bottom
+
+map [normal] a adjust_window best-fit
+map [normal] w adjust_window width
+
+map [normal] m mark_add
+
+map [normal] <C-P> print
+map [normal] u toggle_index
