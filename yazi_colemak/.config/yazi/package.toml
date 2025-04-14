@@ -34,11 +34,6 @@ rev = "b12a9ab"
 hash = "dd97eede8e20e59cd2604e8006e470e2"
 
 [[plugin.deps]]
-use = "macydnah/office"
-rev = "bcd9e9e"
-hash = "51ad32b80bc4cd496c55cd82fbfd238a"
-
-[[plugin.deps]]
 use = "KKV9/compress"
 rev = "60b24af"
 hash = "ee025be766240cc98e671754ac836da3"
