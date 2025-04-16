@@ -37,6 +37,8 @@ layers:
       e: move  0 -1
       semicolon: scroll up
       k: scroll down
+      comma: scroll up
+      m: scroll down
       c: speed 2.5
       s: speed 0.3
       rightalt: speed 0.3
