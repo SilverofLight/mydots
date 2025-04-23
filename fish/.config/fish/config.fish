@@ -137,11 +137,16 @@ if status is-interactive
     function fish_user_key_bindings
         bind -M insert \ct fzf-file-widget # Ctrl-T
         bind -M insert \cr fzf-history-widget # Ctrl-R
-        bind -M insert jk 'if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char repaint-mode; end'
+        # bind -M insert jk 'if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char repaint-mode; end'
         bind -M insert \cf forward-char
         bind -M insert \ca beginning-of-line
         bind -M insert \ce end-of-line
         bind -M default " "a beginning-of-line
         bind -M default " "e end-of-line
+        bind -M default i forward-char
+        bind -M default l undo
+        bind -m insert u 'set fish_cursor_end_mode exclusive' repaint-mode
+        bind -M default e up-or-search
+        bind -M default n down-or-search
     end
 end
