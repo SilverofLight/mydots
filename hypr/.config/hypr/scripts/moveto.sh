@@ -9,7 +9,7 @@
 
 workspaces=$(hyprctl workspaces | grep "workspace ID" | awk '{print $2,$3,$4,$5,$6,$7}')
 
-chosen_workspace=$(echo -e "$workspaces\nCreateNew" | rofi -dmenu -i -msg "Move to workspace")
+chosen_workspace=$(echo -e "$workspaces\nCreateNew" | rofi -dmenu -i -mesg "Move to workspace")
 
 # echo $chosen_workspace
 
