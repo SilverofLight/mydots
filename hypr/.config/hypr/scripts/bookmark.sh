@@ -29,6 +29,7 @@ bookmarks=(
     "wikipedia | https://en.wikipedia.org/wiki/Main_Page"
     "whutvnp | https://webvpn.whut.edu.cn/login"
     "colemak | https://colemak.com/Learn"
+    "cswiki | https://csdiy.wiki"
 )
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
@@ -41,4 +42,4 @@ fi
 
 url=$(echo "$selected_bookmark" | cut -d'|' -f2 | tr -d ' ')
 
-brave "$url"
+env GTK_IM_MODULE=fcitx,QT_IM_MODULE=fcitx,XMODIFIERS=@im=fcitx /opt/zen-browser-bin/zen-bin "$url"
