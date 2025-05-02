@@ -23,7 +23,7 @@ function check_dir() {
 function take_screenshot() {
     check_dir
     
-    _timestamp_=$(date +%s)
+    _timestamp_=$(date +%Y-%m-%d-%H-%M-%S)
     _screenshot_command_="$1"
     _notif_message_="$2"
     
