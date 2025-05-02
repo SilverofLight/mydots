@@ -1,5 +1,7 @@
+/* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
+
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "source": "~/.config/fastfetch/nyarch.png",
     "type": "kitty",
@@ -8,89 +10,123 @@
         "top": 1
     }
   },
-  "modules": [
-    "title",
+"display": {
+"separator": " 󰑃  "
+},
+"modules": [
+    "break",
     {
-      "type": "custom",
-      "format": "{#1}╭───────────────────────────────╮"
-    },
-    // system information
-    {
-      "type": "os",
-      "key": "{#separator}|  {#keys}OS"
-    },
-    {
-      "type": "kernel",
-      "key": "{#separator}|  {#keys}Kernel"
+    "type": "os",
+    "key": " DISTRO",
+    "keyColor": "yellow"
     },
     {
-      "type": "uptime",
-      "key": "{#separator}|  {#keys}Uptime"
+    "type": "kernel",
+    "key": "│ ├",
+    "keyColor": "yellow"
     },
     {
-      "type": "packages",
-      "key": "{#separator}|  {#keys}Packages"
+    "type": "packages",
+    "key": "│ ├󰏖",
+    "keyColor": "yellow"
     },
     {
-      "type": "shell",
-      "key": "{#separator}|  {#keys}Shell"
+    "type": "shell",
+    "key": "│ └",
+    "keyColor": "yellow"
     },
     {
-      "type": "wm",
-      "key": "{#separator}|  {#keys}WM"
+    "type": "wm",
+    "key": " DE/WM",
+    "keyColor": "blue"
     },
     {
-      "type": "theme",
-      "key": "{#separator}|  {#keys}Theme"
+    "type": "wmtheme",
+    "key": "│ ├󰉼",
+    "keyColor": "blue"
     },
     {
-      "type": "icons",
-      "key": "{#separator}|  {#keys}Icons"
+    "type": "icons",
+    "key": "│ ├󰀻",
+    "keyColor": "blue"
     },
     {
-      "type": "font",
-      "key": "{#separator}|  {#keys}Font"
+        "type": "cursor",
+        "key": "│ ├",
+        "keyColor": "blue",
     },
     {
-      "type": "terminal",
-      "key": "{#separator}|  {#keys}Terminal"
+        "type": "terminalfont",
+        "key": "│ ├",
+        "keyColor": "blue",
     },
     {
-      "type": "terminalfont",
-      "key": "{#separator}|  {#keys}Terminal Font"
+    "type": "terminal",
+    "key": "│ └",
+    "keyColor": "blue"
     },
     {
-      "type": "cpu",
-      "key": "{#separator}|  {#keys}CPU"
+    "type": "host",
+    "key": "󰌢 SYSTEM",
+    "keyColor": "green"
     },
     {
-      "type": "gpu",
-      "key": "{#separator}|  {#keys}GPU"
+    "type": "cpu",
+    "key": "│ ├󰻠",
+    "keyColor": "green"
     },
     {
-      "type": "memory",
-      "key": "{#separator}|  {#keys}Memory"
+    "type": "gpu",
+    "key": "│ ├󰻑",
+    "format": "{2}",
+    "keyColor": "green"
     },
     {
-      "type": "swap",
-      "key": "{#separator}|  {#keys}Swap"
+            "type": "display",
+    "key": "│ ├󰍹",
+    "keyColor": "green",
+    "compactType": "original-with-refresh-rate"
     },
     {
-      "type": "locale",
-      "key": "{#separator}|  {#keys}Locale"
+    "type": "memory",
+    "key": "│ ├󰾆",
+    "keyColor": "green"
     },
     {
-      "type": "custom",
-      "format": "{#1}|"
+    "type": "swap",
+    "key": "│ ├󰓡",
+    "keyColor": "green"
     },
     {
-      "type": "colors",
-      "key": "{#separator}|  {#keys}Colors",
-      "symbol": "circle"
+    "type": "uptime",
+    "key": "│ ├󰅐",
+    "keyColor": "green"
     },
     {
-      "type": "custom",
-      "format": "{#1}╰───────────────────────────────╯"
-    }
-  ]
+    "type": "display",
+    "key": "│ └󰍹",
+    "keyColor": "green"
+    },
+    {
+    "type": "sound",
+    "key": " AUDIO",
+    "format": "{2}",
+    "keyColor": "magenta"
+    },
+    {
+    "type": "player",
+    "key": "│ ├󰥠",
+    "keyColor": "magenta"
+    },
+    {
+    "type": "media",
+    "key": "│ └󰝚",
+    "keyColor": "magenta"
+    },
+    {
+    "type": "custom",
+    "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m  \u001b[39m    \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m "
+    },
+    "break",
+    ]
 }
