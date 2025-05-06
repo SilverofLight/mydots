@@ -10,7 +10,8 @@
     "custom/launcher",
     "hyprland/workspaces",
     "custom/playerctl",
-    "custom/playerlabel"
+    "custom/playerlabel",
+    "custom/lyrics"
   ],
   "modules-center": [
     "cpu",
@@ -239,5 +240,9 @@
     "format": "󱉙  {}",
     "exec": "cat /home/silver/Templates/update",
     "interval": 10
+  },
+  "custom/lyrics": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/scripts/lyrics.sh"
   }
 }
