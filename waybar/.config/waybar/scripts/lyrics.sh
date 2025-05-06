@@ -39,7 +39,8 @@ while true; do
 
         line = $0
         while (match(line, /\[([0-9]+):([0-9]+)\.?([0-9]*)\]/, m)) {
-          t = m[1] * 60 + m[2] + 1 - (m[3] ? m[3]/100 : 0)
+          # t = m[1] * 60 + m[2] + 1 - (m[3] ? (100 - m[3])/100 : 0)
+          t = m[1] * 60 + m[2]
             
             if (t <= ct && t > max_time) {
                 max_time = t
@@ -53,7 +54,7 @@ while true; do
         if (max_time != -1 && current_lyric != "") {
             print current_lyric
         } else {
-            print "Could not found current lyric"
+            # print "Could not found current lyric"
         }
     }' "$lyrics_file")
     # echo "current lyric: $current_lyric"
