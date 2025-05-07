@@ -58,7 +58,7 @@ layers:
   - name: number
     enterCommand: "touch /home/silver/Templates/number.tmp; pkill -RTMIN+6 waybar"
     exitCommand: "rm /home/silver/Templates/number.tmp; pkill -RTMIN+6 waybar"
-    # passThrough: true
+    passThrough: false
 
     bindings:
       k7: k7
@@ -77,6 +77,7 @@ layers:
       kpcomma: kpcomma
       backspace: backspace
       leftalt+a: layer mouse
+      _: t+_
 
   - name: direction
     bindings:

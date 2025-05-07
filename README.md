@@ -2,6 +2,8 @@
 
 **Shell** : fish
 
+**Keybord-layont** : Colemak
+
 **Terminal** : Alacritty
 
 **Notify Daemon** : Dunst
