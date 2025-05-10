@@ -54,5 +54,6 @@ elif [ "$1" = 'area' ]; then
     take_screenshot 'grimblast copysave area' "${msg}"
 elif [ "$1" = 'edit' ]; then
     msg=''
-    take_screenshot 'grimblast edit area' "${msg}"
+    # take_screenshot 'grimblast edit area' "${msg}"
+    grim -g "$(slurp)" - | swappy -f -
 fi
