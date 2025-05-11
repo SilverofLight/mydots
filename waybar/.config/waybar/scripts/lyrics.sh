@@ -13,7 +13,7 @@ while true; do
     # 定位歌词文件
     lyrics_file="$HOME/Music/lyrics/${song_name}.lrc"
     if [[ ! -f "$lyrics_file" ]]; then
-        # echo "lyrics file not found：${lyrics_file}"
+        echo "lyrics file not found"
         sleep 1
         continue
     fi
@@ -64,5 +64,5 @@ while true; do
         prev_lyric="$current_lyric"
     fi
     
-    sleep 0.2
+    sleep 0.1
 done

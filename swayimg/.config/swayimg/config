@@ -86,6 +86,7 @@ Shift + I = step_right 1
 Shift + E = step_up 1
 Shift + N = step_down 1
 Equal = zoom +10
+Shift + Plus = zoom +10
 Plus = zoom +10
 u = zoom +10
 Minus = zoom -10
