@@ -25,6 +25,7 @@
     "tray",
     "custom/clash",
     "custom/update",
+    "custom/mail_new",
     "network",
     "bluetooth",
     "pulseaudio",
@@ -244,5 +245,9 @@
   "custom/lyrics": {
     "format": "{}",
     "exec": "$HOME/.config/waybar/scripts/lyrics.sh"
+  },
+  "custom/mail_new": {
+    "format": "󰛮  {}",
+    "exec": "cat $HOME/Templates/mail_new"
   }
 }
