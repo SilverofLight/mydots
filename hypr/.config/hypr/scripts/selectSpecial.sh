@@ -14,13 +14,13 @@ workspaces=$(hyprctl workspaces | grep special | awk '{print $4}' | sed -n 's/.*
 # 添加"新建"选项到列表开头
 options="CreateNew\n$workspaces"
 
-# 显示rofi菜单
-selected=$(echo -e "$options" | rofi -dmenu -i -mesg "Select Special Workspace")
+# 显示wofi菜单
+selected=$(echo -e "$options" | wofi --dmenu --prompt "Select Special Workspace")
 
 if [ -n "$selected" ]; then
     if [ "$selected" = "CreateNew" ]; then
         # 弹出输入框让用户输入新workspace的名称
-        new_name=$(rofi -dmenu -mesg "Enter new Special Workspace name")
+        new_name=$(wofi --dmenu --prompt "Enter new Special Workspace name")
         if [ -n "$new_name" ]; then
             # 创建并切换到新的special workspace
             hyprctl dispatch workspace "special:$new_name"

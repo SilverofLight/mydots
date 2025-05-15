@@ -2,8 +2,8 @@
 
 # author: Silver Lee
 # date: 2024/12/11
-# description: use rofi to select a bookmark
-# requirements: rofi, brave-bin
+# description: use wofi to select a bookmark
+# requirements: wofi, brave-bin
 
 bookmarks=(
     "Arch Wiki | https://wiki.archlinuxcn.org/wiki/%E9%A6%96%E9%A1%B5"
@@ -35,7 +35,7 @@ bookmarks=(
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
 
-selected_bookmark=$(echo -e "$bookmark_list" | rofi -dmenu -i -mesg "Bookmarks")
+selected_bookmark=$(echo -e "$bookmark_list" | wofi --dmenu --prompt "Bookmarks")
 
 if [ -z "$selected_bookmark" ]; then
     exit 1

@@ -1,13 +1,13 @@
-#!/usr/bin/env sh
+#!/usr/bin/bash
 # roconf="~/.config/rofi/clipboard.rasi"
-roconf="~/.config/rofi/config.rasi"
+# roconf="~/.config/rofi/config.rasi"
 
 case $1 in
-    c)  cliphist list | rofi -dmenu -theme-str 'entry { placeholder: "Copy...";}' -config $roconf -mesg 'Clipboard' | cliphist decode | wl-copy
+    c)  cliphist list | wofi --dmenu --prompt 'Clipboard' | cliphist decode | wl-copy
         ;; 
-    d)  cliphist list | rofi -dmenu -theme-str 'entry { placeholder: "Delete...";}' -config $roconf | cliphist delete
+    d)  cliphist list | wofi --dmenu  | cliphist delete
         ;;
-    w)  if [ `echo -e "Yes\nNo" | rofi -dmenu -theme-str 'entry { placeholder: "Clear Clipboard History?";}' -config $roconf` == "Yes" ] ; then
+    w)  if [ echo -e "Yes\nNo" | wofi --dmenu ] ; then
             cliphist wipe
         fi
         ;;
