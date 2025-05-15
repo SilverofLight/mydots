@@ -38,8 +38,8 @@ import html
 ################################################################################
 #####                      C O N F I G U R A T I O N                      ######
 ################################################################################
-SEARCH_ENGINE = 'google'            # or 'duckduckgo'
-BROWSER = 'firefox'                 # or 'firefox', 'chromium', 'brave', 'lynx'
+SEARCH_ENGINE = 'duckduckgo'            # or 'duckduckgo'
+BROWSER = 'zen-browser'                 # or 'firefox', 'chromium', 'brave', 'lynx'
 TERMINAL = ['kitty', '--']          # or ['st', '-e'] or something like that
 ################################################################################
 
@@ -49,6 +49,7 @@ CONFIG = {
         'firefox' : ['firefox'],
         'chromium' : ['chromium-browser'],
         'brave' : ['brave-browser'],
+        'zen-browser' : ['zen-browser'],
         'lynx' : TERMINAL + ['lynx']
     },
     'USER_AGENT' : {
