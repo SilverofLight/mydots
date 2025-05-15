@@ -4,3 +4,4 @@ single_click=true
 height=45%
 insensitive=true
 normal_window=true
+exec_search=true
