@@ -1,5 +1,6 @@
 #!/bin/bash
 
+while true; do
 dir1="$HOME/.Mail/account1/INBOX/new"
 dir2="$HOME/.Mail/account1/Junk/new"
 
@@ -10,3 +11,7 @@ total=$((count1 + count2))
 
 # echo $total > $HOME/Templates/mail_new
 echo $total
+
+sleep 60
+
+done
