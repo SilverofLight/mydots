@@ -35,7 +35,7 @@ bookmarks=(
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
 
-selected_bookmark=$(echo -e "$bookmark_list" | rofi -dmenu -i -p "Bookmarks")
+selected_bookmark=$(echo -e "$bookmark_list" | rofi -dmenu -i -mesg "Bookmarks")
 
 if [ -z "$selected_bookmark" ]; then
     exit 1

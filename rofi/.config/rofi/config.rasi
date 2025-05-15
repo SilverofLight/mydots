@@ -9,6 +9,10 @@
   prompt-padding: 4px;
 }
 
+configuration {
+  kb-row-select: "";
+}
+
 
 window {
   padding: 1em;

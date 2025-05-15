@@ -141,6 +141,7 @@ keymap = [
 	{ on = [ "g", "p" ],       run = "cd ~/Pictures/Screenshots/",         desc = "Goto Screenshots" },
 	{ on = [ "g", "P" ],       run = "cd ~/Public/",         desc = "Goto Public" },
 	{ on = [ "g", "b" ],       run = "cd ~/.local/share/shadPS4/savedata/1/CUSA03023/SPRJ0005/",         desc = "Goto bloodb" },
+	{ on = [ "g", "t" ],       run = "cd ~/Study/thesis/latex/",         desc = "Goto thesis" },
 
   # plugins
 	{ on = [ "g", "i" ],       run = "plugin lazygit",   desc = "run lazygit" },
