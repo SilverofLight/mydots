@@ -219,7 +219,7 @@
     "exec": "$HOME/.config/waybar/scripts/get_proxy.sh",
     "exec-if": "pgrep 'clash'",
     "tooltip": true,
-    "tooltip-format": "connecting: {}",
+    "tooltip-format": "connecting: {}"
   },
   "custom/hyprpicker": {
     "format": "󰈋",
@@ -248,6 +248,7 @@
   },
   "custom/mail_new": {
     "format": "󰛮  {}",
-    "exec": "cat $HOME/Templates/mail_new"
+    // "exec": "while true; do cat $HOME/Templates/mail_new; sleep 60; done"
+    "exec": "$HOME/.config/waybar/scripts/mail_new.sh"
   }
 }
