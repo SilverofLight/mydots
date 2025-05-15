@@ -4,3 +4,6 @@ single_click=true
 height=45%
 insensitive=true
 normal_window=true
+
+key_pgup=Left
+key_pgdn=Right
