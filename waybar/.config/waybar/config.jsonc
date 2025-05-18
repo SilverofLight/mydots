@@ -62,7 +62,8 @@
       // "10": "10",
       "urgent": "",
       "active": "",
-      "default": "",
+      "empty": "",
+      "default": "",
       "sort-by-number": true
     },
   },
