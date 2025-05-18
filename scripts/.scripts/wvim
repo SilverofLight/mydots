@@ -2,8 +2,8 @@
 
 # author: Silver Lee
 # date: 2024/12/16
-# description: use rofi to select a config file, and use kitty + nvim open it
-# requirements: rofi, nvim, kitty
+# description: use wofi to select a config file, and use kitty + nvim open it
+# requirements: wofi, nvim, kitty
 
 # 检查文件列表是否存在
 if [ ! -f "$HOME/Templates/wvim" ]; then
@@ -11,8 +11,8 @@ if [ ! -f "$HOME/Templates/wvim" ]; then
     exit 1
 fi
 
-# 从文件中读取列表并使用rofi显示
-selected_file=$(cat "$HOME/Templates/wvim" | rofi -dmenu -i -mesg "Wvim")
+# 从文件中读取列表并使用wofi显示
+selected_file=$(cat "$HOME/Templates/wvim" | wofi -dmenu --prompt "Wvim")
 
 # 如果用户选择了文件，需要将~重新替换回$HOME后再打开
 if [ -n "$selected_file" ]; then
