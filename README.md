@@ -8,7 +8,7 @@
 
 **Notify Daemon** : Dunst
 
-**Launcher** : Rofi
+**Launcher** : Wofi
 
 **File Manager** : Yazi
 
@@ -75,7 +75,7 @@ hyprpm reload # Reload the plugins
 ```sh
 ## CLI & Tools
 paru -S btop cava fastfetch noise-suppression-for-voice   \
-rofi-lbonn-wayland-git rofi-emoji starship zsh viewnior ocs-url
+wofi starship zsh viewnior ocs-url
 ```
 
 ```sh
