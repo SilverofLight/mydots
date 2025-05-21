@@ -1,10 +1,10 @@
 [Groups/0]
 # Group Name
-Name=rime
+Name=default
 # Layout
 Default Layout=us
 # Default Input Method
-DefaultIM=rime
+DefaultIM=shuangpin
 
 [Groups/0/Items/0]
 # Name
@@ -14,17 +14,17 @@ Layout=
 
 [Groups/0/Items/1]
 # Name
-Name=rime
+Name=shuangpin
 # Layout
 Layout=
 
 [Groups/1]
 # Group Name
-Name=default
+Name=rime
 # Layout
 Default Layout=us
 # Default Input Method
-DefaultIM=shuangpin
+DefaultIM=rime
 
 [Groups/1/Items/0]
 # Name
@@ -34,7 +34,7 @@ Layout=
 
 [Groups/1/Items/1]
 # Name
-Name=shuangpin
+Name=rime
 # Layout
 Layout=
 
