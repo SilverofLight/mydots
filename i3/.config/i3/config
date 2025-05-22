@@ -34,7 +34,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # aoto startup
 exec_always --no-startup-id numlockx
@@ -42,13 +42,12 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id fcitx5
 # exec_always --no-startup-id variety
 exec_always --no-startup-id feh --bg-fill /home/silver/Pictures/wallpaper/old.png
-exec_always --no-startup-id picom --config ~/.config/picom/picom.config
-exec_always --no-startup-id ~/.dwm/xdotool.sh
-exec_always --no-startup-id mouseless --config ~/.config/mouseless/config.yaml
-exec --no-startup-id ~/mydots/dwm/xdotool
+# exec_always --no-startup-id picom --config ~/.config/picom/picom.config
+# exec_always --no-startup-id ~/.dwm/xdotool.sh
+# exec_always --no-startup-id mouseless --config ~/.config/mouseless/config.yaml
 
 # Change blank time to 1 hour
-exec_always xset s 3600 3600
+# exec_always xset s 3600 3600
 
 
 # Use pactl to adjust volume in PulseAudio.
@@ -78,14 +77,14 @@ bindsym $mod+Shift+a exec $HOME/.config/wacomleft.sh
 bindsym $mod+Shift+s exec $HOME/.config/wacomright.sh
 
 # start obsidian
-bindsym $mod+o exec $HOME/Applications/Obsidian-1.6.7_fbe5be623488d0ecebb94f3b174ba197.AppImage
+# bindsym $mod+o exec $HOME/Applications/Obsidian-1.6.7_fbe5be623488d0ecebb94f3b174ba197.AppImage
 
 # neovide
-bindsym $mod+Shift+i exec neovide
+# bindsym $mod+Shift+i exec neovide
 
 
 # browser
-bindsym $mod+Shift+Return exec brave
+bindsym $mod+Shift+Return exec zen-browser
 
 # screen shot
 bindsym $mod+x exec flameshot gui -p ~/Pictures/Screenshots/ -c
@@ -104,9 +103,9 @@ bindsym $mod+d exec rofi -show drun
 
 # change focus
 bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+n focus down
+bindsym $mod+e focus up
+bindsym $mod+i focus right
 
 # alternatively, you can use the cursor keys: bindsym $mod+Left focus left bindsym $mod+Down focus down
 #bindsym $mod+Up focus up
@@ -119,9 +118,9 @@ bindsym $mod+l focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+n move down
+# bindsym $mod+Shift+e move up
+bindsym $mod+Shift+i move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -142,7 +141,7 @@ bindsym $mod+Shift+f fullscreen toggle global
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -265,10 +264,10 @@ for_window [class="^.*"] border pixel 2
 workspace_auto_back_and_forth yes
 
 # 使当前聚焦的窗口成为便笺簿
-bindsym $mod+Shift+n move scratchpad
+# bindsym $mod+Shift+n move scratchpad
 
 # 显示第一个便笺簿窗口
-bindsym $mod+n scratchpad show
+# bindsym $mod+n scratchpad show
 
 # 显示 sup-mail 暂存窗口，如果有的话。
 # bindsym mod4+s [title="^Sup ::"] scratchpad show
