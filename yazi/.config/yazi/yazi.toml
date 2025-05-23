@@ -58,15 +58,18 @@ play = [
 swwwbg = [
   { run = '$HOME/.scripts/swww.sh "$@"', desc = "set bg", for = "linux"},
 ]
+copy = [
+  { run = 'wl-copy < "$@"', desc = "wl-copy", for = "linux" },
+]
 
 [open]
 rules = [
 	# Folder
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
 	# Text
-	{ mime = "text/*", use = [ "edit", "reveal" ] },
+	{ mime = "text/*", use = [ "edit", "copy", "reveal" ] },
 	# Image
-	{ mime = "image/*", use = [ "open", "swwwbg", "reveal" ] },
+	{ mime = "image/*", use = [ "open", "swwwbg", "copy", "reveal" ] },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
 	# Archive
@@ -77,7 +80,7 @@ rules = [
 	# Empty file
 	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Fallback
-	{ name = "*", use = [ "open", "edit", "reveal" ] },
+	{ name = "*", use = [ "open", "edit", "copy", "reveal" ] },
 ]
 
 [tasks]
