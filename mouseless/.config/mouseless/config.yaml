@@ -53,6 +53,7 @@ layers:
       leftctrl: leftctrl
       leftshift: leftshift
       f+d: layer number
+      leftshift+k0: button middle
       _: layer initial
 
   - name: number
