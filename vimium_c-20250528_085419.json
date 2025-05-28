@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "2/17/2025, 9:20:55 PM",
-	"time": 1739798455704,
+	"@time": "5/28/2025, 8:54:19 AM",
+	"time": 1748393659835,
 	"environment": {
-		"extension": "2.11.3",
+		"extension": "2.12.3",
 		"platform": "linux",
-		"chromium": 133
+		"firefox": 138
 	},
 	"allBrowserUrls": true,
 	"exclusionRules": [],
@@ -25,6 +25,7 @@
 		"mapKey E K",
 		""
 	],
+	"linkHintCharacters": "sadjwcmpghrtxv",
 	"searchUrl": "https://duckduckgo.com/?q=$s DuckDuckGo",
 	"vimSync": true
 }
