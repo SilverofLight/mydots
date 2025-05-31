@@ -31,6 +31,7 @@ bookmarks=(
     "colemak | https://colemak.com/Learn"
     "cswiki | https://csdiy.wiki"
     "notion | https://notion.so"
+    "bitwarden | https://vault.bitwarden.com/#/vault"
 )
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
