@@ -20,6 +20,8 @@ if status is-interactive
     # deepseek key
     set -l deep_key $(cat $HOME/Documents/deepseek_key)
     export DEEPSEEK_API_KEY=$deep_key
+    set -l groq_key $(cat $HOME/Documents/groq_key)
+    export GROQ_API_KEY=$groq_key
 
     set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 
