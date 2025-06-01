@@ -142,6 +142,7 @@ if status is-interactive
         bind -M default i forward-char
         bind -M default l undo
         bind -m insert u 'set fish_cursor_end_mode exclusive' repaint-mode
+        bind -M insert ctrl-c cancel-commandline
         bind -M default e up-or-search
         bind -M default n down-or-search
     end
