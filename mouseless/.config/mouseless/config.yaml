@@ -15,6 +15,7 @@ layers:
       # a: tap-hold a ; toggle-layer mouse ; 500
       # when leftalt+a, activate mouse layer
       leftalt+a: layer mouse
+      rightctrl+n: layer mouse
       # a: tap-hold-next a ; toggle-layer mouse ; 500
       # f+d: layer number
       t: tap-hold-next t ; toggle-layer number ; 500
