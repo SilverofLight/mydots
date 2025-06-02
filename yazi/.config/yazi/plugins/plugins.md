@@ -1,5 +1,3 @@
-compress.yazi
-
 git.yazi
 
 jump-to-char.yazi
