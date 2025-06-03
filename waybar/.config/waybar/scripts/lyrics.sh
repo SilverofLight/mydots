@@ -3,7 +3,7 @@
 prev_lyric=""
 while true; do
     # 获取当前歌曲信息
-    song_name=$(mpc current 2>/dev/null)
+    song_name=$(playerctl -a metadata --format '{{markup_escape(title)}}' 2>/dev/null)
     if [[ -z "$song_name" ]]; then
         # echo "You are not playing a song"
         sleep 1
