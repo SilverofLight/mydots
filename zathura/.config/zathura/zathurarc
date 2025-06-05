@@ -21,7 +21,9 @@ map [normal] <Left> scroll left
 map [normal] <Up> scroll up
 map [normal] <Down> scroll down
 map [normal] <Right> scroll right
-map [normal] k scroll full-down
+# map [normal] k scroll full-down
+map [normal] k search forward
+map [normal] K search backward
 map [normal] <C-l> scroll full-up
 map [normal] p scroll full-up
 map [normal] d scroll full-down
