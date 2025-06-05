@@ -58,7 +58,10 @@ if [[ $text == "d "* ]]; then # duckduckgo
 elif [[ $text == "b "* ]]; then # bilibili
   prompt=$(echo "$text" | cut -d' ' -f2 | sed -E 's/ +/+/g')
   $command https://search.bilibili.com/all?keyword=$prompt
-else                          # default duckduckgo
+elif [[ $text == "g "* ]]; then # github
+  prompt=$(echo "$text" | cut -d' ' -f2 | sed -E 's/ +/+/g')
+  $command https://github.com/search?q=$prompt&type=repositories
+else                           # default duckduckgo
   prompt=$(echo "$text" | sed -E 's/ +/+/g')
   $command https://duckduckgo.com/?q=$prompt&ia=web
 fi
