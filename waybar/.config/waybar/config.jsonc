@@ -46,20 +46,9 @@
     "disable-scroll": false,
     "on-scroll-up": "hyprctl dispatch workspace -1",
     "on-scroll-down": "hyprctl dispatch workspace +1",
-    // "format": "{name}{icon}",
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      // "1": "1",
-      // "2": "2",
-      // "3": "3",
-      // "4": "4",
-      // "5": "5",
-      // "6": "6",
-      // "7": "7",
-      // "8": "8",
-      // "9": "9",
-      // "10": "10",
       "urgent": "",
       "active": "",
       "empty": "",
@@ -146,19 +135,8 @@
     // "device": "acpi_video1",
     "format": "{icon} {percent}%",
     "format-icons": [
-      // "",
-      // "",
-      // "",
-      // "",
-      // "",
-      // "",
-      // "",
-      // "",
-      // ""
       "󰛨 "
-    ],
-    //	"on-scroll-up":,
-    //	"on-scroll-down":,
+    ]
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -183,10 +161,8 @@
   },
   "custom/launcher": {
     "format": "󰣇",
-    "on-click": "rofi -show drun",
-    //    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
-    "on-click-right": "rofi -show run",
-    //    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
+    "on-click": "wofi --show drun",
+    "on-click-right": "wofi --show run",
     "on-click-middle": "wlogout"
   },
   "custom/wf-recorder": {
@@ -249,7 +225,6 @@
   },
   "custom/mail_new": {
     "format": "󰛮  {}",
-    // "exec": "while true; do cat $HOME/Templates/mail_new; sleep 60; done"
     "exec": "$HOME/.config/waybar/scripts/mail_new.sh"
   }
 }
