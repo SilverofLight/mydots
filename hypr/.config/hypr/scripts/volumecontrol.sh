@@ -28,18 +28,18 @@ function notify_vol
 }
 
 case $1 in
-    i) pamixer -i 5
+    i) pamixer -i 10
         notify_vol
     ;;
-    d) pamixer -d 5
+    d) pamixer -d 10
         notify_vol
     ;;
     m) pamixer -t
         notify_vol
     ;;
     *) echo "volumecontrol.sh [action]"
-        echo "i -- increase volume [+5]"
-        echo "d -- decrease volume [-5]"
+        echo "i -- increase volume [+10]"
+        echo "d -- decrease volume [-10]"
         echo "m -- mute [x]"
     ;;
 esac
