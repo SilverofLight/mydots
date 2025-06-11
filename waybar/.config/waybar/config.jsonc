@@ -224,7 +224,7 @@
     "exec": "$HOME/.config/waybar/scripts/lyrics.sh"
   },
   "custom/mail_new": {
-    "format": "󰛮  {}",
+    "format": "  {}",
     "exec": "$HOME/.config/waybar/scripts/mail_new.sh"
   }
 }
