@@ -3,7 +3,7 @@
 # author: Silver Lee
 # date: 2025/5/15
 # description: use wofi to search in web, then store the search history
-# requirements: wofi, zen-browser, sqlite3
+# requirements: wofi, brave, sqlite3
 
 DB_FILE="$HOME/Templates/searchHistory.db"
 
@@ -29,7 +29,8 @@ fi
 
 text=$(echo -e "$text" | wofi --conf $HOME/.config/wofi/config_search --dmenu --prompt "search history")
 
-command="env GTK_IM_MODULE=fcitx,QT_IM_MODULE=fcitx,XMODIFIERS=@im=fcitx /opt/zen-browser-bin/zen-bin"
+# command="env GTK_IM_MODULE=fcitx,QT_IM_MODULE=fcitx,XMODIFIERS=@im=fcitx /opt/zen-browser-bin/zen-bin"
+command=$browser
 
 if [ -z $text ]; then
   exit 1
