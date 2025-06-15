@@ -1,4 +1,4 @@
-// ==UserScript=// ==UserScript==
+// ==UserScript==
 // @name         MPV BiliBili
 // @namespace    http://tampermonkey.net/
 // @version      1.1
