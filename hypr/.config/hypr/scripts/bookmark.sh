@@ -33,6 +33,7 @@ bookmarks=(
     "notion | https://notion.so"
     "bitwarden | https://vault.bitwarden.com/#/vault"
     "tyys | https://tyys2.com/"
+    "windsurf | https://windsurf.com/profile"
 )
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
