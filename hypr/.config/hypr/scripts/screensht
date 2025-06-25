@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -o pipefail
-export GRIMBLAST_EDITOR="drawing"
+export GRIMBLAST_EDITOR="swappy -f"
 
 # Directory
 _SCREENSHOT_DIR_=$HOME/Pictures/Screenshots
@@ -53,7 +53,6 @@ elif [ "$1" = 'area' ]; then
     msg='Area screenshot saved and copied to clipboard!'
     take_screenshot 'grimblast copysave area' "${msg}"
 elif [ "$1" = 'edit' ]; then
-    msg=''
-    # take_screenshot 'grimblast edit area' "${msg}"
-    grim -g "$(slurp)" - | swappy -f -
+    msg='Area screenshot edited ended'
+    take_screenshot 'grimblast edit area' "${msg}"
 fi
