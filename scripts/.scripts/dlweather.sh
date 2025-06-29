@@ -6,7 +6,7 @@
 # requirements: network, curl
 
 # Default city is Wuhan, but can be overridden by command line argument
-CITY=${1:-"Wuhan"}
+CITY=${1:-"Wangdu"}
 
 # Create Templates directory if it doesn't exist
 mkdir -p "$HOME/Templates"
