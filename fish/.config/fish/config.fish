@@ -90,6 +90,7 @@ if status is-interactive
     alias cdd="cd /run/media/silver/"
     alias hibernate="systemctl hibernate"
     alias a="task"
+    alias mpv="mpv --input-ipc-server=/tmp/mpvsocket"
 
     # 如果在使用 kitty, 则更改 ssh
     if test "$TERM" = xterm-kitty
