@@ -55,8 +55,7 @@ proxise=(
 
 proxies_list=$(printf '%s\n' "${proxise[@]}")
 
-notify-send "proxy" "please enter password"
-passwd=$(wofi -P -c ~/.config/wofi/config_password -s ~/.config/wofi/style_password.css --dmenu)
+passwd=$(cat ~/Documents/mihomo_select)
 
 if [ -z "$passwd" ]; then
   exit 1
