@@ -23,6 +23,8 @@ if status is-interactive
     set -l groq_key $(cat $HOME/Documents/groq_key)
     export GROQ_API_KEY=$groq_key
 
+    export CLASH_PASSWORD=$(cat $HOME/Documents/mihomo_select)
+
     export LIBVIRT_DEFAULT_URI="qemu:///system"
 
     set -U fish_user_paths $HOME/.local/bin $fish_user_paths
