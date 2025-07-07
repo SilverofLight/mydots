@@ -9,7 +9,7 @@ if status is-interactive
     # end
 
     # ptyhon path
-    set -gx PATH $HOME/.pyenv/bin $PATH
+    # set -gx PATH $HOME/.pyenv/bin $PATH
 
     # lean path
     set -gx PATH $PATH $HOME/.elan/bin
@@ -30,9 +30,9 @@ if status is-interactive
     set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 
     # Initialize pyenv
-    status --is-interactive; and pyenv init --path | source
-    status --is-interactive; and pyenv init - | source
-    status --is-interactive; and pyenv virtualenv-init - | source
+    # status --is-interactive; and pyenv init --path | source
+    # status --is-interactive; and pyenv init - | source
+    # status --is-interactive; and pyenv virtualenv-init - | source
 
     # Allow deprecated scikit-learn package installation
     set -gx SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL True
