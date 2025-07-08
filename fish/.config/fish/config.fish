@@ -22,6 +22,8 @@ if status is-interactive
     export DEEPSEEK_API_KEY=$deep_key
     set -l groq_key $(cat $HOME/Documents/groq_key)
     export GROQ_API_KEY=$groq_key
+    set -l gemini_key $(cat $HOME/Documents/GEMINI_API)
+    export GEMINI_API=$gemini_key
 
     export CLASH_PASSWORD=$(cat $HOME/Documents/mihomo_select)
 
