@@ -35,6 +35,8 @@ bookmarks=(
     "tyys | https://tyys2.com/"
     "windsurf | https://windsurf.com/profile"
     "gemini | https://gemini.google.com/u/1/app"
+    "hui | https://user.hyproxy.cc/#/dashboard"
+    "flybit | https://goflybit.pages.dev/"
 )
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")

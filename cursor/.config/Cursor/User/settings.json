@@ -2658,4 +2658,5 @@
   "editor.fontFamily": "'Hack Nerd Font'",
   "editor.codeLensFontFamily": "'Hack Nerd Font'",
   "editor.fontSize": 16,
+  "git.autofetch": true,
 }
