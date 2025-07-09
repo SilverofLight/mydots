@@ -224,7 +224,7 @@ def main(stdscr):
                           curses.color_pair(2) | curses.A_BOLD)
 
         # 显示节点列表标题
-        header = "可用节点列表 (↑/↓ n/e 选择, Enter 切换, p:测试当前节点, P:测试所有节点)"
+        header = "可用节点 (↑/↓ n/e:选择, Enter:切换, o:跳转当前, p/P:测试)"
         stdscr.addstr(4, 2, header, curses.A_UNDERLINE)
 
         # 显示节点列表
@@ -273,7 +273,7 @@ def main(stdscr):
                           len(scroll_info) - 2, scroll_info)
 
         # 状态栏
-        status_bar = "Q:退出 | R:刷新 | Enter:切换节点 | t:测试当前节点 | T:测试所有节点"
+        status_bar = "Q:退出 | R:刷新 | o:跳转当前 | p/P:测试"
         stdscr.addstr(height - 1, (width - len(status_bar)) // 2,
                       status_bar, curses.A_REVERSE)
 
@@ -301,6 +301,15 @@ def main(stdscr):
         elif key == curses.KEY_DOWN or key == ord("n"):
             selected_idx = min(len(proxies) - 1, selected_idx + 1)
             last_status_message = ""
+        elif key == ord('o'):
+            if proxies and "now" in data:
+                try:
+                    current_node_name = data.get("now", "")
+                    if current_node_name in proxies:
+                        selected_idx = proxies.index(current_node_name)
+                        last_status_message = f"🔍 已跳转到当前节点"
+                except ValueError:
+                    last_status_message = "❌ 未在列表中找到当前节点"
         elif key == ord('\n') or key == curses.KEY_ENTER:
             if proxies and selected_idx < len(proxies):
                 proxy_name = proxies[selected_idx]
@@ -328,10 +337,8 @@ def main(stdscr):
                 def run_single_latency_test():
                     nonlocal latency_results, is_testing, last_status_message
                     try:
-                        # 使用队列接收结果
                         q = queue.Queue()
                         test_node_latency(proxy_name, q)
-                        # 从队列取出结果
                         if not q.empty():
                             node, latency = q.get()
                             latency_results[node] = latency
@@ -342,12 +349,10 @@ def main(stdscr):
                     finally:
                         is_testing = False
 
-                # 启动测试线程
                 test_thread = threading.Thread(target=run_single_latency_test)
                 test_thread.daemon = True
                 test_thread.start()
 
-                # 启动进度更新线程
                 progress_thread = threading.Thread(
                     target=update_progress, args=(1,))
                 progress_thread.daemon = True
@@ -358,14 +363,11 @@ def main(stdscr):
                 test_progress = 0
                 test_total_nodes = len(proxies)
                 last_status_message = "⏳ 开始测试所有节点延迟..."
-
-                # 清空之前的测试结果
                 latency_results.clear()
 
                 def run_latency_test():
                     nonlocal latency_results, is_testing, last_status_message
                     try:
-                        # 测试所有节点
                         test_results = test_all_nodes_latency(proxies)
                         latency_results.update(test_results)
                         last_status_message = "✅ 延迟测试完成!"
@@ -375,12 +377,10 @@ def main(stdscr):
                     finally:
                         is_testing = False
 
-                # 在后台线程中运行测试
                 test_thread = threading.Thread(target=run_latency_test)
                 test_thread.daemon = True
                 test_thread.start()
 
-                # 启动进度更新线程
                 progress_thread = threading.Thread(
                     target=update_progress, args=(len(proxies),))
                 progress_thread.daemon = True

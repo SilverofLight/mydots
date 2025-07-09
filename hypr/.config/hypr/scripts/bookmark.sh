@@ -34,6 +34,7 @@ bookmarks=(
     "bitwarden | https://vault.bitwarden.com/#/vault"
     "tyys | https://tyys2.com/"
     "windsurf | https://windsurf.com/profile"
+    "gemini | https://gemini.google.com/u/1/app"
 )
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
