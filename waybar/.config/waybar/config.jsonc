@@ -193,8 +193,8 @@
   "custom/clash": {
     "format": " ",
     "interval": 5,
-    "exec": "$HOME/.config/waybar/scripts/get_proxy.sh",
-    "exec-if": "pgrep verge-mihomo",
+    "exec": "$HOME/.config/waybar/scripts/get_proxy.py",
+    "exec-if": "pgrep 'verge-mihomo'",
     "tooltip": true,
     "tooltip-format": "connecting: {}"
   },
