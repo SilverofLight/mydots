@@ -16,7 +16,9 @@ logging.basicConfig(filename='clash_tui.log', level=logging.INFO,
 
 # 从环境变量获取密码
 PASSWORD = os.getenv("CLASH_PASSWORD", "your_default_password")
-PROXIES_URL = "http://127.0.0.1:9090/proxies/%F0%9F%94%B0%20%E8%8A%82%E7%82%B9%E9%80%89%E6%8B%A9"
+# PROXIES_URL = "http://127.0.0.1:9090/proxies/%F0%9F%94%B0%20%E8%8A%82%E7%82%B9%E9%80%89%E6%8B%A9"
+group = quote("辉夜Proxy", safe='')
+PROXIES_URL = f"http://127.0.0.1:9097/proxies/{group}"
 
 
 def fetch_proxy_data():
@@ -67,8 +69,10 @@ def test_node_latency(node_name, results_queue):
     encoded_name = quote(node_name, safe='')
 
     # 构建测试URL
-    test_url = f"http://127.0.0.1:9090/providers/proxies/%F0%9F%94%B0%20%E8%8A%82%E7%82%B9%E9%80%89%E6%8B%A9/{
-        encoded_name}/healthcheck"
+    # test_url = f"http://127.0.0.1:9090/providers/proxies/%F0%9F%94%B0%20%E8%8A%82%E7%82%B9%E9%80%89%E6%8B%A9/{
+    # encoded_name}/healthcheck"
+    test_url = f"http://127.0.0.1:9097/providers/proxies/{
+        group}/{encoded_name}/healthcheck"
 
     params = {
         "url": "http://www.youtube.com",
