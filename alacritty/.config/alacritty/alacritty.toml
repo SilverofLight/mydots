@@ -17,3 +17,42 @@ italic = { family = "Fira Code", style = "Italic" }
 [env]
 WINIT_X11_SCALE_FACTOR="1.16"
 
+[[keyboard.bindings]]
+key = "H"
+mods = "Control|Shift"
+action = "ToggleViMode"
+
+[[keyboard.bindings]]
+key = "n"
+mode = "Vi|~Search"
+action = "Down"
+
+[[keyboard.bindings]]
+key = "e"
+mode = "Vi|~Search"
+action = "Up"
+
+[[keyboard.bindings]]
+key = "i"
+mode = "Vi|~Search"
+action = "Right"
+
+[[keyboard.bindings]]
+key = "u"
+mode = "Vi|~Search"
+action = "ToggleViMode"
+
+[[keyboard.bindings]]
+key = "a"
+mode = "Vi|~Search"
+action = "ToggleViMode"
+
+[[keyboard.bindings]]
+key = "q"
+mode = "Vi|~Search"
+action = "ToggleViMode"
+
+[[keyboard.bindings]]
+key = "Escape"
+mode = "Vi|~Search"
+action = "ToggleViMode"
