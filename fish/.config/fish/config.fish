@@ -23,7 +23,7 @@ if status is-interactive
     set -l groq_key $(cat $HOME/Documents/groq_key)
     export GROQ_API_KEY=$groq_key
     set -l gemini_key $(cat $HOME/Documents/GEMINI_API)
-    export GEMINI_API=$gemini_key
+    export GEMINI_API_KEY=$gemini_key
 
     export CLASH_PASSWORD=$(cat $HOME/Documents/mihomo_select)
 

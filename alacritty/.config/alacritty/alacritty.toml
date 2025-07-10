@@ -8,10 +8,10 @@ general.import = [
 ]
 
 [font]
-size=12
-normal = { family = "Fira Code", style = "Regular" }
-bold = { family = "Fira Code", style = "Bold" }
-italic = { family = "Fira Code", style = "Italic" }
+size=13
+normal = { family = "Hack Nerd Font", style = "Regular" }
+bold = { family = "Hack Nerd Font", style = "Bold" }
+italic = { family = "Hack Nerd Font", style = "Italic" }
 
 
 [env]
