@@ -11,7 +11,7 @@ from datetime import datetime
 from urllib.parse import quote
 
 # 设置日志记录
-logging.basicConfig(filename='clash_tui.log', level=logging.INFO,
+logging.basicConfig(filename=os.path.expanduser('~/.cache/clash_tui.log'), level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 # 从环境变量获取密码
@@ -167,6 +167,7 @@ def main(stdscr):
     is_testing = False    # 是否正在测试延迟
     last_status_message = ""
     test_progress = 0     # 测试进度
+    test_total_nodes = 0
 
     # 定义更新进度的函数
     def update_progress(total_nodes):
