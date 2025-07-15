@@ -55,7 +55,7 @@
   "menus.power.lowBatteryThreshold": 15,
   "menus.dashboard.powermenu.avatar.name": "Silver",
   "menus.clock.time.hideSeconds": false,
-  "bar.clock.format": "%a %b %d  %H:%M %p",
+  "bar.clock.format": "%a %b %d  %H:%M",
   "bar.clock.showIcon": true,
   "bar.clock.showTime": true,
   "menus.clock.time.military": true,
@@ -450,5 +450,11 @@
   "bar.workspaces.showWsIcons": false,
   "bar.workspaces.showApplicationIcons": false,
   "menus.dashboard.shortcuts.left.shortcut4.command": "wofi --show drun",
-  "menus.dashboard.directories.enabled": false
+  "menus.dashboard.directories.enabled": false,
+  "bar.customModules.ram.labelType": "percentage",
+  "bar.customModules.ram.round": true,
+  "theme.bar.buttons.modules.ram.enableBorder": false,
+  "theme.osd.orientation": "horizontal",
+  "theme.osd.location": "top right",
+  "theme.osd.muted_zero": false
 }
