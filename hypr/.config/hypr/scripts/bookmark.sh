@@ -37,6 +37,7 @@ bookmarks=(
     "gemini | https://gemini.google.com/u/1/app"
     "hui | https://user.hyproxy.cc/#/dashboard"
     "flybit | https://goflybit.pages.dev/"
+    "grok | https://grok.com/"
 )
 
 bookmark_list=$(printf '%s\n' "${bookmarks[@]}")
