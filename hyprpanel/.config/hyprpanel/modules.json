@@ -21,5 +21,12 @@
     "label": "{}",
     "execute": "/home/silver/.config/hyprpanel/scripts/mouseless",
     "interval": 50
+  },
+
+  "custom/wf-recorder": {
+    "label": "{}",
+    "execute": "/home/silver/.config/hyprpanel/scripts/wfrecorder.sh",
+    "hideOnEmpty": true,
+    "interval": 200
   }
 }

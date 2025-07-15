@@ -26,6 +26,7 @@
         "storage"
       ],
       "right": [
+        "custom/wf-recorder",
         "custom/mouseless",
         "custom/update",
         "custom/mailNew",
@@ -447,5 +448,7 @@
   "theme.bar.menus.enableShadow": false,
   "theme.bar.transparent": true,
   "bar.workspaces.showWsIcons": false,
-  "bar.workspaces.showApplicationIcons": false
+  "bar.workspaces.showApplicationIcons": false,
+  "menus.dashboard.shortcuts.left.shortcut4.command": "wofi --show drun",
+  "menus.dashboard.directories.enabled": false
 }

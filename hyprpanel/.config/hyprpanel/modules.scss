@@ -10,7 +10,7 @@
             'icon-color': #242438,
             'icon-background': #cba6f7,
             'label-background': #44475A,
-            'inner-spacing': 0.5em,
+            'inner-spacing': 0em,
             'border-enabled': false,
             'border-color': #cba6f7,
             'icon-size': 1.2em
@@ -26,7 +26,7 @@
             'icon-color': #242438,
             'icon-background': #cba6f7,
             'label-background': #44475A,
-            'inner-spacing': 0.5em,
+            'inner-spacing': 0em,
             'border-enabled': false,
             'border-color': #cba6f7,
             'icon-size': 1.2em
@@ -39,6 +39,7 @@
     // styling properties
     (
             'text-color': #ffd700,
+            'inner-spacing': 0em,
             'background-color': transparent,
             'icon-background': transparent,
             'label-background': transparent,
@@ -50,8 +51,20 @@
     'cmodule-lyrics',
     // styling properties
     (
+            'inner-spacing': 0em,
             'background-color': transparent,
             'icon-background': transparent,
             'label-background': transparent,
+        )
+);
+
+@include styleModule(
+    // class name
+    'cmodule-wf-recorder',
+    // styling properties
+    (
+          'text-color': #e5809e,
+          'inner-spacing': 0em,
+          'background-color': #1E1E2E
         )
 );
