@@ -36,8 +36,10 @@ while true; do
   if [ -n "$msg" ]; then
     echo $msg >> $HISTORY_FILE
     history -r $HISTORY_FILE
+    base_output=$(kd "$msg" | sed -e 's#    \[#\n    [#g' -e '/⸺⸺⸺⸺⸺/q')
+    echo "$base_output" | sed '1,2d;$d' | wl-copy
     # 第一行为红色，第二行如果是注音，则为绿色，倒数第二行为红色
-    kd "$msg" | sed -e 's/    \[/\n    [/g' -e '/⸺⸺⸺⸺⸺/q' |
+    echo "$base_output" |
       awk 'NR==1 {print "\033[31m" $0 "\033[0m"; next} 
                NR==2 {print; next} 
                {prev=line; line=$0; lines[NR]=$0} 
@@ -46,6 +48,6 @@ while true; do
                    for (i=3; i<NR; i++) print "  " lines[i]
                    if (NR >= 1) print line
                }' |
-      sed -e 's/\[\([^]]*\)\]/\x1b[92m[\1]\x1b[0m/g'
+      sed -e 's#\[\([^\]]*\)\]#\x1b[92m[\1]\x1b[0m#g'
   fi
 done
