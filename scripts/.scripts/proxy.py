@@ -14,10 +14,53 @@ from urllib.parse import quote
 logging.basicConfig(filename=os.path.expanduser('~/.cache/clash_tui.log'), level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
+def get_first_proxy_group_name(yaml_path):
+    """从clash配置文件中获取第一个代理组的名称"""
+    try:
+        with open(yaml_path, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+        
+        in_proxy_groups = False
+        for line in lines:
+            # Use strip() to handle potential whitespace
+            if line.strip() == 'proxy-groups:':
+                in_proxy_groups = True
+                continue
+            
+            if in_proxy_groups:
+                stripped_line = line.strip()
+                if stripped_line.startswith('- name:'):
+                    group_name = stripped_line.split(':', 1)[1].strip()
+                    # Remove potential quotes
+                    if group_name.startswith("'") and group_name.endswith("'"):
+                        return group_name[1:-1]
+                    if group_name.startswith('"') and group_name.endswith('"'):
+                        return group_name[1:-1]
+                    return group_name
+        logging.warning("在配置文件中未找到 'proxy-groups' 或任何组.")
+        return None
+    except FileNotFoundError:
+        logging.error(f"Clash配置文件未找到: {yaml_path}")
+        return None
+    except Exception as e:
+        logging.error(f"读取或解析Clash配置文件时出错: {e}")
+        return None
+
 # 从环境变量获取密码
 PASSWORD = os.getenv("CLASH_PASSWORD", "your_default_password")
 # PROXIES_URL = "http://127.0.0.1:9090/proxies/%F0%9F%94%B0%20%E8%8A%82%E7%82%B9%E9%80%89%E6%8B%A9"
-group = quote("辉夜Proxy", safe='')
+
+# 自动从clash-verge.yaml中查找group
+CLASH_CONFIG_PATH = os.path.expanduser('~/.local/share/io.github.clash-verge-rev.clash-verge-rev/clash-verge.yaml')
+group_name = get_first_proxy_group_name(CLASH_CONFIG_PATH)
+
+if group_name:
+    logging.info(f"从配置文件中找到代理组: {group_name}")
+    group = quote(group_name, safe='')
+else:
+    logging.warning("无法从配置文件中找到代理组, 使用默认值 '辉夜Proxy'")
+    group = quote("辉夜Proxy", safe='')
+
 PROXIES_URL = f"http://127.0.0.1:9097/proxies/{group}"
 
 

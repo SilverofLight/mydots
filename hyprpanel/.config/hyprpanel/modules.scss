@@ -1,0 +1,57 @@
+/* ##################################
+ * #  Custom Volume Module Styling  #
+ * ################################## */
+@include styleModule(
+    // class name
+    'cmodule-update',
+    // styling properties
+    (
+            'text-color': #cba6f7,
+            'icon-color': #242438,
+            'icon-background': #cba6f7,
+            'label-background': #44475A,
+            'inner-spacing': 0.5em,
+            'border-enabled': false,
+            'border-color': #cba6f7,
+            'icon-size': 1.2em
+        )
+);
+
+@include styleModule(
+    // class name
+    'cmodule-mailNew',
+    // styling properties
+    (
+            'text-color': #cba6f7,
+            'icon-color': #242438,
+            'icon-background': #cba6f7,
+            'label-background': #44475A,
+            'inner-spacing': 0.5em,
+            'border-enabled': false,
+            'border-color': #cba6f7,
+            'icon-size': 1.2em
+        )
+);
+
+@include styleModule(
+    // class name
+    'cmodule-mouseless',
+    // styling properties
+    (
+            'text-color': #ffd700,
+            'background-color': transparent,
+            'icon-background': transparent,
+            'label-background': transparent,
+        )
+);
+
+@include styleModule(
+    // class name
+    'cmodule-lyrics',
+    // styling properties
+    (
+            'background-color': transparent,
+            'icon-background': transparent,
+            'label-background': transparent,
+        )
+);

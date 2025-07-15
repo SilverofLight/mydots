@@ -1,0 +1,25 @@
+{
+  "custom/lyrics": {
+    "label": "{}",
+    "execute": "python /home/silver/.config/hyprpanel/scripts/lyrics.py",
+    "interval": 100
+  },
+
+  "custom/update": {
+    "label": "󱉙  {}",
+    "execute": "cat /home/silver/Templates/update",
+    "interval": 6000
+  },
+
+  "custom/mailNew": {
+    "label": "  {}",
+    "execute": "/home/silver/.config/hyprpanel/scripts/mailNew.sh",
+    "interval": 6000
+  },
+
+  "custom/mouseless": {
+    "label": "{}",
+    "execute": "/home/silver/.config/hyprpanel/scripts/mouseless",
+    "interval": 50
+  }
+}
