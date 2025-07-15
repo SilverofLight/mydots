@@ -10,7 +10,7 @@
   "menus.media.hideAuthor": true,
   "menus.media.hideAlbum": true,
   "theme.bar.menus.monochrome": false,
-  "wallpaper.enable": true,
+  "wallpaper.enable": false,
   "wallpaper.image": "/home/silver/Pictures/wallpaper/sddm.png",
   "bar.layouts": {
     "*": {

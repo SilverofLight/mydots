@@ -29,13 +29,13 @@ function notify_vol
 
 case $1 in
     i) pamixer -i 10
-        notify_vol
+        # notify_vol
     ;;
     d) pamixer -d 10
-        notify_vol
+        # notify_vol
     ;;
     m) pamixer -t
-        notify_vol
+        # notify_vol
     ;;
     *) echo "volumecontrol.sh [action]"
         echo "i -- increase volume [+10]"
