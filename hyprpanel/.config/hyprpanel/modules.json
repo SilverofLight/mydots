@@ -2,6 +2,7 @@
   "custom/lyrics": {
     "label": "{}",
     "execute": "python /home/silver/.config/hyprpanel/scripts/lyrics.py",
+    "hideOnEmpty": true,
     "interval": 100
   },
 
@@ -20,6 +21,7 @@
   "custom/mouseless": {
     "label": "{}",
     "execute": "/home/silver/.config/hyprpanel/scripts/mouseless",
+    "hideOnEmpty": true,
     "interval": 50
   },
 
