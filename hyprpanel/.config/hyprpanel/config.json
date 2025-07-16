@@ -456,5 +456,6 @@
   "theme.bar.buttons.modules.ram.enableBorder": false,
   "theme.osd.orientation": "horizontal",
   "theme.osd.location": "top right",
-  "theme.osd.muted_zero": false
+  "theme.osd.muted_zero": false,
+  "menus.dashboard.powermenu.avatar.image": "/home/silver/.config/hyprpanel/profile.jpg"
 }
