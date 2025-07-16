@@ -29,6 +29,7 @@ def main():
     song_name = get_mpc_output(['mpc', 'current', '--format', '%title%'])
     if not song_name:
         # Silently exit if no song is playing, mimicking the original script's behavior.
+        print("")
         sys.exit(1)
 
     # 2. Construct the path to the corresponding lyrics file.
@@ -37,15 +38,18 @@ def main():
     )
     if not os.path.isfile(lyrics_file_path):
         print("lyrics file not found", file=sys.stderr)
+        print("")
         sys.exit(1)
 
     # 3. Get the current playback time from MPC status.
     mpc_status = get_mpc_output(['mpc', 'status'])
     if not mpc_status:
+        print("")
         sys.exit(1)
 
     # Exit silently if MPC is paused.
     if '[paused]' in mpc_status:
+        print("")
         sys.exit(0)
 
     current_total_seconds = -1
@@ -60,6 +64,7 @@ def main():
 
     if current_total_seconds == -1:
         # Exit if time could not be parsed.
+        print("")
         sys.exit(1)
 
     # 4. Parse the LRC file to find the current lyric.
