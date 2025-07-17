@@ -18,6 +18,7 @@ def get_mpc_output(command):
         return result.stdout.strip()
     except (subprocess.CalledProcessError, FileNotFoundError):
         # Suppress errors like 'mpc is not running' or 'command not found'
+        print("")
         return None
 
 
