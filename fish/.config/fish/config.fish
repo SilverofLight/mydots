@@ -18,14 +18,14 @@ if status is-interactive
     set MNT /run/media/silver/
 
     # deepseek key
-    set -l deep_key $(cat $HOME/Documents/deepseek_key)
+    set -l deep_key $(cat $HOME/Documents/keys/deepseek_key)
     export DEEPSEEK_API_KEY=$deep_key
-    set -l groq_key $(cat $HOME/Documents/groq_key)
+    set -l groq_key $(cat $HOME/Documents/keys/groq_key)
     export GROQ_API_KEY=$groq_key
-    set -l gemini_key $(cat $HOME/Documents/GEMINI_API)
+    set -l gemini_key $(cat $HOME/Documents/keys/GEMINI_API)
     export GEMINI_API_KEY=$gemini_key
 
-    export CLASH_PASSWORD=$(cat $HOME/Documents/mihomo_select)
+    export CLASH_PASSWORD=$(cat $HOME/Documents/keys/mihomo_select)
 
     export LIBVIRT_DEFAULT_URI="qemu:///system"
 
