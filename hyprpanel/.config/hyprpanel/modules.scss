@@ -68,3 +68,14 @@
           'background-color': #1E1E2E
         )
 );
+
+@include styleModule(
+    // class name
+    'cmodule-bluetooth',
+    // styling properties
+    (
+          'inner-spacing': 0.1em,
+          'label-background': #44475A,
+          'text-color': #8be9fd,
+        )
+);

@@ -11,7 +11,7 @@
   "menus.media.hideAlbum": true,
   "theme.bar.menus.monochrome": false,
   "wallpaper.enable": false,
-  "wallpaper.image": "/home/silver/Pictures/wallpaper/sddm.png",
+  "wallpaper.image": "/home/silver/Pictures/wallpaper/2.png",
   "bar.layouts": {
     "*": {
       "left": [
@@ -33,7 +33,7 @@
         "systray",
         "volume",
         "network",
-        "bluetooth",
+        "custom/bluetooth",
         "battery",
         "clock",
         "notifications"
@@ -457,5 +457,6 @@
   "theme.osd.orientation": "horizontal",
   "theme.osd.location": "top right",
   "theme.osd.muted_zero": false,
-  "menus.dashboard.powermenu.avatar.image": "/home/silver/.config/hyprpanel/profile.jpg"
+  "menus.dashboard.powermenu.avatar.image": "/home/silver/.config/hyprpanel/profile.jpg",
+  "bar.bluetooth.label": false
 }
