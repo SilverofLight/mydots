@@ -25,7 +25,7 @@ layers:
   # enterCommand: "notify-send 'mouseless' 'mouse layer entered'"
   # exitCommand: "notify-send 'mouseless' 'mouse layer exited'"
     enterCommand: "echo  > /home/silver/Templates/mouse.tmp"
-    exitCommand: "rm /home/silver/Templates/mouse.tmp"
+    exitCommand: "echo '' > /home/silver/Templates/mouse.tmp"
     # when true, keys that are not mapped keep their original meaning
     bindings:
       # quit mouse layer
