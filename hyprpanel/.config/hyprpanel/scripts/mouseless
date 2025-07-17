@@ -2,6 +2,8 @@
 
 file="/home/silver/Templates/mouse.tmp"
 
-if [ -f $file ]; then
+if [ ! -f $file ]; then
+  echo ""
+else
   cat $file
 fi
