@@ -26,6 +26,7 @@ if status is-interactive
     export GEMINI_API_KEY=$gemini_key
 
     export CLASH_PASSWORD=$(cat $HOME/Documents/keys/mihomo_select)
+    export BOOKMARKS_KEY=$(cat $HOME/Documents/keys/bookmarks_key)
 
     export LIBVIRT_DEFAULT_URI="qemu:///system"
 
