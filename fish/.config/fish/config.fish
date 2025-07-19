@@ -77,8 +77,6 @@ if status is-interactive
     alias wificnn="nmcli device wifi connect"
     alias hmm="h-m-m"
     alias gi="lazygit"
-    alias c="cowsay"
-    alias cs="cowsay 大傻逼"
     alias cn="cowsay 牛逼"
     alias vv="nvim ~/Study/TODOlist.md"
     alias t="tmux"
