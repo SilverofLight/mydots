@@ -6,6 +6,7 @@ import subprocess
 
 PORT = 15612
 
+
 class CORSRequestHandler(http.server.SimpleHTTPRequestHandler):
     def do_OPTIONS(self):
         self.send_response(204)
@@ -21,13 +22,15 @@ class CORSRequestHandler(http.server.SimpleHTTPRequestHandler):
             url = query.get("url", [""])[0]
             if url:
                 print("Playing:", url)
-                subprocess.Popen(["mpv", "--quiet", "--no-terminal", "--title=mpv-bilibili", url])
+                subprocess.Popen(["mpv", "--quiet", "--no-terminal",
+                                 "--input-ipc-server=/tmp/mpv_bilibili", "--title=mpv-bilibili", url])
             self.send_response(200)
             self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
         else:
             self.send_response(404)
             self.end_headers()
+
 
 Handler = CORSRequestHandler
 httpd = socketserver.TCPServer(("", PORT), Handler)
