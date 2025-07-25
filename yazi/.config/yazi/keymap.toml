@@ -88,7 +88,7 @@ keymap = [
 	{ on = "s",         run = "plugin easyjump",             desc = "easyjump" },
 	{ on = "<C-s>",     run = "escape --search",             desc = "Cancel the ongoing search" },
 	# { on = "z",         run = "plugin zoxide",               desc = "Jump to a directory via zoxide" },
-	# { on = "Z",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
+	{ on = "S",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
 
 	# Linemode
 	{ on = [ "m", "s" ], run = "linemode size",        desc = "Linemode: size" },
