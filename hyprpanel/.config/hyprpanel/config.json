@@ -458,5 +458,9 @@
   "theme.osd.location": "top right",
   "theme.osd.muted_zero": false,
   "menus.dashboard.powermenu.avatar.image": "/home/silver/.config/hyprpanel/profile.jpg",
-  "bar.bluetooth.label": false
+  "bar.bluetooth.label": false,
+  "theme.bar.menus.popover.radius": "0.4em",
+  "theme.bar.menus.buttons.radius": "0.4em",
+  "theme.matugen": false,
+  "theme.bar.buttons.background_opacity": 50
 }
