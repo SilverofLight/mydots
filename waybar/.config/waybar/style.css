@@ -172,6 +172,21 @@ window#waybar {
     margin-left: 10px;
 }
 
+#mpd {
+	background: #282828;
+	padding-left: 15px;
+  padding-right: 14px;
+	border-radius: 16px;
+  /*border-left: solid 1px #282738;*/
+  /*border-right: solid 1px #282738;*/
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 0px;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 13px;
+}
+
 #custom-playerctl {
 	background: #282828;
 	padding-left: 15px;

@@ -9,8 +9,9 @@
   "modules-left": [
     "custom/launcher",
     "hyprland/workspaces",
-    "custom/playerctl",
-    "custom/playerlabel",
+    // "custom/playerctl",
+    // "custom/playerlabel",
+    "mpd",
     "custom/lyrics"
   ],
   "modules-center": [
@@ -53,7 +54,7 @@
       "empty": "",
       "default": "",
       "sort-by-number": true
-    },
+    }
   },
   "custom/playerctl": {
     "format": "{icon}",
@@ -79,7 +80,22 @@
     "format-icons": {
       "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
       "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
+    }
+  },
+  "mpd": {
+    "format": "󰒮 {title} 󰒭",
+    "format-disconnected": "<span>Media </span>",
+    "format-stopped": "<span>Media </span>",
+    "interval": 10,
+    "state-icons": {
+        "paused": "Paused 󰏥 ",
+        "playing": "Playing 󰐌 "
     },
+    "tooltip-format": "{stateIcon} {elapsedTime:%M:%S}/{totalTime:%M:%S}",
+    "tooltip-format-disconnected": "MPD Disconnected",
+    "on-click-middle": "mpc toggle",
+    "on-click": "mpc prev",
+    "on-click-right": "mpc next"
   },
   "battery": {
     "states": {
@@ -220,7 +236,8 @@
   },
   "custom/lyrics": {
     "format": "{}",
-    "exec": "$HOME/.config/waybar/scripts/lyrics.sh"
+    "exec": "python $HOME/.config/waybar/scripts/lyrics.py",
+    "interval": 1
   },
   "custom/mail_new": {
     "format": "  {}",
