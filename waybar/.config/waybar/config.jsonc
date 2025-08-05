@@ -231,8 +231,8 @@
   },
   "custom/update": {
     "format": "󱉙  {}",
-    "exec": "cat /home/silver/Templates/update",
-    "interval": 10
+    "exec": "checkupdates | wc -l",
+    "interval": 3600
   },
   "custom/lyrics": {
     "format": "{}",
