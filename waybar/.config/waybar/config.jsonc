@@ -241,6 +241,7 @@
   },
   "custom/mail_new": {
     "format": "  {}",
-    "exec": "$HOME/.config/waybar/scripts/mail_new.sh"
+    "exec": "$HOME/.config/waybar/scripts/mail_new.sh",
+    "interval": 60
   }
 }
