@@ -62,6 +62,10 @@ copy = [
   { run = 'wl-copy < "$@"', desc = "wl-copy", for = "linux" },
 ]
 
+pinme = [
+  { run = 'pinme.py "$@"', desc = "pinme", for = "linux" }
+]
+
 [open]
 rules = [
 	# Folder
@@ -69,7 +73,7 @@ rules = [
 	# Text
 	{ mime = "text/*", use = [ "edit", "copy", "reveal" ] },
 	# Image
-	{ mime = "image/*", use = [ "open", "swwwbg", "copy", "reveal" ] },
+	{ mime = "image/*", use = [ "open", "swwwbg", "copy", "pinme", "reveal" ] },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
 	# Archive
@@ -80,7 +84,7 @@ rules = [
 	# Empty file
 	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Fallback
-	{ name = "*", use = [ "open", "edit", "copy", "reveal" ] },
+	{ name = "*", use = [ "open", "edit", "copy", "reveal", "pinme" ] },
 ]
 
 [tasks]
