@@ -1,3 +1,7 @@
 [user]
 	name = SilverofLight
 	email = a2061686759@outlook.com
+[http]
+	proxy = http://127.0.0.1:2080
+[https]
+	proxy = http://127.0.0.1:2080
