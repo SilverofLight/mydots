@@ -36,7 +36,8 @@ recursive = no
 all = yes
 
 [font]
-name = SourceCodePro
+# name = SourceCodePro
+name = Sarasa Term SC
 size = 14
 color = #FFFFFF
 shadow = #000000

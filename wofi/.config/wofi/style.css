@@ -1,6 +1,7 @@
 window {
   margin: 0px;
-  font-size: 20px;
+  font-family: "Sarasa Term SC";
+  font-size: 22px;
   border-radius: 20px;
   border: 2px solid #bd93fa;
   background-color: rgba(40, 39, 56, 0.9);
