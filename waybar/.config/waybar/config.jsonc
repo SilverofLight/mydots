@@ -230,7 +230,7 @@
     "on-click": "blueman-manager"
   },
   "custom/update": {
-    "format": "󱉙  {}",
+    "format": "󱉙  {} ",
     "exec": "checkupdates | wc -l",
     "interval": 3600
   },
@@ -240,7 +240,7 @@
     "interval": 1
   },
   "custom/mail_new": {
-    "format": "  {}",
+    "format": "  {} ",
     "exec": "$HOME/.config/waybar/scripts/mail_new.sh",
     "interval": 60
   }
