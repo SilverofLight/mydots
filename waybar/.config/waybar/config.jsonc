@@ -35,7 +35,7 @@
   ],
   // Modules configuration
   "clock": {
-    "format": "  {:%y/%m/%d  %a  %H:%M}",
+    "format": "  {:%y/%m/%d %a %H:%M}",
     "tooltip": "true",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": " {:%d/%m}"
@@ -67,7 +67,7 @@
     "format-icons": {
       "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
       "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
-    },
+    }
   },
   "custom/playerlabel": {
     "format": "<span>{}</span>",
@@ -103,9 +103,9 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}  {capacity}%",
-    "format-charging": "{icon}  {capacity}% ",
-    "format-plugged": "{icon}  {capacity}% 󱐥",
+    "format": "{icon} {capacity}%",
+    "format-charging": "{icon} {capacity}% ",
+    "format-plugged": "{icon} {capacity}% 󱐥",
     "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
