@@ -6,10 +6,10 @@
 # requirements: network, dnust
 
 # Default city is Wuhan, but can be overridden by command line argument
-CITY=${1:-"Wangdu"}
+CITY=${1:-"Jiayuguan"}
 
 # Check if it's Wuhan and local weather file exists
-if [ "$CITY" = "Wangdu" ] && [ -f "$HOME/Templates/weather" ]; then
+if [ "$CITY" = "Jiayuguan" ] && [ -f "$HOME/Templates/weather" ]; then
     weather=$(cat "$HOME/Templates/weather")
 else
     # Get weather information (added &m for metric units - Celsius)
