@@ -13,8 +13,8 @@ local settings = {
   key_peek_at_playlist = "",
 
   -- dynamic keys
-  key_moveup = "UP",
-  key_movedown = "DOWN",
+  key_moveup = "UP e",
+  key_movedown = "DOWN n",
   key_movepageup = "PGUP",
   key_movepagedown = "PGDWN",
   key_movebegin = "HOME",
