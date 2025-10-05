@@ -29,15 +29,15 @@ function notify_vol
 
 case $1 in
     i) pamixer -i 10
-        notify_vol
+        # notify_vol
       # canberra-gtk-play -i dialog-error -d "error"
     ;;
     d) pamixer -d 10
-        notify_vol
+        # notify_vol
       # canberra-gtk-play -i dialog-error -d "error"
     ;;
     m) pamixer -t
-        notify_vol
+        # notify_vol
       # canberra-gtk-play -i dialog-error -d "error"
     ;;
     *) echo "volumecontrol.sh [action]"

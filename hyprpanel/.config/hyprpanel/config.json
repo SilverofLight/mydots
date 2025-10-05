@@ -49,7 +49,7 @@
   "bar.workspaces.show_numbered": false,
   "bar.media.format": "{title}",
   "menus.clock.weather.enabled": false,
-  "theme.font.size": "0.7rem",
+  "theme.font.size": "0.8rem",
   "menus.power.showLabel": true,
   "menus.power.lowBatteryNotification": true,
   "menus.power.lowBatteryThreshold": 15,
@@ -362,7 +362,7 @@
   "theme.bar.buttons.windowtitle.background": "#44475a",
   "theme.bar.buttons.workspaces.numbered_active_underline_color": "#e23ee2",
   "theme.bar.buttons.workspaces.numbered_active_highlighted_text_color": "#21252b",
-  "theme.bar.buttons.workspaces.hover": "#44475a",
+  "theme.bar.buttons.workspaces.hover": "#ffff00",
   "theme.bar.buttons.workspaces.active": "#ff79c6",
   "theme.bar.buttons.workspaces.occupied": "#ffb86c",
   "theme.bar.buttons.workspaces.available": "#8be9fd",
@@ -462,5 +462,5 @@
   "theme.bar.menus.popover.radius": "0.4em",
   "theme.bar.menus.buttons.radius": "0.4em",
   "theme.matugen": false,
-  "theme.bar.buttons.background_opacity": 50
+  "theme.bar.buttons.background_opacity": 75
 }
