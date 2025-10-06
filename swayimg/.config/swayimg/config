@@ -5,8 +5,8 @@
 
 [general]
 mode = viewer
-position = parent
-size = parent
+# position = parent
+# size = parent
 sigusr1 = reload
 sigusr2 = next_file
 app_id = swayimg
@@ -71,7 +71,7 @@ comma = prev_frame
 period = next_frame
 c = skip_file
 a = animation
-Return = mode
+Return = exec swayimg -g "%" &; exit
 o = mode
 h = step_left 10
 i = step_right 10
