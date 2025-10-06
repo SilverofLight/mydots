@@ -3,7 +3,7 @@ local mp = require("mp")
 -- 配置参数
 local i_short_press_seek = 1 -- i 键短按前进 5 秒
 local long_press_speed = 3.0 -- 长按设置为 3 倍速
-local long_press_threshold = 0.3 -- 长按阈值（秒）
+local long_press_threshold = 0.5 -- 长按阈值（秒）
 
 -- 内部状态
 local is_holding = false

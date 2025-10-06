@@ -70,6 +70,8 @@ pinme = [
 rules = [
 	# Folder
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
+  # Playlist
+  { name = "*.m3u", use = [ "edit", "play", "reveal" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "copy", "reveal" ] },
 	# Image
