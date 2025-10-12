@@ -20,9 +20,7 @@
 
 ![screenshot1](./screenshot2.png)
 
-
 ### Install steps (Take care about it. Isn't a tutorial)
-
 
 [Read Spanish Detailed Guide Here](https://aprendiendoaprogramar.netlify.app/configurando-hyprland-y-wayland/)
 
@@ -46,7 +44,6 @@ paru -S hyprland-git hyprpicker-git waybar-git \
 dunst nwg-look wf-recorder wlogout wlsunset
 ```
 
-
 <summary><h3>Dependencies</h3></summary>
 
 - Installation using paru
@@ -64,11 +61,10 @@ xwaylandvideobridge-cursor-mode-2-git cliphist qt5-imageformats qt5ct
 
 ```sh
 hyprpm update
-hyprpm add https://github.com/Duckonaut/hyprsplit # Add the plugin repository
+hyprpm add https://github.com/shezdy/hyprsplit # Add the plugin repository
 hyprpm enable hyprsplit # Enable the plugin
 hyprpm reload # Reload the plugins
 ```
-
 
 <summary><h3>Apps & More</h3></summary>
 
@@ -96,13 +92,11 @@ pipewire pipewire-alsa pipewire-audio pipewire-pulse      \
 pipewire-jack wireplumber gst-plugin-pipewire pavucontrol
 ```
 
-
 </div>
 
 <summary><h3>DOTFILES</h3></summary>
 
 use GNU_stow to stow dotfiles, or move to the right place manually
-
 
 </div>
 
