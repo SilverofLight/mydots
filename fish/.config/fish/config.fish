@@ -85,7 +85,7 @@ if status is-interactive
     alias tt="tmux attach -t"
     alias en="~/.scripts/touchEtyma.sh"
     alias link="scrcpy"
-    alias s="fastfetch"
+    # alias s="fastfetch"
     alias dic="~/Documents/github/my_dict/dict"
     alias clash="$HOME/Documents/github/clash-for-linux/start.sh"
     alias cnnp="nmcli device wifi connect DIRECT-5C-HP\ DeskJet\ 2700\ series"
@@ -93,6 +93,14 @@ if status is-interactive
     alias cdd="cd /run/media/silver/"
     alias hibernate="systemctl hibernate"
     alias a="task"
+
+    function s
+        if set -q SSH_CONNECTION
+            fastfetch -c ~/.config/fastfetch/config2.jsonc
+        else
+            fastfetch
+        end
+    end
 
     # 如果在使用 kitty, 则更改 ssh
     if test "$TERM" = xterm-kitty
