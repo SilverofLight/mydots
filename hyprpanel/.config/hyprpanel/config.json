@@ -45,7 +45,7 @@
   "theme.bar.border.location": "none",
   "theme.bar.buttons.workspaces.enableBorder": false,
   "bar.workspaces.monitorSpecific": true,
-  "bar.workspaces.show_icons": true,
+  "bar.workspaces.show_icons": false,
   "bar.workspaces.show_numbered": false,
   "bar.media.format": "{title}",
   "menus.clock.weather.enabled": false,
@@ -447,8 +447,8 @@
   "menus.transition": "crossfade",
   "theme.bar.menus.enableShadow": false,
   "theme.bar.transparent": true,
-  "bar.workspaces.showWsIcons": false,
-  "bar.workspaces.showApplicationIcons": false,
+  "bar.workspaces.showWsIcons": true,
+  "bar.workspaces.showApplicationIcons": true,
   "menus.dashboard.shortcuts.left.shortcut4.command": "wofi --show drun",
   "menus.dashboard.directories.enabled": false,
   "bar.customModules.ram.labelType": "percentage",
@@ -462,5 +462,7 @@
   "theme.bar.menus.popover.radius": "0.4em",
   "theme.bar.menus.buttons.radius": "0.4em",
   "theme.matugen": false,
-  "theme.bar.buttons.background_opacity": 75
+  "theme.bar.buttons.background_opacity": 75,
+  "bar.workspaces.applicationIconEmptyWorkspace": "",
+  "bar.workspaces.applicationIconFallback": ""
 }
