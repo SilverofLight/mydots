@@ -7,7 +7,8 @@
 
 temp_file=$(mktemp /tmp/nvimAnywhere.XXXXXX.md)
 
-st -T nvimAnywhere fish -c "nvim $temp_file"
+# st -T nvimAnywhere fish -c "nvim $temp_file"
+kitty -T nvimAnywhere fish -c "nvim $temp_file"
 
 if command -v wl-copy &> /dev/null; then
     cat "$temp_file" | wl-copy

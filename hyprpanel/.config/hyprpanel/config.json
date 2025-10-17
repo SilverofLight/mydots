@@ -464,5 +464,8 @@
   "theme.matugen": false,
   "theme.bar.buttons.background_opacity": 75,
   "bar.workspaces.applicationIconEmptyWorkspace": "",
-  "bar.workspaces.applicationIconFallback": ""
+  "bar.workspaces.applicationIconFallback": "",
+  "bar.workspaces.applicationIconMap": {
+    "swayimg": ""
+  }
 }
