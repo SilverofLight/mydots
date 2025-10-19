@@ -42,7 +42,8 @@ function take_screenshot() {
     fi
     
     # Send notification
-    dunstify -t 3000 "Screenshot Tool" "$_notif_message_" -a "Screenshot Tool"
+    # dunstify -t 3000 "Screenshot Tool" "$_notif_message_" -a "Screenshot Tool"
+    paplay ~/.config/hypr/src/screensht.mp3
 }
 
 # Check parameters
