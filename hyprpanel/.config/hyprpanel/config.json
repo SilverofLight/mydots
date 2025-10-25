@@ -28,6 +28,7 @@
       "right": [
         "custom/wf-recorder",
         "custom/mouseless",
+        "custom/hypr_resize_mode",
         "custom/update",
         "custom/mailNew",
         "systray",

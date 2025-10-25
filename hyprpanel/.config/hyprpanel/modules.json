@@ -25,6 +25,13 @@
     "interval": 100
   },
 
+  "custom/hypr_resize_mode": {
+    "label": "{}",
+    "execute": "/home/silver/.config/hyprpanel/scripts/hypr_resize_mode",
+    "hideOnEmpty": true,
+    "interval": 100
+  },
+
   "custom/wf-recorder": {
     "label": "{}",
     "execute": "/home/silver/.config/hyprpanel/scripts/wfrecorder.sh",

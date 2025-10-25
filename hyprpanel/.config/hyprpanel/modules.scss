@@ -48,6 +48,19 @@
 
 @include styleModule(
     // class name
+    'cmodule-hypr_resize_mode',
+    // styling properties
+    (
+            'text-color': #ffd700,
+            'inner-spacing': 0em,
+            'background-color': transparent,
+            'icon-background': transparent,
+            'label-background': transparent,
+        )
+);
+
+@include styleModule(
+    // class name
     'cmodule-lyrics',
     // styling properties
     (

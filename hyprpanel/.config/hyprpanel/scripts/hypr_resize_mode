@@ -1,0 +1,9 @@
+#!/bin/bash
+
+file="/home/silver/Templates/resize_mode.tmp"
+
+if [ ! -f $file ]; then
+  echo ""
+else
+  cat $file
+fi
