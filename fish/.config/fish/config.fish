@@ -32,6 +32,12 @@ if status is-interactive
 
     set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 
+    export ANDROID_HOME=$HOME/.android_sdk
+    # export PATH=$PATH:$ANDROID_HOME/platform-tools
+    # export PATH=$PATH:$ANDROID_HOME/emulator
+    # export PATH=$PATH:$ANDROID_HOME/tools
+    # export PATH=$PATH:$ANDROID_HOME/tools/bin
+
     # Initialize pyenv
     # status --is-interactive; and pyenv init --path | source
     # status --is-interactive; and pyenv init - | source
