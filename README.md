@@ -34,27 +34,27 @@
 
 <summary><h3>Hyprland Stuff</h3></summary>
 
-###### To get started, let's make sure we have all the necessary prerequisites. In this case, I'm using Paru as the AUR helper, but keep in mind that your system may require a different approach.
+###### To get started, let's make sure we have all the necessary prerequisites. In this case, I'm using yay as the AUR helper, but keep in mind that your system may require a different approach.
 
-- Installation using paru
+- Installation using yay
 
 ```sh
 ## Hyprland Stuff
-paru -S hyprland-git hyprpicker-git waybar-git \
+yay -S hyprland-git hyprpicker-git waybar-git \
 dunst nwg-look wf-recorder wlogout wlsunset
 ```
 
 <summary><h3>Dependencies</h3></summary>
 
-- Installation using paru
+- Installation using yay
 
 ```sh
 ## Dependencies
-paru -S colord ffmpegthumbnailer gnome-keyring grimblast-git gtk-engine-murrine \
+yay -S colord ffmpegthumbnailer gnome-keyring grimblast-git gtk-engine-murrine \
 imagemagick kvantum pamixer playerctl polkit-kde-agent qt5-quickcontrols        \
 qt5-quickcontrols2 qt5-wayland qt6-wayland swww ttf-font-awesome tumbler     \
 ttf-jetbrains-mono ttf-icomoon-feather xdg-desktop-portal-hyprland-git xdotool  \
-xwaylandvideobridge-cursor-mode-2-git cliphist qt5-imageformats qt5ct
+xwaylandvideobridge-cursor-mode-2-git cliphist qt5-imageformats qt5ct wayfreeze
 ```
 
 - Plagin: hyprsplit
@@ -70,24 +70,24 @@ hyprpm reload # Reload the plugins
 
 ```sh
 ## CLI & Tools
-paru -S btop cava fastfetch noise-suppression-for-voice   \
+yay -S btop cava fastfetch noise-suppression-for-voice   \
 wofi starship zsh viewnior ocs-url
 ```
 
 ```sh
 ## Browser & File Explorer
-paru -S brave-bin file-roller noto-fonts noto-fonts-cjk  \
+yay -S brave-bin file-roller noto-fonts noto-fonts-cjk  \
 noto-fonts-emoji nautilus
 ```
 
 ```sh
 # Theme Based
-paru -S catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-mocha papirus-icon-theme sddm-git swaylock-effects-git kvantum kvantum-theme-catppuccin-git
+yay -S catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-mocha papirus-icon-theme sddm-git swaylock-effects-git kvantum kvantum-theme-catppuccin-git
 ```
 
 ```sh
 # Pipewire & OBS
-paru -S obs-studio-rc ffmpeg-obs cef-minimal-obs-rc-bin   \
+yay -S obs-studio-rc ffmpeg-obs cef-minimal-obs-rc-bin   \
 pipewire pipewire-alsa pipewire-audio pipewire-pulse      \
 pipewire-jack wireplumber gst-plugin-pipewire pavucontrol
 ```

@@ -8,7 +8,7 @@ _SCREENSHOT_DIR_=$HOME/Pictures/Screenshots
 
 function check() {
     if [[ $? -eq 1 && ${PIPESTATUS[0]} -eq 1 ]]; then
-        # dunstify -u critical -t 3000 -a "Screenshot Tool" "Failed"
+        dunstify -u critical -t 3000 -a "Screenshot Tool" "Failed"
         exit 1
     fi
 }
@@ -31,19 +31,21 @@ function take_screenshot() {
         # Execute screenshot command
         $_screenshot_command_ $_SCREENSHOT_DIR_/${_timestamp_}.png > /dev/null 2>&1
         check
-    elif [ "$1" == "grimblast copysave area" ] || [ "$1" == "grimblast edit area" ]; then
-        tmp=$(mktemp /tmp/grimblast.XXXXXX.png)
-        grimblast save output $tmp
-        hyprctl dispatch exec '[fullscreen; noanim] swayimg' $tmp
-        sleep 0.2
-        $_screenshot_command_ $_SCREENSHOT_DIR_/${_timestamp_}.png > /dev/null 2>&1
-        rm $tmp
-        check
+    elif [ "$1" == "grimblast copysave area" ]; then
+        wayfreeze --hide-cursor --after-freeze-cmd "$_screenshot_command_ $_SCREENSHOT_DIR_/${_timestamp_}.png > /dev/null 2>&1; killall wayfreeze"
+    elif [ "$1" == "grimblast edit area" ]; then
+        wayfreeze --hide-cursor --after-freeze-cmd "$_screenshot_command_ $_SCREENSHOT_DIR_/${_timestamp_}.png > /dev/null 2>&1; killall wayfreeze"
+    fi
+
+    sleep 0.05
+    if [ -f "$_SCREENSHOT_DIR_/${_timestamp_}.png" ]; then
+      # Send notification
+      # dunstify -t 3000 "Screenshot Tool" "$_notif_message_" -a "Screenshot Tool"
+      paplay ~/.config/hypr/src/screensht.mp3
+    else
+      exit 1
     fi
     
-    # Send notification
-    # dunstify -t 3000 "Screenshot Tool" "$_notif_message_" -a "Screenshot Tool"
-    paplay ~/.config/hypr/src/screensht.mp3
 }
 
 # Check parameters
