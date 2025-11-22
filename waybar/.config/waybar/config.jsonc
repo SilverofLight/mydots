@@ -45,11 +45,11 @@
     "format-icons": {
       // Named workspaces
       // (you need to configure them in niri)
-      "browser": "",
-      "discord": "",
-      "chat": "<b></b>",
+      "wechat": "",
+      "special": "󰎚",
       // Icons by state
-      "active": "",
+      "urgent": "",
+      "focused": "",
       "default": ""
     }
   },
@@ -232,7 +232,7 @@
     "interval": 3600
   },
   "custom/lyrics": {
-    "format": "{}",
+    "format": " {}",
     "exec": "python $HOME/.config/waybar/scripts/lyrics.py",
     "interval": 1
   },

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # Adapted from the many ideas shared at: https://github.com/YaLTeR/niri/discussions/329
 
+# INFO: scratchpad, kd
+
 import argparse
 import json
 import os
@@ -12,7 +14,7 @@ scratch_window = {}
 # the focused workspace data
 focused_workspace = {}
 # the scratchpad workspace name
-scratch_workspace = os.getenv("NS_WORKSPACE", "scratch")
+scratch_workspace = os.getenv("NS_WORKSPACE", "special")
 
 def niri_cmd(cmd_args):
     subprocess.run(["niri", "msg", "action"] + cmd_args)
