@@ -81,8 +81,8 @@
   },
   "mpd": {
     "format": "<span foreground='#E5B9C6'>󰒮 {title} 󰒭</span>",
-    "format-disconnected": "<span foreground='#E5B9C6'>Media </span>",
-    "format-stopped": "<span foreground='#E5B9C6'>Media </span>",
+    "format-disconnected": "<span foreground='#E5B9C6'>Media 󰃂</span>",
+    "format-stopped": "<span foreground='#E5B9C6'>Media 󰃂</span>",
     "interval": 10,
     "state-icons": {
       "paused": "Paused 󰏥 ",
