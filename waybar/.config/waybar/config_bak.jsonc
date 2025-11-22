@@ -8,7 +8,7 @@
   "margin-right": 0,
   "modules-left": [
     "custom/launcher",
-    "niri/workspaces",
+    "hyprland/workspaces",
     // "custom/playerctl",
     // "custom/playerlabel",
     "mpd",
@@ -40,17 +40,20 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": " {:%d/%m}"
   },
-  "niri/workspaces": {
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": false,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1",
     "format": "{icon}",
+    "on-click": "activate",
     "format-icons": {
-      // Named workspaces
-      // (you need to configure them in niri)
-      "browser": "",
-      "discord": "",
-      "chat": "<b></b>",
-      // Icons by state
+      "urgent": "",
       "active": "",
-      "default": ""
+      "empty": "",
+      "default": "",
+      "sort-by-number": true
     }
   },
   "custom/playerctl": {
@@ -85,8 +88,8 @@
     "format-stopped": "<span foreground='#E5B9C6'>Media </span>",
     "interval": 10,
     "state-icons": {
-      "paused": "Paused 󰏥 ",
-      "playing": "Playing 󰐌 "
+        "paused": "Paused 󰏥 ",
+        "playing": "Playing 󰐌 "
     },
     "tooltip-format": "{stateIcon} {elapsedTime:%M:%S}/{totalTime:%M:%S}",
     "tooltip-format-disconnected": "MPD Disconnected",
