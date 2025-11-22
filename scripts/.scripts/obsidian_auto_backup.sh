@@ -7,4 +7,5 @@ if [ -n "$(git status -s)" ]; then
   echo "Backuping..."
   git add .
   git commit -m "Obsidian Backup: $date"
+  git push
 fi
