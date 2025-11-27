@@ -26,19 +26,19 @@ try:
 
         # 确保表存在
         cursor.execute(
-            "CREATE TABLE IF NOT EXISTS bookmarks (name TEXT, url TEXT)")
+            "CREATE TABLE IF NOT EXISTS bookmarks (name TEXT, desc TEXT, url TEXT)")
 
         # 查询数据
         cursor.execute("SELECT * FROM bookmarks")
         rows = cursor.fetchall()
 
-        # for row in rows:
-        #     print(f"{row[0]} | {row[1]}")
+        for row in rows:
+            print(f"{row[0]} | {row[2]} | {row[1]}")
         if not rows:
             print("No bookmarks found.")
             exit(0)
         else:
-            formatted_rows = [f"{row[0]} | {row[1]}" for row in rows]
+            formatted_rows = [f"{row[0]} | {row[2]} | {row[1]}" for row in rows]
 
             process = subprocess.Popen(
                 ['wofi', '--show', 'dmenu', '--prompt', 'Bookmarks'],
@@ -52,7 +52,7 @@ try:
             if selected:
                 selected = selected.strip()
                 # print(selected)
-                selected_url = selected.split(' | ')[1]
+                selected_url = selected.split(' | ')[2]
                 # print(selected_url)
                 subprocess.run(['xdg-open', selected_url])
             else:
