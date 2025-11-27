@@ -32,9 +32,11 @@ def add_bookmark(url):
             if not name:
                 raise ValueError("书签名称不能为空")
 
+            desc = input("请输入描述: ").strip()
+
             # 插入书签
             cursor.execute(
-                "INSERT INTO bookmarks (name, url) VALUES (?, ?)", (name, url))
+                "INSERT INTO bookmarks (name, desc, url) VALUES (?, ?, ?)", (name, desc, url))
             conn.commit()
             subprocess.run(['notify-send', '成功', f'书签 "{name}" 已添加'])
             print(f"书签已添加: {name} | {url}")
@@ -71,7 +73,7 @@ def list_bookmarks():
             cursor.execute(f"PRAGMA key = '{key}'")
 
             # 查询所有书签
-            cursor.execute("SELECT name, url FROM bookmarks")
+            cursor.execute("SELECT name, desc, url FROM bookmarks")
             bookmarks = cursor.fetchall()
 
             if not bookmarks:
@@ -79,8 +81,8 @@ def list_bookmarks():
                 return
 
             # 使用 tabulate 格式化输出
-            headers = ["书签名称", "URL"]
-            print(tabulate(bookmarks, headers=headers, tablefmt="grid"))
+            headers = ["书签名称", "DESC", "URL"]
+            print(tabulate(bookmarks, headers=headers, tablefmt="github"))
 
     except sqlite.DatabaseError as e:
         error_msg = f"数据库错误: {str(e)}"
