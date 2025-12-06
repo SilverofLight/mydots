@@ -28,7 +28,8 @@ binds {
     // Mod+Shift+X { spawn-sh "~/.config/niri/scripts/screensht full"; }
     // Mod+Ctrl+X { spawn-sh "~/.config/niri/scripts/screensht edit"; }
 
-    Mod+Semicolon { spawn-sh "cliphist list | wmenu -b -p 'Clipboard' -l 12 -N '#282B38A3' -n '#F6339A' -M '#424659A3' -m '#F6339A' -S '#424659A3' -s '#F6339A' -f 'JetBrains Mono 14' | cliphist decode | wl-copy"; }
+    // Mod+Semicolon { spawn-sh "cliphist list | wmenu -b -p 'Clipboard' -l 12 -N '#282B38A3' -n '#F6339A' -M '#424659A3' -m '#F6339A' -S '#424659A3' -s '#F6339A' -f 'JetBrains Mono 14' | cliphist decode | wl-copy"; }
+    Mod+Semicolon { spawn-sh "~/.config/niri/scripts/cliphist.sh c"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
