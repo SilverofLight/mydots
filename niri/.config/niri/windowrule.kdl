@@ -114,6 +114,12 @@ window-rule {
   open-floating true
 }
 
+window-rule {
+  match app-id="^swayimg$"
+
+  open-maximized true
+}
+
 layer-rule {
   match namespace="^wallpaper$"
   place-within-backdrop true
