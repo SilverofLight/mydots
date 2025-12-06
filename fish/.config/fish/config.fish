@@ -24,6 +24,8 @@ if status is-interactive
     export GROQ_API_KEY=$groq_key
     set -l gemini_key $(cat $HOME/Documents/keys/GEMINI_API)
     export GEMINI_API_KEY=$gemini_key
+    set -l qwen $(cat $HOME/Documents/keys/qwen_key)
+    export QWEN_API_KEY=$qwen
 
     export CLASH_PASSWORD=$(cat $HOME/Documents/keys/mihomo_select)
     export BOOKMARKS_KEY=$(cat $HOME/Documents/keys/bookmarks_key)
