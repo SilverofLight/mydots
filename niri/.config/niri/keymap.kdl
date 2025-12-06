@@ -47,8 +47,10 @@ binds {
     Mod+Shift+Q { close-window; }
 
     Mod+H     { focus-column-left; }
-    Mod+N     { focus-window-or-workspace-down; }
-    Mod+E     { focus-window-or-workspace-up; }
+    // Mod+N     { focus-window-or-workspace-down; }
+    // Mod+E     { focus-window-or-workspace-up; }
+    Mod+N     { spawn-sh "~/.config/niri/scripts/niri_circ_in_normal.py n"; }
+    Mod+E     { spawn-sh "~/.config/niri/scripts/niri_circ_in_normal.py p"; }
     Mod+I     { focus-column-right; }
 
     Mod+k    { switch-focus-between-floating-and-tiling; }
