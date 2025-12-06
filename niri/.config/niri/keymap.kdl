@@ -23,7 +23,7 @@ binds {
 
     Mod+SHIFT+M { spawn-sh "mpc toggle"; }
 
-    Mod+V { spawn-sh "killall wofi || ~/.config/niri/scripts/recorder.sh"; }
+    Mod+V { spawn-sh "killall wofi || ~/.config/niri/scripts/niri_recorder.sh"; }
     // Mod+X { spawn-sh "~/.config/niri/scripts/screensht area"; }
     // Mod+Shift+X { spawn-sh "~/.config/niri/scripts/screensht full"; }
     // Mod+Ctrl+X { spawn-sh "~/.config/niri/scripts/screensht edit"; }
