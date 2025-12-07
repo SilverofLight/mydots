@@ -153,9 +153,8 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+SHift+L { quit; }
-    // Ctrl+Mod+Delete { quit; }
-    // Mod+Shift+L { spawn "~/.config/niri/scripts/wlogout.sh"; }
+    // Mod+SHift+L { quit; }
+    Mod+Shift+L { spawn "~/.config/niri/scripts/niri_wlogout.sh"; }
 
     // INFO: special
     Mod+U { spawn-sh "~/.config/niri/scripts/nvimAnywhere.sh"; }
