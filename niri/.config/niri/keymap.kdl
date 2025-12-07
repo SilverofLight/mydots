@@ -121,6 +121,7 @@ binds {
     Mod+Ctrl+Minus { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
+    Mod+J { spawn "~/.config/niri/scripts/niri_master_layout.py"; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
