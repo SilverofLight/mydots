@@ -154,6 +154,19 @@ window#waybar {
   font-size: 13px;
 }
 
+/* Use the icons from the Uiua386 font */
+#custom-windows {
+    font-size: 18px;
+    background-color: #282828;
+    /*color: #83A598;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
 #window {
     background: #282828;
     padding-left: 15px;

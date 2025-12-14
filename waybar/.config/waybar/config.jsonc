@@ -9,6 +9,7 @@
     "modules-left": [
         "custom/launcher",
         "niri/workspaces",
+        "custom/windows",
         "mpd",
         "custom/lyrics"
     ],
@@ -52,6 +53,15 @@
             "focused": "",
             "default": ""
         }
+    },
+    "custom/windows": {
+        "exec": "~/.config/waybar/scripts/waybar-niri-windows",
+        "return-type": "json",
+        "restart-interval": 1,
+        "hide-empty-text": true,
+        "on-scroll-up": "niri msg action focus-column-left",
+        "on-scroll-down": "niri msg action focus-column-right",
+        "on-click": "niri msg action toggle-overview"
     },
     "mpd": {
         "format": "<span foreground='#E5B9C6'>󰒮 {title} 󰒭</span>",
