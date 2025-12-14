@@ -15,6 +15,7 @@
     "modules-center": [
         "cpu",
         "memory",
+        "custom/gpu",
         "disk"
     ],
     "modules-right": [
@@ -39,6 +40,8 @@
     },
     "niri/workspaces": {
         "format": "{icon}",
+        "on-scroll-up": "niri msg action focus-workspace-up",
+        "on-scroll-down": "niri msg action focus-workspace-down",
         "format-icons": {
             // Named workspaces
             // (you need to configure them in niri)
@@ -93,6 +96,12 @@
     "cpu": {
         "format": "󰻠 {usage}%",
         "format-alt": "󰻠 {avg_frequency} GHz",
+        "interval": 5
+    },
+    "custom/gpu": {
+        "exec": "/usr/bin/nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "format": "󰢮 {}%",
+        "format-alt": "󰢮 GPU: {}%",
         "interval": 5
     },
     "disk": {
