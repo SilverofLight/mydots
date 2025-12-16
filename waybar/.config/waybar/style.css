@@ -156,7 +156,7 @@ window#waybar {
 
 /* Use the icons from the Uiua386 font */
 #custom-windows {
-    font-size: 18px;
+    /* font-size: 10px; */
     background-color: #282828;
     /*color: #83A598;*/
     border-radius: 16px;
