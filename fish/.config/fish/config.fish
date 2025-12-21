@@ -76,10 +76,10 @@ if status is-interactive
     #     set -e NO_PROXY
     #     echo -e "\033[31m[×] 已关闭代理\033[0m"
     # end
-    alias ls="exa --icons"
-    alias ll="exa --icons -l"
-    alias la="exa --icons -a"
-    alias lla="exa --icons -la"
+    alias ls="eza --icons"
+    alias ll="eza --icons -l"
+    alias la="eza --icons -a"
+    alias lla="eza --icons -la"
     alias v="nvim"
     alias wifils="nmcli device wifi list"
     alias wificnn="nmcli device wifi connect"
