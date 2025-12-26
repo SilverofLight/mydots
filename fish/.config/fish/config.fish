@@ -26,6 +26,7 @@ if status is-interactive
     export GEMINI_API_KEY=$gemini_key
     set -l qwen $(cat $HOME/Documents/keys/qwen_key)
     export QWEN_API_KEY=$qwen
+    export DASHSCOPE_API_KEY=$qwen
 
     export CLASH_PASSWORD=$(cat $HOME/Documents/keys/mihomo_select)
     export BOOKMARKS_KEY=$(cat $HOME/Documents/keys/bookmarks_key)
@@ -142,6 +143,10 @@ if status is-interactive
     # 为 Fish shell 配置 FZF 的命令补全
     set -g __fzf_fish_path $HOME/.fzf/bin
     set -gx PATH $PATH $HOME/.fzf/bin
+
+    # cuda
+    set -gx PATH $PATH /opt/cuda
+    export CUDA_HOME=/opt/cuda
 
     # FZF 绑定命令到 Ctrl-T 和 Ctrl-R
     function fzf-file-widget
