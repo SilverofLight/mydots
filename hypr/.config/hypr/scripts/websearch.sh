@@ -30,7 +30,7 @@ fi
 text=$(echo -e "$text" | wofi --conf $HOME/.config/wofi/config_search --dmenu --prompt "search history")
 
 # command="env GTK_IM_MODULE=fcitx,QT_IM_MODULE=fcitx,XMODIFIERS=@im=fcitx /opt/zen-browser-bin/zen-bin"
-command="qutebroswer"
+command="qutebrowser"
 # command=$browser
 
 if [ -z $text ]; then
