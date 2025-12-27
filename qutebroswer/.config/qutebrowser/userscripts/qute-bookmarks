@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+if [ "$1" = "open" ]; then
+    python ~/.config/niri/scripts/bookmark.py
+elif [ "$1" = "add" ]; then
+    url=$QUTE_URL
+    kitty -T Floating_Term --hold -e fish -c "~/.scripts/bookmarks.py $url"
+fi

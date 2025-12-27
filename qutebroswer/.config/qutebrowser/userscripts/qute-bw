@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+import os
+import sys
+import csv
+import re
+import subprocess
+from urllib.parse import urlparse
+
+# 配置
+CSV_PATH = os.path.expanduser("~/Documents/keys/passwords.csv")
+QUTE_URL = os.environ.get("QUTE_URL")
+QUTE_FIFO = os.environ.get("QUTE_FIFO")
+
+def send_message(level, msg):
+    if QUTE_FIFO:
+        with open(QUTE_FIFO, "w") as f:
+            f.write(f"{level} \"{msg}\"\n")
+
+def copy_to_clipboard(text):
+    try:
+        # 支持 Wayland (wl-copy) 和 X11 (xclip)
+        if os.environ.get("WAYLAND_DISPLAY"):
+            proc = subprocess.run(["wl-copy", "-n"], input=text.encode(), check=False)
+        else:
+            proc = subprocess.run(["xclip", "-selection", "clipboard"], input=text.encode(), check=False)
+        return proc.returncode == 0
+    except FileNotFoundError:
+        send_message("message-error", "Clipboard tool (wl-copy or xclip) not found!")
+        return False
+
+def extract_domain(url):
+    if not url.startswith(("http://", "https://")):
+        url = "https://" + url
+    try:
+        netloc = urlparse(url).netloc
+        # 去掉端口
+        domain = netloc.split(':')[0].lower()
+        return domain
+    except Exception:
+        return ""
+
+def load_entries():
+    entries = []
+    try:
+        with open(CSV_PATH, newline='', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                if row.get('type') != 'login':
+                    continue
+                uri = row.get('login_uri', '').strip()
+                username = row.get('login_username', '')
+                password = row.get('login_password', '')
+                if uri and (username or password):
+                    # 支持多个 URI（Bitwarden 有时用分号分隔）
+                    uris = [u.strip() for u in uri.split(';') if u.strip()]
+                    for u in uris:
+                        domain = extract_domain(u)
+                        if domain:
+                            entries.append({
+                                'domain': domain,
+                                'username': username,
+                                'password': password,
+                                'name': row.get('name', '')
+                            })
+    except Exception as e:
+        send_message("message-error", f"Failed to read CSV: {e}")
+    return entries
+
+def main():
+    if not QUTE_URL:
+        send_message("message-error", "No QUTE_URL provided")
+        sys.exit(1)
+
+    if len(sys.argv) != 2 or sys.argv[1] not in ("username", "password", "fill"):
+        send_message("message-error", "Usage: bw-local {username|password|fill}")
+        sys.exit(1)
+
+    target = sys.argv[1]
+    current_domain = extract_domain(QUTE_URL)
+    if not current_domain:
+        send_message("message-warning", "Could not extract domain from URL")
+        sys.exit(1)
+
+    entries = load_entries()
+    if not entries:
+        send_message("message-warning", "No login entries found in CSV")
+        sys.exit(1)
+
+    # 查找完全匹配或子域名匹配（可选）
+    match = None
+    for entry in entries:
+        if entry['domain'] == current_domain:
+            match = entry
+            break
+        # 可选：支持子域名匹配（如 login.github.com 匹配 github.com）
+        # if current_domain.endswith('.' + entry['domain']):
+        #     match = entry
+        #     break
+
+    if not match:
+        send_message("message-warning", f"No entry found for domain: {current_domain}")
+        sys.exit(1)
+
+    if target == "fill":
+        username = match["username"]
+        password = match["password"]
+        if not username and not password:
+            send_message("message-warning", f"No credentials found for {current_domain}")
+            sys.exit(1)
+        js_code = (
+            f"document.querySelector('input[type=\"email\"], input[type=\"text\"]').value = '{match['username']}';"
+            f"document.querySelector('input[type=\"password\"]').value = '{match['password']}';"
+        )
+        if QUTE_FIFO:
+            with open(QUTE_FIFO, "w") as f:
+                f.write(f"jseval {js_code}\n")
+        send_message("message-info", "Login form filled automatically")
+    else:
+        value = match[target]
+        if copy_to_clipboard(value):
+            send_message("message-info", f"{target.capitalize()} copied to clipboard")
+        else:
+            send_message("message-error", "Failed to copy to clipboard")
+
+if __name__ == "__main__":
+    main()
