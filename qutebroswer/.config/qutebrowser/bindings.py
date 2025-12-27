@@ -26,6 +26,7 @@ config.bind('qt', 'spawn --userscript qute-dict', mode='caret')
 config.unbind('q', mode='normal')
 config.bind('qt', 'spawn --userscript qute-dict')
 config.bind('qh', 'spawn --userscript qute-html')
+config.bind('qb', 'spawn mpv {url}')
 
 config.unbind(';I', mode='normal')
 config.unbind(';O', mode='normal')

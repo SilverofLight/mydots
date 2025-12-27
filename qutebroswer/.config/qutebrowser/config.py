@@ -12,7 +12,6 @@ blood(c, {
 
 config.source('bindings.py')
 
-# NOTE: file chooser (untested)
 fileChooser = ['kitty', '-T', 'Floating_Term', '-e', 'fish', '-c', 'yazi --chooser-file="$argv[1]"', '--', '{}']
 c.fileselect.handler = "external"
 c.fileselect.folder.command = fileChooser
