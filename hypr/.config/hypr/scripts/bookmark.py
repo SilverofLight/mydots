@@ -54,7 +54,8 @@ try:
                 # print(selected)
                 selected_url = selected.split(' | ')[2]
                 # print(selected_url)
-                subprocess.run(['xdg-open', selected_url])
+                # subprocess.run(['xdg-open', selected_url])
+                subprocess.run(['qutebrowser', selected_url])
             else:
                 print("No bookmark selected.")
                 exit(0)

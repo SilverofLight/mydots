@@ -19,7 +19,8 @@ binds {
     Mod+R { spawn-sh "killall wofi || wofi --show run"; }
     Mod+Z { spawn-sh "killall wofi || ~/.config/niri/scripts/websearch.sh"; }
     Super+Shift+B { spawn-sh "killall waybar; waybar"; }
-    Mod+Shift+Return { spawn-sh "env GTK_IM_MODULE=fcitx,QT_IM_MODULE=fcitx,XMODIFIERS=@im=fcitx /opt/zen-browser-bin/zen-bin"; }
+    // Mod+Shift+Return { spawn-sh "env GTK_IM_MODULE=fcitx,QT_IM_MODULE=fcitx,XMODIFIERS=@im=fcitx /opt/zen-browser-bin/zen-bin"; }
+    Mod+Shift+Return { spawn-sh "qutebrowser"; }
 
     Mod+SHIFT+M { spawn-sh "mpc toggle"; }
 
