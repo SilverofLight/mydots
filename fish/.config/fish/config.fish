@@ -31,6 +31,7 @@ if status is-interactive
     export CLASH_PASSWORD=$(cat $HOME/Documents/keys/mihomo_select)
     export BOOKMARKS_KEY=$(cat $HOME/Documents/keys/bookmarks_key)
 
+    export BW_SESSION=$(cat $HOME/Documents/keys/bitwarden)
     export LIBVIRT_DEFAULT_URI="qemu:///system"
 
     set -U fish_user_paths $HOME/.local/bin $fish_user_paths
