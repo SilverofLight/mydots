@@ -150,4 +150,5 @@ if __name__ == "__main__":
         delete_bookmark(sys.argv[2])
     else:
         url = sys.argv[1]
+        print("添加书签: " + url)
         add_bookmark(url)
