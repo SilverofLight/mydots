@@ -12,6 +12,8 @@ blood(c, {
 
 config.source('bindings.py')
 
+c.editor.command = ['kitty', '-T', 'nvimAnywhere', '-e', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
+
 fileChooser = ['kitty', '-T', 'Floating_Term', '-e', 'fish', '-c', 'yazi --chooser-file="$argv[1]"', '--', '{}']
 c.fileselect.handler = "external"
 c.fileselect.folder.command = fileChooser
