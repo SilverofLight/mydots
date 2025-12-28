@@ -73,7 +73,27 @@ config.set(
 c.scrolling.bar = 'always'
 c.hints.selectors["all"].extend([".qutebrowser-custom-click"])
 
-prev_regexes_list = ["\b上一封\b", "\b上页\b", "\b上一页\b", "\b上一章\b", "\b前一页\b", "\b上一张\b", "\bolder\b", "\b‹\b", "\b«\b"]
+prev_regexes_list = [
+    r"\b上一封\b",
+    r"\b上页\b",
+    r"\b上一页\b",
+    r"\b上一章\b",
+    r"\b前一页\b",
+    r"\b上一张\b",
+    r"\bolder\b",
+    r"\b‹\b",
+    r"\b«\b",
+]
+next_regexes_list = [
+    r"\b下一封\b",
+    r"\b下页\b",
+    r"\b下一页\b",
+    r"\b下一章\b",
+    r"\b后一页\b",
+    r"\b下一张\b",
+    r"\bnewer\b",
+    r"\b›\b",
+    r"\b»\b",
+]
 c.hints.prev_regexes.extend(prev_regexes_list)
-next_regexes_list = ["\b下一封\b", "\b下页\b", "\b下一页\b", "\b下一章\b", "\b下一页\b", "\b下一张\b", "\bnewer\b", "\b›\b", "\b»\b"]
 c.hints.next_regexes.extend(next_regexes_list)
