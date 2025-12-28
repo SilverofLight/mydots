@@ -1,141 +1,122 @@
 #!/usr/bin/env python3
-import os
-import sys
-import csv
-import re
-import subprocess
+# -*- coding: utf-8 -*-
+"""
+本地 Bitwarden CSV 自动填充（fake-key 版）
+用法：bw-local {username|password|fill|auto}
+auto = 填完直接回车提交
+"""
+import os, sys, csv, re, shlex, subprocess, json
 from urllib.parse import urlparse
 
-# 配置
-CSV_PATH = os.path.expanduser("~/Documents/keys/passwords.csv")
-QUTE_URL = os.environ.get("QUTE_URL")
-QUTE_FIFO = os.environ.get("QUTE_FIFO")
+CSV_PATH   = os.path.expanduser("~/Documents/keys/passwords.csv")
+QUTE_URL   = os.environ.get("QUTE_URL")
+QUTE_FIFO  = os.environ.get("QUTE_FIFO")
 
-def send_message(level, msg):
-    if QUTE_FIFO:
-        with open(QUTE_FIFO, "w") as f:
-            f.write(f"{level} \"{msg}\"\n")
+# ---------- 小工具 ----------
+def qute(cmd):
+    if not QUTE_FIFO: return
+    with open(QUTE_FIFO, "w") as f:
+        f.write(cmd.strip() + "\n")
 
-def copy_to_clipboard(text):
-    try:
-        # 支持 Wayland (wl-copy) 和 X11 (xclip)
-        if os.environ.get("WAYLAND_DISPLAY"):
-            proc = subprocess.run(["wl-copy", "-n"], input=text.encode(), check=False)
-        else:
-            proc = subprocess.run(["xclip", "-selection", "clipboard"], input=text.encode(), check=False)
-        return proc.returncode == 0
-    except FileNotFoundError:
-        send_message("message-error", "Clipboard tool (wl-copy or xclip) not found!")
-        return False
+def msg(level, txt):
+    qute(f"{level} \"{txt}\"")
 
-def extract_domain(url):
-    if not url.startswith(("http://", "https://")):
+def domainer(url):
+    if not re.match(r"^https?://", url):
         url = "https://" + url
-    try:
-        netloc = urlparse(url).netloc
-        # 去掉端口
-        domain = netloc.split(':')[0].lower()
-        return domain
-    except Exception:
-        return ""
+    return urlparse(url).netloc.split(":")[0].lower()
 
-def load_entries():
+def load_csv():
+    """返回 list[dict] 同你旧脚本"""
     entries = []
     try:
         with open(CSV_PATH, newline='', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
+            for row in csv.DictReader(f):
                 if row.get('type') != 'login':
                     continue
-                uri = row.get('login_uri', '').strip()
-                username = row.get('login_username', '')
-                password = row.get('login_password', '')
-                if uri and (username or password):
-                    # 支持多个 URI（Bitwarden 有时用分号分隔）
-                    uris = [u.strip() for u in uri.split(';') if u.strip()]
-                    for u in uris:
-                        domain = extract_domain(u)
-                        if domain:
-                            entries.append({
-                                'domain': domain,
-                                'username': username,
-                                'password': password,
-                                'name': row.get('name', '')
-                            })
+                uris = [u.strip() for u in row.get('login_uri', '').split(';') if u.strip()]
+                for u in uris:
+                    d = domainer(u)
+                    if d:
+                        entries.append({'domain': d,
+                                        'username': row.get('login_username', ''),
+                                        'password': row.get('login_password', ''),
+                                        'name': row.get('name', '')})
     except Exception as e:
-        send_message("message-error", f"Failed to read CSV: {e}")
+        msg("message-error", f"CSV 读取失败: {e}")
     return entries
 
+def best_match(entries, current):
+    """先精确再根域"""
+    for e in entries:
+        if e['domain'] == current: return e
+    cur_root = '.'.join(current.split('.')[-2:])
+    for e in entries:
+        ent_root = '.'.join(e['domain'].split('.')[-2:])
+        if ent_root == cur_root: return e
+    return None
+
+# ---------- fake-key 核心 ----------
+def fake_key(text):
+    """把任意字符串用 fake-key 打进去"""
+    for ch in text:
+        seq = '" "' if ch == ' ' else shlex.quote(r'{}'.format(ch))
+        qute(f"fake-key {seq}")
+
+def tab():
+    qute("fake-key <Tab>")
+
+def enter():
+    qute("fake-key <Return>")
+
+# ---------- 主逻辑 ----------
 def main():
     if not QUTE_URL:
-        send_message("message-error", "No QUTE_URL provided")
-        sys.exit(1)
+        msg("message-error", "QUTE_URL 不存在"); sys.exit(1)
+    if len(sys.argv) != 2 or sys.argv[1] not in {"username", "password", "fill", "auto"}:
+        msg("message-error", "用法: bw-local {username|password|fill|auto}"); sys.exit(1)
+    cmd = sys.argv[1]
 
-    if len(sys.argv) != 2 or sys.argv[1] not in ("username", "password", "fill"):
-        send_message("message-error", "Usage: bw-local {username|password|fill}")
-        sys.exit(1)
-
-    target = sys.argv[1]
-    current_domain = extract_domain(QUTE_URL)
-    if not current_domain:
-        send_message("message-warning", "Could not extract domain from URL")
-        sys.exit(1)
-
-    entries = load_entries()
-    if not entries:
-        send_message("message-warning", "No login entries found in CSV")
-        sys.exit(1)
-
-    # 查找匹配的条目
-    match = None
-
-    # 首先尝试完全匹配
-    for entry in entries:
-        if entry['domain'] == current_domain:
-            match = entry
-            send_message("message-info", f"Found exact match for domain: {current_domain}")
-            break
-
-    # 如果没有匹配，尝试根域名匹配
+    current = domainer(QUTE_URL)
+    entries = load_csv()
+    match   = best_match(entries, current)
     if not match:
-        # 提取根域名（最后两部分，如 aliyun.com）
-        current_parts = current_domain.split('.')
-        if len(current_parts) >= 2:
-            current_root = '.'.join(current_parts[-2:])
+        msg("message-warning", f"未找到 {current} 的条目"); sys.exit(1)
 
-            for entry in entries:
-                entry_parts = entry['domain'].split('.')
-                if len(entry_parts) >= 2:
-                    entry_root = '.'.join(entry_parts[-2:])
-                    if current_root == entry_root:
-                        match = entry
-                        send_message("message-info", f"Found root domain match: {current_root} (from {current_domain} and {entry['domain']})")
-                        break
+    username = match['username'] or ''
+    password = match['password'] or ''
 
-    if not match:
-        send_message("message-warning", f"No entry found for domain: {current_domain} (tried exact and root domain matches)")
-        sys.exit(1)
+    # --- 复制到剪贴板 ---
+    def copy(text):
+        try:
+            if os.environ.get("WAYLAND_DISPLAY"):
+                subprocess.run(["wl-copy", "-n"], input=text.encode(), check=True)
+            else:
+                subprocess.run(["xclip", "-selection", "clipboard"],
+                               input=text.encode(), check=True)
+            return True
+        except Exception:
+            return False
 
-    if target == "fill":
-        username = match["username"]
-        password = match["password"]
-        if not username and not password:
-            send_message("message-warning", f"No credentials found for {current_domain}")
-            sys.exit(1)
-        js_code = (
-            f"document.querySelector('input[type=\"email\"], input[type=\"text\"]').value = '{match['username']}';"
-            f"document.querySelector('input[type=\"password\"]').value = '{match['password']}';"
-        )
-        if QUTE_FIFO:
-            with open(QUTE_FIFO, "w") as f:
-                f.write(f"jseval {js_code}\n")
-        send_message("message-info", "Login form filled automatically")
-    else:
-        value = match[target]
-        if copy_to_clipboard(value):
-            send_message("message-info", f"{target.capitalize()} copied to clipboard")
+    if cmd == "username":
+        if copy(username):
+            msg("message-info", "用户名已复制到剪贴板")
         else:
-            send_message("message-error", "Failed to copy to clipboard")
+            msg("message-error", "复制用户名失败")
+    elif cmd == "password":
+        if copy(password):
+            msg("message-info", "密码已复制到剪贴板")
+        else:
+            msg("message-error", "复制密码失败")
+    elif cmd in ("fill", "auto"):
+        if not username or not password:
+            msg("message-warning", "用户名或密码为空"); sys.exit(1)
+        fake_key(username)
+        tab()
+        fake_key(password)
+        if cmd == "auto":
+            enter()
+        msg("message-info", "已自动填充" + ("并提交" if cmd == "auto" else ""))
 
 if __name__ == "__main__":
     main()
