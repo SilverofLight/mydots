@@ -69,3 +69,5 @@ config.set(
     'Mozilla/5.0 ({os_info}; rv:135.0) Gecko/20100101 Firefox/135',
     pattern='https://accounts.google.com/*'
 )
+c.scrolling.bar = 'always'
+c.hints.selectors["all"].extend([".qutebrowser-custom-click"])
