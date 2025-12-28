@@ -54,7 +54,8 @@ c.content.blocking.adblock.lists = [
   "https://easylist.to/easylist/easylist.txt",
   "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
   "https://easylist.to/easylist/easyprivacy.txt",
-  "https://secure.fanboy.co.nz/fanboy-annoyance.txt",]
+  "https://secure.fanboy.co.nz/fanboy-annoyance.txt",
+  "https://anti-ad.net/easylist.txt"]
 
 c.scrolling.smooth = True
 c.content.autoplay = True
