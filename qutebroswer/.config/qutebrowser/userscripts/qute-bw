@@ -86,19 +86,34 @@ def main():
         send_message("message-warning", "No login entries found in CSV")
         sys.exit(1)
 
-    # 查找完全匹配或子域名匹配（可选）
+    # 查找匹配的条目
     match = None
+
+    # 首先尝试完全匹配
     for entry in entries:
         if entry['domain'] == current_domain:
             match = entry
+            send_message("message-info", f"Found exact match for domain: {current_domain}")
             break
-        # 可选：支持子域名匹配（如 login.github.com 匹配 github.com）
-        # if current_domain.endswith('.' + entry['domain']):
-        #     match = entry
-        #     break
+
+    # 如果没有匹配，尝试根域名匹配
+    if not match:
+        # 提取根域名（最后两部分，如 aliyun.com）
+        current_parts = current_domain.split('.')
+        if len(current_parts) >= 2:
+            current_root = '.'.join(current_parts[-2:])
+
+            for entry in entries:
+                entry_parts = entry['domain'].split('.')
+                if len(entry_parts) >= 2:
+                    entry_root = '.'.join(entry_parts[-2:])
+                    if current_root == entry_root:
+                        match = entry
+                        send_message("message-info", f"Found root domain match: {current_root} (from {current_domain} and {entry['domain']})")
+                        break
 
     if not match:
-        send_message("message-warning", f"No entry found for domain: {current_domain}")
+        send_message("message-warning", f"No entry found for domain: {current_domain} (tried exact and root domain matches)")
         sys.exit(1)
 
     if target == "fill":
