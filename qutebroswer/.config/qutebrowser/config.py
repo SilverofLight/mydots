@@ -30,7 +30,7 @@ c.auto_save.session = False
 
 c.tabs.show = "always"
 c.tabs.position = "right"
-c.tabs.padding = {"bottom":0, "left":0, "right":0, "top":0}
+c.tabs.padding = {"bottom":7, "left":0, "right":0, "top":7}
 c.tabs.indicator.width = 0
 c.tabs.width = '7%'
 c.statusbar.show = "always"

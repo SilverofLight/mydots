@@ -76,7 +76,7 @@ config.bind('K', "search-prev", mode='normal')
 config.bind('s', 'hint all', mode='normal')
 config.bind('Ss', 'hint all tab-fg', mode='normal')
 config.bind('<Ctrl-s>', 'hint all hover', mode='normal')
-config.bind('L', 'undo -w', mode='normal')
+config.bind('X', 'undo', mode='normal')
 
 config.bind('d', 'scroll-page 0 0.5', mode='normal')
 config.bind('l', 'scroll-page 0 -0.5', mode='normal')
