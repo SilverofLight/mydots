@@ -85,6 +85,8 @@ config.bind('h', 'scroll-page -0.1 0', mode='normal')
 config.bind('n', 'scroll-page 0 0.1', mode='normal')
 config.bind('e', 'scroll-page 0 -0.1', mode='normal')
 config.bind('i', 'scroll-page 0.1 0', mode='normal')
+config.bind('gN', "tab-move +", mode='normal')
+config.bind('gE', "tab-move -", mode='normal')
 
 config.bind('m', 'mode-enter set_mark', mode='normal')
 config.bind('k', 'search-next', mode='normal')
