@@ -28,6 +28,9 @@ config.bind('qt', 'spawn --userscript qute-dict')
 config.bind('qh', 'spawn --userscript qute-html')
 config.bind('qb', 'spawn mpv {url}')
 
+config.bind(']]', "spawn --userscript qute-navigate next")
+config.bind('[[', "spawn --userscript qute-navigate prev")
+
 config.unbind(';I', mode='normal')
 config.unbind(';O', mode='normal')
 config.unbind(';R', mode='normal')
