@@ -97,3 +97,14 @@ next_regexes_list = [
 ]
 c.hints.prev_regexes.extend(prev_regexes_list)
 c.hints.next_regexes.extend(next_regexes_list)
+
+c.aliases = {
+        "cs": "config-source",
+        "q": "close",
+        "qa": "quit",
+        "w": "session-save",
+        "wq": "quit --save",
+        "waq": "quit --save",
+        "sp": "spawn -u qute-speed",
+        "msg": "messages",
+}

@@ -31,6 +31,10 @@ config.bind('qb', 'spawn mpv {url}')
 config.bind(']]', "spawn --userscript qute-navigate next")
 config.bind('[[', "spawn --userscript qute-navigate prev")
 
+config.unbind('j')
+config.bind('jj', "spawn --userscript qute-speed 3")
+config.bind('jh', "spawn --userscript qute-speed 1")
+
 config.unbind(';I', mode='normal')
 config.unbind(';O', mode='normal')
 config.unbind(';R', mode='normal')
