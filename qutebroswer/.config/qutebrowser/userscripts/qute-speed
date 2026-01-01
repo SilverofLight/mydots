@@ -7,7 +7,6 @@ if not fifo:
 
 speed = float(sys.argv[1]) if len(sys.argv) > 1 else 2.0
 
-# 1. 正常写多行，便于阅读
 js_multiline = textwrap.dedent(f'''\
     (function(speed){{
         const vids = document.querySelectorAll('video');
@@ -22,13 +21,10 @@ js_multiline = textwrap.dedent(f'''\
     }})({speed});
 ''')
 
-# 2. 压缩成单行：去掉换行和前后空格
 js_oneline = ' '.join(js_multiline.split())
 
-# 3. 写进 FIFO
 with open(fifo, 'w') as f:
     f.write(f'jseval {js_oneline}\n')
 
-# 可选通知
 with open(fifo, 'w') as f:
     f.write(f'message-info "视频已设为 ×{speed}"')

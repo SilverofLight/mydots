@@ -72,6 +72,7 @@ config.set(
 )
 c.scrolling.bar = 'always'
 c.hints.selectors["all"].extend([".qutebrowser-custom-click"])
+c.hints.selectors["ytskip"] = [".ytp-skip-ad-button.ytp-ad-component--clickable"] # hint the youtube skip ad button
 
 prev_regexes_list = [
     r"\b上一封\b",
