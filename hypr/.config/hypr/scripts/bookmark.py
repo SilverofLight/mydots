@@ -33,12 +33,12 @@ try:
         rows = cursor.fetchall()
 
         for row in rows:
-            print(f"{row[0]} | {row[2]} | {row[1]}")
+            print(f"{row[0]} | {row[1]} | {row[2]}")
         if not rows:
             print("No bookmarks found.")
             exit(0)
         else:
-            formatted_rows = [f"{row[0]} | {row[2]} | {row[1]}" for row in rows]
+            formatted_rows = [f"{row[0]} | {row[1]} | {row[2]}" for row in rows]
 
             process = subprocess.Popen(
                 ['wofi', '--show', 'dmenu', '--prompt', 'Bookmarks'],
