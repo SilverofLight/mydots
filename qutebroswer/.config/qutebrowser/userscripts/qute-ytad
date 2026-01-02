@@ -18,3 +18,7 @@ time.sleep(1) # 等待 0.5 秒的话按钮不会立刻出现
 speed_control(1)
 with open(qute_fifo, 'w') as f:
     f.write("hint -f ytskip\n")
+
+time.sleep(0.5)
+with open(qute_fifo, 'w') as f:
+    f.write("clear-messages\n")
