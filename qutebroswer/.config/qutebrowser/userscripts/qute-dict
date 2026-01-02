@@ -20,5 +20,5 @@ else
     CMD="/bin/kd"
 fi
 
-$TERM -e fish -c "$CMD \"$word\""
-# $TERM -e fish -c "echo" "$word"
+escaped_word=$(printf '%q' "$word")
+$TERM -e fish -c "$CMD $escaped_word"
