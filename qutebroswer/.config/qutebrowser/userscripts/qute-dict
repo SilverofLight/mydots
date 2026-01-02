@@ -15,7 +15,7 @@ CMD=""
 
 # 判断是否包含空格来区分单词和句子
 if [[ "$word" == *" "* ]]; then
-    CMD="/bin/trans en:zh"
+    CMD="/bin/trans en:zh -b"
 else
     CMD="/bin/kd"
 fi
