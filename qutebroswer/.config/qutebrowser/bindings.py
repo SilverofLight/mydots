@@ -32,9 +32,8 @@ config.bind(']]', "spawn --userscript qute-navigate next")
 config.bind('[[', "spawn --userscript qute-navigate prev")
 
 config.unbind('j')
-config.bind('jj', "spawn --userscript qute-speed 3")
 config.bind('jh', "spawn --userscript qute-speed 1")
-config.bind('jn', "spawn --userscript qute-ytad")
+config.bind('jj', "spawn --userscript qute-ytad")
 
 config.unbind(';I', mode='normal')
 config.unbind(';O', mode='normal')
