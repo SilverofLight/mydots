@@ -10,7 +10,7 @@ if pgrep -x "wf-recorder" > /dev/null; then
 fi
 
 monitors=$(hyprctl monitors all | grep Monitor | awk '{print $2}')
-audio_sources=$(pactl list sources | grep Name | cut -d: -f2 | sed 's/^[[:space:]]*//')
+audio_sources=$(pactl list sources | grep Name | cut -d: -f2- | sed 's/^[[:space:]]*//')
 
 chosen_monitor=$(echo -e "$monitors\nmanual" | wofi --dmenu --prompt "Select Monitor")
 if [ -z "$chosen_monitor" ]; then
