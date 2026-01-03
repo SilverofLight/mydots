@@ -131,8 +131,10 @@ config.bind('guf', 'spawn -u qute-bw fill', mode="normal")
 config.bind('b', 'spawn -u qute-bookmarks open', mode='normal')
 config.bind('B', 'spawn -u qute-bookmarks add', mode='normal')
 
+config.bind('<Escape>', 'spawn -u qute-better_esc normal', mode='normal')
+
 # hint
 config.bind('s', 'mode-leave', mode="hint")
 
 # insert
-config.bind('<Escape>', 'spawn -u qute-leave_insert', mode='insert')
+config.bind('<Escape>', 'spawn -u qute-better_esc insert', mode='insert')
