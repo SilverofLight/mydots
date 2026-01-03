@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+
+fifo = os.getenv('QUTE_FIFO')
+if not fifo:
+    sys.exit()
+
+with open(fifo, 'w') as f:
+    f.write('jseval -q document.activeElement.blur()\n')
+    f.write('mode-leave\n')

@@ -133,3 +133,6 @@ config.bind('B', 'spawn -u qute-bookmarks add', mode='normal')
 
 # hint
 config.bind('s', 'mode-leave', mode="hint")
+
+# insert
+config.bind('<Escape>', 'spawn -u qute-leave_insert', mode='insert')

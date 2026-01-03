@@ -24,7 +24,7 @@ js_multiline = textwrap.dedent(f'''\
 js_oneline = ' '.join(js_multiline.split())
 
 with open(fifo, 'w') as f:
-    f.write(f'jseval {js_oneline}\n')
+    f.write(f'jseval -q {js_oneline}\n')
 
 with open(fifo, 'w') as f:
     f.write(f'message-info "视频已设为 ×{speed}"')
