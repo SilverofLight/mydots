@@ -19,21 +19,22 @@ config.bind('n', 'move-to-next-line', mode='caret')
 config.bind('e', 'move-to-prev-line', mode='caret')
 config.bind('i', 'move-to-next-char', mode='caret')
 
-config.bind('qt', 'spawn --userscript qute-dict', mode='caret')
+config.bind('qt', 'spawn -u qute-dict', mode='caret')
 
 # normal:
 
 config.unbind('q', mode='normal')
-config.bind('qt', 'spawn --userscript qute-dict')
-config.bind('qh', 'spawn --userscript qute-html')
+config.bind('qt', 'spawn -u qute-dict')
+config.bind('qh', 'spawn -u qute-html')
 config.bind('qb', 'spawn mpv {url}')
+config.bind('qc', 'spawn -u qute-bvcode')
 
-config.bind(']]', "spawn --userscript qute-navigate next")
-config.bind('[[', "spawn --userscript qute-navigate prev")
+config.bind(']]', "spawn -u qute-navigate next")
+config.bind('[[', "spawn -u qute-navigate prev")
 
 config.unbind('j')
-config.bind('jh', "spawn --userscript qute-speed 1")
-config.bind('jj', "spawn --userscript qute-ytad")
+config.bind('jh', "spawn -u qute-speed 1")
+config.bind('jj', "spawn -u qute-ytad")
 
 config.unbind(';I', mode='normal')
 config.unbind(';O', mode='normal')
