@@ -31,16 +31,21 @@ input {
 }
 
 output "eDP-1" {
-    off
+    // off
 
-    mode "1920x1080@120.030"
-    scale 2
+    mode "1920x1080@60.020"
+    scale 1
+
+    layout {
+        default-column-width { proportion 1.0; }
+    }
 
     transform "normal"
-    position x=1280 y=0
+    position x=0 y=0
 }
 
 output "HDMI-A-1" {
+    off
     mode "2560x1440@60"
     scale 1
     position x=0 y=0

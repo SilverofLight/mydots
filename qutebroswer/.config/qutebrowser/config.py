@@ -107,6 +107,7 @@ c.aliases = {
         "wq": "quit --save",
         "waq": "quit --save",
         "sp": "spawn -u qute-speed",
+        "spu": "spawn -u qute-speed 1.5",
         "msg": "messages",
         "clr": "clear-messages"
 }
