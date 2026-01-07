@@ -10,7 +10,9 @@ workspace "special"
 input {
     keyboard {
         xkb {
-            options "ctrl:nocaps"
+            layout "us"
+            variant "colemak"
+            options "compose:ralt,ctrl:nocaps"
         }
         numlock
     }
