@@ -29,9 +29,16 @@ def add_bookmark(url):
                 "CREATE TABLE IF NOT EXISTS bookmarks (name TEXT, url TEXT)")
 
             # 获取用户输入的名称
-            name = input("请输入书签名称: ").strip()
-            if not name:
-                raise ValueError("书签名称不能为空")
+            while True:
+                name = input("请输入书签名称: ").strip()
+                if not name:
+                    raise ValueError("书签名称不能为空")
+
+                # 检查第5个字符是否为-
+                if len(name) >= 5 and name[4] == '-':
+                    break
+                else:
+                    print("没有输入标签，请重新输入。")
 
             desc = input("请输入描述: ").strip()
 
