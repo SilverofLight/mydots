@@ -30,7 +30,7 @@ def add_bookmark(url):
 
             # 获取用户输入的名称
             while True:
-                name = input("请输入书签名称: ").strip()
+                name = input("已存在标签：tol, med, prn, tol, vps, ai, doc\n请输入书签名称: ").strip()
                 if not name:
                     raise ValueError("书签名称不能为空")
 
