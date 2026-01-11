@@ -126,6 +126,9 @@ config.unbind('gb', mode="normal")
 config.unbind('g^', mode="normal")
 config.unbind('gU', mode="normal")
 
+config.bind('gb', "open www.bilibili.com")
+
+
 config.bind('guu', 'spawn -u qute-bw username', mode="normal")
 config.bind('gup', 'spawn -u qute-bw password', mode="normal")
 config.bind('guf', 'spawn -u qute-bw fill', mode="normal")
