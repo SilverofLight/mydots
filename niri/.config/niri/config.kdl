@@ -4,14 +4,14 @@ include "windowrule.kdl"
 include "animation.kdl"
 include "env.kdl"
 // "/-" comments out the following node.
-workspace "wechat"
+// workspace "wechat"
 workspace "special"
 
 input {
     keyboard {
         xkb {
-            layout "us"
-            variant "colemak"
+            // layout "us"
+            // variant "colemak"
             options "compose:ralt,ctrl:nocaps"
         }
         numlock
@@ -32,6 +32,17 @@ input {
     mod-key-nested "Super"
 }
 
+output "HDMI-A-1" {
+    mode "1920x1080@60"
+    scale 1
+
+    layout {
+        default-column-width { proportion 0.9; }
+    }
+
+    position x=0 y=0
+}
+
 output "eDP-1" {
     // off
 
@@ -43,14 +54,7 @@ output "eDP-1" {
     }
 
     transform "normal"
-    position x=0 y=0
-}
-
-output "HDMI-A-1" {
-    off
-    mode "2560x1440@60"
-    scale 1
-    position x=0 y=0
+    position x=1920 y=0
 }
 
 cursor {
@@ -67,7 +71,7 @@ layout {
     preset-column-widths {
         proportion 0.45
         proportion 0.55
-        proportion 0.8
+        proportion 0.9
     }
 
     default-column-width { proportion 0.8; }

@@ -48,19 +48,22 @@ binds {
 
     Mod+Shift+Q { close-window; }
 
-    Mod+H     { focus-column-left; }
-    // Mod+N     { focus-window-or-workspace-down; }
-    // Mod+E     { focus-window-or-workspace-up; }
-    Mod+N     { spawn-sh "~/.config/niri/scripts/niri_circ_in_normal.py n"; }
-    Mod+E     { spawn-sh "~/.config/niri/scripts/niri_circ_in_normal.py p"; }
-    Mod+I     { focus-column-right; }
+    Mod+H     { focus-column-or-monitor-left; }
+    Mod+N     { focus-window-or-workspace-down; }
+    Mod+E     { focus-window-or-workspace-up; }
+    // Mod+N     { spawn-sh "~/.config/niri/scripts/niri_circ_in_normal.py n"; }
+    // Mod+E     { spawn-sh "~/.config/niri/scripts/niri_circ_in_normal.py p"; }
+    Mod+I     { focus-column-or-monitor-right; }
+    
+    Super+H     { focus-monitor-left; }
+    Super+I     { focus-monitor-right; }
 
     Mod+k    { switch-focus-between-floating-and-tiling; }
 
-    Mod+Shift+H     { move-column-left; }
+    Mod+Shift+H     { move-column-left-or-to-monitor-left; }
     Mod+Shift+N     { move-window-down-or-to-workspace-down; }
     Mod+Shift+E     { move-window-up-or-to-workspace-up; }
-    Mod+Shift+I     { move-column-right; }
+    Mod+Shift+I     { move-column-right-or-to-monitor-right; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
@@ -163,5 +166,6 @@ binds {
     Mod+S { spawn-sh "~/.config/niri/scripts/niri_scratchpad.py -t scratchpad -s 'kitty -T scratchpad'"; }
     Mod+W { spawn-sh "~/.config/niri/scripts/niri_scratchpad.py -t kd -s 'kitty -T kd -e fish -c kd.sh'"; }
     // Mod+C { focus-workspace "wechat"; }
-    Mod+C { spawn-sh "~/.config/niri/scripts/niri_wechat_toggle.py"; }
+    Mod+C { spawn-sh "~/.config/niri/scripts/niri_scratchpad.py -t Weixin -s 'wechat'"; }
+    Mod+Q { spawn-sh "~/.config/niri/scripts/niri_scratchpad.py -t QQ -s 'linuxqq'"; }
 }

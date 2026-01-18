@@ -68,7 +68,10 @@ window-rule {
 window-rule {
   match title="^Weixin$"
   match title="^QQ$"
-  open-on-workspace "wechat"
+  // open-on-workspace "wechat"
+  default-column-width { proportion 0.6; }
+  default-window-height { proportion 0.6; }
+  open-floating true
   opacity 0.9
 }
 
