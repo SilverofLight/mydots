@@ -5,7 +5,9 @@ include "animation.kdl"
 include "env.kdl"
 // "/-" comments out the following node.
 // workspace "wechat"
-workspace "special"
+workspace "special" {
+    open-on-output "HDMI-A-1"
+}
 
 input {
     keyboard {
