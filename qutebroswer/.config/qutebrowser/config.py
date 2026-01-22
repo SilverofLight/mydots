@@ -64,6 +64,7 @@ c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.policy.images = 'never'
 c.colors.webpage.bg = '#282a36' # fix darkmode white flash
 config.set('colors.webpage.darkmode.enabled', False, 'https://giantesswaltz.org') # disable darkmode for gw
+config.set('colors.webpage.darkmode.enabled', False, 'https://cloud.oppo.com')
 
 # c.content.headers.user_agent = "Mozilla/5.0 ({os_info}; rv:135.0) Gecko/20100101 Firefox/135"
 config.set(
