@@ -49,7 +49,7 @@
         "format-icons": {
             // Icons by state
             "urgent": "",
-            "focused": "",
+            "active": "",
             "default": ""
         }
     },
