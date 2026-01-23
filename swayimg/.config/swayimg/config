@@ -12,8 +12,8 @@ sigusr2 = next_file
 app_id = swayimg
 
 [viewer]
-window = #191919
-transparency = #191919
+window = #282a36ee
+transparency = #282a36
 scale = optimal
 # antialiasing = yes
 history = 1
@@ -22,13 +22,11 @@ preload = 1
 [gallery]
 size = 200
 cache = 100
-fill = no
+border_color = #bd93faff
 # antialiasing = yes
-window = #191919
-background = #191919
+window = #282a36ee
+background = #282a36ee
 select = #6f3f89
-border = #6f3f89
-shadow = #000000ff
 
 [list]
 order = alpha
@@ -71,8 +69,7 @@ comma = prev_file
 period = next_file
 c = skip_file
 a = animation
-Return = exec swayimg -g "%" &; exit
-o = mode
+o = mode gallery
 h = step_left 10
 i = step_right 10
 e = step_up 10
@@ -129,7 +126,7 @@ semicolon = page_up
 k = page_down
 c = skip_file
 Return = mode
-o = mode
+o = mode viewer
 Shift + a = antialiasing
 r = reload
 m = info
