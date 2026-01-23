@@ -5,4 +5,4 @@ height=45%
 insensitive=true
 
 key_pgup=Left
-key_pgdn=Right
+key_expand=Right

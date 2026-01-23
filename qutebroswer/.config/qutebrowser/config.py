@@ -24,7 +24,7 @@ c.zoom.levels = ["25%", "33%", "50%", "67%", "75%", "90%", "100%", "110%", "120%
 
 # c.url.start_pages = 'file:///dev/null'
 # c.url.default_page= 'file:///dev/null'
-# c.tabs.last_close = "startpage"
+c.tabs.last_close = "startpage"
 c.auto_save.session = False
 
 
