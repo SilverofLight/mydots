@@ -47,7 +47,7 @@ c.downloads.location.remember = False
 c.downloads.remove_finished = 3300
 c.downloads.position = "bottom"
 
-c.content.fullscreen.window = True # Limit fullscreen to browser window
+# c.content.fullscreen.window = True # Limit fullscreen to browser window
 c.content.blocking.enabled = True
 c.content.blocking.method = 'both'
 c.content.blocking.adblock.lists = [
