@@ -55,7 +55,8 @@ try:
                 selected_url = selected.split(' | ')[2]
                 # print(selected_url)
                 # subprocess.run(['xdg-open', selected_url])
-                subprocess.run(['QT_QPA_PLATFORM=xcb','qutebrowser', selected_url])
+                os.environ['QT_QPA_PLATFORM'] = 'xcb'
+                subprocess.run(['qutebrowser', selected_url])
             else:
                 print("No bookmark selected.")
                 exit(0)
