@@ -1,7 +1,15 @@
 #!/usr/bin/bash
 
+current_url=$QUTE_URL
+fifo=$QUTE_FIFO
+
 if [ "$1" = "open" ]; then
-    python ~/.config/niri/scripts/bookmark.py
+    if [ "$current_url" = 'https://start.duckduckgo.com/' ]; then
+        url=$(python ~/.config/mango/scritps/bookmark.py open)
+        echo "open $url" > $fifo
+    else
+        python ~/.config/mango/scritps/bookmark.py
+    fi
 elif [ "$1" = "add" ]; then
     url=$QUTE_URL
     kitty -T Floating_Term --hold -e fish -c "~/.scripts/bookmarks.py $url"

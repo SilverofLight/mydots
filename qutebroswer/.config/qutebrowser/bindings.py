@@ -137,6 +137,13 @@ config.bind('B', 'spawn -u qute-bookmarks add', mode='normal')
 
 config.bind('<Escape>', 'spawn -u qute-better_esc normal', mode='normal')
 
+config.bind('wIf', 'devtools-focus', mode="normal")
+config.bind('wIh', 'devtools left', mode="normal")
+config.bind('wIn', 'devtools bottom', mode="normal")
+config.bind('wIe', 'devtools top', mode="normal")
+config.bind('wIi', 'devtools right', mode="normal")
+config.bind('wIw', 'devtools window', mode="normal")
+
 # hint
 config.bind('s', 'mode-leave', mode="hint")
 

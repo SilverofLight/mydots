@@ -1,6 +1,7 @@
 from sqlcipher3 import dbapi2 as sqlite
 import os
 import subprocess
+import sys
 
 home = os.getenv('HOME')
 database = os.path.join(home, '.config/hypr/scripts/bookmarks.db')
@@ -32,10 +33,10 @@ try:
         cursor.execute("SELECT * FROM bookmarks")
         rows = cursor.fetchall()
 
-        for row in rows:
-            print(f"{row[0]} | {row[1]} | {row[2]}")
+        # for row in rows:
+        #     print(f"{row[0]} | {row[1]} | {row[2]}")
         if not rows:
-            print("No bookmarks found.")
+            # print("No bookmarks found.")
             exit(0)
         else:
             formatted_rows = [f"{row[0]} | {row[1]} | {row[2]}" for row in rows]
@@ -55,21 +56,25 @@ try:
                 selected_url = selected.split(' | ')[2]
                 # print(selected_url)
                 # subprocess.run(['xdg-open', selected_url])
-                os.environ['QT_QPA_PLATFORM'] = 'xcb'
-                subprocess.run(['qutebrowser', selected_url])
+                if len(sys.argv) <= 1:
+                    os.environ['QT_QPA_PLATFORM'] = 'xcb'
+                    subprocess.run(['qutebrowser', selected_url])
+
+                elif sys.argv[1] == 'open':
+                    print(selected_url)
+                else:
+                    os.environ['QT_QPA_PLATFORM'] = 'xcb'
+                    subprocess.run(['qutebrowser', selected_url])
             else:
-                print("No bookmark selected.")
                 exit(0)
 
 except sqlite.DatabaseError as e:
     # 捕获数据库相关错误（如密码错误）
     error_msg = f"数据库错误: {str(e)}"
     subprocess.run(['notify-send', '错误', '数据库密码错误或文件损坏'])
-    print(error_msg)
     exit(1)
 except Exception as e:
     # 捕获其他异常
     error_msg = f"错误: {str(e)}"
     subprocess.run(['notify-send', '错误', error_msg])
-    print(error_msg)
     exit(1)
