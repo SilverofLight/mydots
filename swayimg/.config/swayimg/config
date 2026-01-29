@@ -12,7 +12,8 @@ sigusr2 = next_file
 app_id = swayimg
 
 [viewer]
-window = #282a36ee
+# window = #282a36ee
+window = #1e1e2eee
 transparency = #282a36
 scale = optimal
 # antialiasing = yes
@@ -24,9 +25,12 @@ size = 200
 cache = 100
 border_color = #bd93faff
 # antialiasing = yes
-window = #282a36ee
-background = #282a36ee
-select = #6f3f89
+# window = #282a36ee
+window = #1e1e2eee
+# background = #282a36ee
+background = #1e1e2eee
+# select = #6f3f89
+select = #cba6f7ff
 
 [list]
 order = alpha
