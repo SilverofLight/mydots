@@ -149,3 +149,4 @@ config.bind('s', 'mode-leave', mode="hint")
 
 # insert
 config.bind('<Escape>', 'spawn -u qute-better_esc insert', mode='insert')
+config.bind('<Ctrl-f>', 'spawn -u qute-bw auto')
