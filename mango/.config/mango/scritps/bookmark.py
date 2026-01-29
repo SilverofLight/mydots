@@ -41,6 +41,21 @@ try:
         else:
             formatted_rows = [f"{row[0]} | {row[1]} | {row[2]}" for row in rows]
 
+            # 分类：tol, med, prn, vps, ai, doc, dev
+            # sort: med, ai, dev, prn, tol, vps, doc
+            category_order = {'med': 0, 'ai': 1, 'dev': 2, 'prn': 3, 'tol': 4, 'vps': 5, 'doc': 6}
+            def get_category_priority(row):
+                # Extract first 3 characters and strip whitespace
+                prefix = row[:3].strip()
+                # Handle 'ai ' case (with space) by checking for 'ai' substring
+                if prefix == 'ai':
+                    return category_order.get('ai', 6)
+                else:
+                    return category_order.get(prefix, 6)
+            
+            # Sort formatted_rows by category priority, maintaining original order within categories
+            formatted_rows.sort(key=get_category_priority)
+
             process = subprocess.Popen(
                 ['wofi', '--show', 'dmenu', '--prompt', 'Bookmarks'],
                 stdin=subprocess.PIPE,
