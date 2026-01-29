@@ -1,14 +1,18 @@
-from dracula import blood
+# from dracula import blood
+# blood(c, {
+#     'spacing': {
+#         'vertical': 6,
+#         'horizontal': 8
+#     }
+# })
 
 config.load_autoconfig(False)
 # c.content.user_stylesheets = ["~/.config/qutebrowser/styles/black.css"]
 
-blood(c, {
-    'spacing': {
-        'vertical': 6,
-        'horizontal': 8
-    }
-})
+import catppuccin
+config.load_autoconfig()
+catppuccin.setup(c, 'mocha', True)
+
 
 config.source('bindings.py')
 
