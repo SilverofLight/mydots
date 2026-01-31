@@ -3,6 +3,30 @@
 # Download script with -o option support
 # Usage: ./dl-openlist.sh <url> [-o <output_filename>]
 
+# URL decode function
+urldecode() {
+    local url="$1"
+    local decoded=""
+    local i=0
+    local len=${#url}
+
+    while [ $i -lt $len ]; do
+        char="${url:$i:1}"
+        if [ "$char" = "%" ] && [ $((i+2)) -lt $len ]; then
+            # Extract hex digits
+            hex="${url:$((i+1)):2}"
+            # Convert hex to decimal and then to character
+            char=$(printf "\\x$hex")
+            i=$((i+3))
+        else
+            i=$((i+1))
+        fi
+        decoded="$decoded$char"
+    done
+
+    echo "$decoded"
+}
+
 # Default values
 url=""
 output_file=""
@@ -64,7 +88,8 @@ if [[ -z "$output_file" ]]; then
     filename=${filename%%\?*}
     # Remove fragment
     filename=${filename%%\#*}
-    output_file="$filename"
+    # URL decode the filename
+    output_file=$(urldecode "$filename")
 fi
 
 # Download the file
