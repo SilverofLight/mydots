@@ -111,7 +111,7 @@ config.unbind('u', mode='normal')
 
 config.bind('u', 'mode-enter insert', mode="normal")
 
-config.bind('.', 'config-cycle tabs.show always never')
+config.bind('.', 'spawn -u qute-tabsAndStatusShow')
 
 config.unbind('g$', mode="normal")
 config.unbind('g0', mode="normal")
