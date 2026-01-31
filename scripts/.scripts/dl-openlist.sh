@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# Download script with -o option support
+# Download script with -o option support (wget version)
 # Usage: ./dl-openlist.sh <url> [-o <output_filename>]
 
-# URL decode function
 urldecode() {
     local url="$1"
     local decoded=""
@@ -13,9 +12,7 @@ urldecode() {
     while [ $i -lt $len ]; do
         char="${url:$i:1}"
         if [ "$char" = "%" ] && [ $((i+2)) -lt $len ]; then
-            # Extract hex digits
             hex="${url:$((i+1)):2}"
-            # Convert hex to decimal and then to character
             char=$(printf "\\x$hex")
             i=$((i+3))
         else
@@ -27,11 +24,9 @@ urldecode() {
     echo "$decoded"
 }
 
-# Default values
 url=""
 output_file=""
 
-# Parse command line arguments
 while [[ $# -gt 0 ]]; do
     case $1 in
         -o|--output)
@@ -51,7 +46,6 @@ while [[ $# -gt 0 ]]; do
             exit 0
             ;;
         *)
-            # First non-option argument is the URL
             if [[ -z "$url" ]]; then
                 url="$1"
             else
@@ -64,14 +58,12 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Check if URL was provided
 if [[ -z "$url" ]]; then
     echo "Error: URL is required"
     echo "Usage: $0 <url> [-o <output_filename>]"
     exit 1
 fi
 
-# If output file not specified, ask user for it
 if [[ -z "$output_file" ]]; then
     echo "Enter output filename (press Enter to use default from URL):"
     read -r user_input
@@ -80,28 +72,27 @@ if [[ -z "$output_file" ]]; then
     fi
 fi
 
-# If still no output file, extract from URL
 if [[ -z "$output_file" ]]; then
-    # Extract filename from URL
     filename=$(basename "$url")
-    # Remove query parameters
     filename=${filename%%\?*}
-    # Remove fragment
     filename=${filename%%\#*}
-    # URL decode the filename
     output_file=$(urldecode "$filename")
 fi
 
-# Download the file
 echo "Downloading from: $url"
 echo "Output file: $output_file"
 
-curl -L -H 'User-Agent:pan.baidu.com' -X GET "$url" --output "$output_file"
+wget \
+    --user-agent='pan.baidu.com' \
+    --content-disposition \
+    -O "$output_file" \
+    "$url"
 
-if [[ $? -eq 0 ]]; then
+status=$?
+
+if [[ $status -eq 0 ]]; then
     echo "Download completed successfully: $output_file"
 else
-    echo "Download failed!"
+    echo "Download failed! (exit code: $status)"
     exit 1
 fi
-
