@@ -2,6 +2,7 @@
 
 # Download script with -o option support (wget version)
 # Usage: ./dl-openlist.sh <url> [-o <output_filename>]
+# require: openlist
 
 urldecode() {
     local url="$1"

@@ -1,5 +1,8 @@
 #!/bin/env python
 
+# requires mpv
+# 需要在 mpv 中设置 save-watch-history
+
 import json
 import os
 import sys

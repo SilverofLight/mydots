@@ -1,4 +1,9 @@
 #!/bin/env python
+
+# 管理我的书签数据库
+# Requires: sqlite3, python-sqlcipher3, 
+# The password is in my bw
+
 from sqlcipher3 import dbapi2 as sqlite
 import os
 import subprocess
@@ -141,7 +146,7 @@ def delete_bookmark(name):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
+    if len(sys.argv) < 2 or sys.argv[1] == '--help' or sys.argv[1] == '-h':
         print("使用方法: python bookmarks.py [-l | -d <name> | <url>]")
         exit(1)
 

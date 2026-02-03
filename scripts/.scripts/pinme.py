@@ -1,5 +1,8 @@
 #!/bin/env python
 
+# require: pinme
+# pin 一个文件，并将链接复制到剪切版
+
 import os
 import subprocess
 import sys

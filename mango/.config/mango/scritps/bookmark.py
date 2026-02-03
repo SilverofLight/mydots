@@ -3,6 +3,9 @@ import os
 import subprocess
 import sys
 
+# require: python-sqlcipher3
+# 密码在 bw 中
+
 home = os.getenv('HOME')
 database = os.path.join(home, '.config/hypr/scripts/bookmarks.db')
 

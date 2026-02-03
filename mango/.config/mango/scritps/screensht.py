@@ -1,5 +1,7 @@
 #!/bin/env python
 
+# require: grime, slurp, wayfreeze, wl-copy
+
 import subprocess
 import os
 import sys

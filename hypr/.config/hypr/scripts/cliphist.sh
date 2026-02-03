@@ -1,4 +1,7 @@
 #!/usr/bin/bash
+
+# require: cliphist
+
 # roconf="~/.config/rofi/clipboard.rasi"
 # roconf="~/.config/rofi/config.rasi"
 

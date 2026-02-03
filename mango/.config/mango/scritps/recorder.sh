@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# require: wf-recorder
+
 # check if is recording
 if pgrep -x "wf-recorder" > /dev/null; then
     pkill -RTMIN+8 waybar

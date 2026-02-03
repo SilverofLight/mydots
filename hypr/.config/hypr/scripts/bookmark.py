@@ -2,6 +2,9 @@ from sqlcipher3 import dbapi2 as sqlite
 import os
 import subprocess
 
+# require: python-sqlcipher3
+# 密码在 bw 中
+
 home = os.getenv('HOME')
 database = os.path.join(home, '.config/hypr/scripts/bookmarks.db')
 

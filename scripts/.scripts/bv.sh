@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# require wofi, mpv
+
 # bv=$(wofi --dmenu --prompt "Bv")
 bv=$(wl-paste)
 echo $bv
