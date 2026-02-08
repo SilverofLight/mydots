@@ -12,9 +12,11 @@ proc = subprocess.run(
 clients = json.loads(proc.stdout)
 
 for c in clients:
-    if c.get("class") == "wechat":
+    if c.get("class") == "wechat" and c.get("title") == "Weixin":
         ws = c.get("workspace", {})
         print(f"WeChat is running on workspace: {ws.get('name')} (id={ws.get('id')})")
+        wechat_pid = c.get('pid')
+        print("The pid of wechat: ", wechat_pid)
         break
 else:
     print("WeChat is not running")
@@ -32,6 +34,6 @@ print("current ws: ", current_ws)
 
 # move wechat
 if current_ws == ws.get('id'):
-    subprocess.run(["hyprctl", "dispatch", "movetoworkspacesilent", "special:wechat,class:wechat"])
+    subprocess.run(["hyprctl", "dispatch", "movetoworkspacesilent", f"special:wechat,pid:{wechat_pid}"])
 else:
-    subprocess.run(["hyprctl", "dispatch", "movetoworkspace", f"{current_ws},class:wechat"])
+    subprocess.run(["hyprctl", "dispatch", "movetoworkspace", f"{current_ws},pid:{wechat_pid}"])
