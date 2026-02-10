@@ -28,6 +28,7 @@ config.bind('qt', 'spawn -u qute-dict')
 config.bind('qh', 'spawn -u qute-html')
 config.bind('qb', 'spawn mpv {url}')
 config.bind('qc', 'spawn -u qute-bvcode')
+config.bind('qw', 'spawn -u qute-bw_create')
 
 config.bind(']]', "spawn -u qute-navigate next")
 config.bind('[[', "spawn -u qute-navigate prev")
