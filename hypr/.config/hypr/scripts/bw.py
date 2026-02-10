@@ -92,3 +92,4 @@ subprocess.run(
     f"kitty -T nvimAnywhere fish -c 'nvim {temp_file}'",
     shell=True
 )
+os.remove(temp_file)
