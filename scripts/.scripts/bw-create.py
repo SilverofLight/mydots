@@ -22,7 +22,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="Add Bitwarden item"
     )
-    parser.add_argument("-t", "--type", help="Bitwarden item type", choices=["login", "note"], required=True)
+    parser.add_argument("-t", "--type", default="", help="Bitwarden item type", choices=["login", "note"], required=False)
     parser.add_argument("-n", "--name", default="", help="Bitwarden item name", required=False)
     parser.add_argument("-N", "--note", default="", help="Bitwarden item note", required=False)
     parser.add_argument("-i", "--uri", default="", help="Bitwarden item URI", required=False)
@@ -30,6 +30,14 @@ def main():
     parser.add_argument("-p", "--password", default="", help="Bitwarden item password", required=False)
 
     args = parser.parse_args()
+
+    if args.type == "":
+        args.type = subprocess.run(
+            "echo \"login\nnote\" | wofi --dmenu -p \"Select item type\"",
+            shell=True
+        )
+    if args.type == "":
+        exit(1)
 
     # ===========
     # ===== LOGIN
@@ -40,7 +48,7 @@ def main():
             f.write(f"type: login\nname: {args.name}\nnote: {args.note}\nuri: {args.uri}\nusername: {args.username}\npassword: {args.password}")
 
         subprocess.run(
-            f"kitty -T nvimAnywhere fish -c 'nvim {temp_file}'",
+            f"kitty -T Floating_Term fish -c 'nvim {temp_file}'",
             shell=True
         )
 
@@ -72,7 +80,7 @@ def main():
         with open(temp_file, "w") as f:
             f.write(f"type: note\nname:\n{args.name}\nnote:\n{args.note}")
         subprocess.run(
-            f"kitty -T nvimAnywhere fish -c 'nvim {temp_file}'",
+            f"kitty -T Floating_Term fish -c 'nvim {temp_file}'",
             shell=True
         )
 
