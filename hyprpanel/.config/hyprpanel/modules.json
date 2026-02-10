@@ -8,7 +8,7 @@
 
   "custom/update": {
     "label": "󱉙  {}",
-    "execute": "cat /home/silver/Templates/update",
+    "execute": "checkupdate | wc -l",
     "interval": 6000
   },
 
