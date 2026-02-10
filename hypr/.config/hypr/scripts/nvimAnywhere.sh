@@ -28,11 +28,11 @@ fi
 
 
 if command -v wl-copy &> /dev/null; then
-    echo $content | wl-copy
+    echo "$content" | wl-copy
 elif command -v xclip &> /dev/null; then
-    echo $content | xclip -selection clipboard
+    echo "$content" | xclip -selection clipboard
 elif command -v pbcopy &> /dev/null; then
-    echo $content | pbcopy
+    echo "$content" | pbcopy
 else
     echo "未找到 wl-copy, xclip 或 pbcopy，无法复制到剪切板"
 fi
