@@ -20,7 +20,7 @@ class Note:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Add Bitwarden item"
+        description="Add Bitwarden item. (set type to 'none' to cancel)"
     )
     parser.add_argument("-t", "--type", default="", help="Bitwarden item type", choices=["login", "note"], required=False)
     parser.add_argument("-n", "--name", default="", help="Bitwarden item name", required=False)
@@ -61,6 +61,8 @@ def main():
                     key, value = line.strip().split(":", 1)
                     data[key.strip()] = value.strip()
 
+            if data.get("type") == "none":
+                exit(1)
             login = Login(
                 name=data.get("name", ""),
                 note=data.get("note", ""),
@@ -88,6 +90,9 @@ def main():
             lines = f.readlines()
             # Parse note format: line 2 is name, lines 4 to end are content
             if len(lines) >= 2:
+                ty = lines[0].split(" ")[1].strip()
+                if ty == "none":
+                    exit(1)
                 name = lines[2].strip() if len(lines) > 2 else ""
                 # Get content from line 4 to end (index 3 to end)
                 content_lines = lines[4:] if len(lines) > 4 else []
