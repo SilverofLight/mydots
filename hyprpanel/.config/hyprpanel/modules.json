@@ -1,50 +1,44 @@
 {
-  "custom/lyrics": {
-    "label": "{}",
-    "execute": "python /home/silver/.config/hyprpanel/scripts/lyrics.py",
-    "hideOnEmpty": true,
-    "interval": 100
-  },
-
-  "custom/update": {
-    "label": "󱉙  {}",
-    "execute": "checkupdate | wc -l",
-    "interval": 6000
-  },
-
-  "custom/mailNew": {
-    "label": "  {}",
-    "execute": "/home/silver/.config/hyprpanel/scripts/mailNew.sh",
-    "interval": 6000
-  },
-
-  "custom/mouseless": {
-    "label": "{}",
-    "execute": "/home/silver/.config/hyprpanel/scripts/mouseless",
-    "hideOnEmpty": true,
-    "interval": 100
-  },
-
-  "custom/hypr_resize_mode": {
-    "label": "{}",
-    "execute": "/home/silver/.config/hyprpanel/scripts/hypr_resize_mode",
-    "hideOnEmpty": true,
-    "interval": 100
-  },
-
-  "custom/wf-recorder": {
-    "label": "{}",
-    "execute": "/home/silver/.config/hyprpanel/scripts/wfrecorder.sh",
-    "hideOnEmpty": true,
-    "interval": 200
-  },
-
-  "custom/bluetooth": {
-    "label": "󰂯 {}",
-    "interval": 10000,
-    "execute": "/home/silver/.config/hyprpanel/scripts/bluetooth.sh",
-    "actions": {
-      "onLeftClick": "menu:bluetooth"
+    "custom/lyrics": {
+        "label": "{}",
+        "execute": "python /home/silver/.config/hyprpanel/scripts/lyrics.py",
+        "hideOnEmpty": true,
+        "interval": 100
+    },
+    "custom/update": {
+        "label": "󱉙  {}",
+        "execute": "checkupdates | wc -l",
+        "interval": 6000
+    },
+    "custom/mailNew": {
+        "label": "  {}",
+        "execute": "/home/silver/.config/hyprpanel/scripts/mailNew.sh",
+        "interval": 6000
+    },
+    "custom/mouseless": {
+        "label": "{}",
+        "execute": "/home/silver/.config/hyprpanel/scripts/mouseless",
+        "hideOnEmpty": true,
+        "interval": 100
+    },
+    "custom/hypr_resize_mode": {
+        "label": "{}",
+        "execute": "/home/silver/.config/hyprpanel/scripts/hypr_resize_mode",
+        "hideOnEmpty": true,
+        "interval": 100
+    },
+    "custom/wf-recorder": {
+        "label": "{}",
+        "execute": "/home/silver/.config/hyprpanel/scripts/wfrecorder.sh",
+        "hideOnEmpty": true,
+        "interval": 200
+    },
+    "custom/bluetooth": {
+        "label": "󰂯 {}",
+        "interval": 10000,
+        "execute": "/home/silver/.config/hyprpanel/scripts/bluetooth.sh",
+        "actions": {
+            "onLeftClick": "menu:bluetooth"
+        }
     }
-  }
 }

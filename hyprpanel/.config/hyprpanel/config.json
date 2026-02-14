@@ -467,6 +467,7 @@
   "bar.workspaces.applicationIconEmptyWorkspace": "",
   "bar.workspaces.applicationIconFallback": "",
   "bar.workspaces.applicationIconMap": {
-    "swayimg": ""
+    "swayimg": "",
+    "org.qutebrowser.qutebrowser": ""
   }
 }
