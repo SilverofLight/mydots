@@ -116,13 +116,33 @@ def main():
         check=True
     )
     
-    subprocess.run(
-        ["bw", "create", "item"],
-        input=proc.stdout,
-        text=True,
-        check=True
-    )
+    try:
+        subprocess.run(
+            ["bw", "create", "item"],
+            input=proc.stdout,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=True
+        )
+    except subprocess.CalledProcessError as e:
+        err = e.stderr.strip() if e.stderr else "unknown error"
+        notify("创建新 bw 项目失败：", err)
+        exit(1)
 
+    notify("创建新 bw 项目成功：", f"{data['name']}")
+
+def notify(title, message, urgency="critical"):
+    subprocess.run(
+        [
+            "notify-send",
+            "-u", urgency,
+            "-a", "bw-create",
+            title,
+            message
+        ],
+        check=False
+    )
 
 def generate(type, content):
     if type == "login":
