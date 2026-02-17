@@ -468,6 +468,7 @@
   "bar.workspaces.applicationIconFallback": "",
   "bar.workspaces.applicationIconMap": {
     "swayimg": "",
-    "org.qutebrowser.qutebrowser": ""
+    "org.qutebrowser.qutebrowser": "",
+    "wechat": ""
   }
 }

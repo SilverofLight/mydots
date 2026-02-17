@@ -38,7 +38,7 @@ function on_key_release(key)
 		local press_duration = mp.get_time() - press_start_time
 		if press_duration < long_press_threshold then
 			-- 短按：根据按键执行 seek
-			if key == "i" then
+			if key == "RIGHT" then
 				mp.commandv("seek", i_short_press_seek, "relative", "exact")
 			end
 		else
@@ -52,10 +52,10 @@ function on_key_release(key)
 end
 
 -- 绑定 i 键的按下和释放
-mp.add_key_binding("i", "seek-forward-speed", function(event)
+mp.add_key_binding("RIGHT", "seek-forward-speed", function(event)
 	if event.event == "down" then
-		on_key_press("i")
+		on_key_press("RIGHT")
 	elseif event.event == "up" then
-		on_key_release("i")
+		on_key_release("RIGHT")
 	end
 end, { complex = true })
