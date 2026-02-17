@@ -28,5 +28,10 @@ use = "DreamMaoMao/easyjump"
 rev = "42998d0"
 hash = "bf5817a4a60a44fbf7bf76338bb455be"
 
+[[plugin.deps]]
+use = "KKV9/compress"
+rev = "cb6e8ec"
+hash = "424ada4807b20ccd4fc85d1d7c26d1e4"
+
 [flavor]
 deps = []
