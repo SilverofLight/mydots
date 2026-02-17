@@ -210,13 +210,56 @@ class FileBrowser:
                 except Exception:
                     pass
             else:
-                self.show_message("Preview not found. Run: extract_frames.py -g")
+                # self.show_message("Preview not found. Run: extract_frames.py -g")
+                self.draw_preview_notice("Preview not found.", "Run pls -g first.")
 
         # 关键修复5：刷新列表窗口到物理屏幕，确保高亮状态正确
         # 使用redrawwin而不是普通的noutrefresh，强制完整重绘
         self.list_win.redrawwin()
         self.list_win.noutrefresh()
         curses.doupdate()
+
+    def draw_preview_notice(self, line1, line2):
+        """在右侧预览区域绘制带边框的提示信息（使用 curses）"""
+        height, width = self.stdscr.getmaxyx()
+        start_x = self.left_width + 1
+        start_y = 1
+        preview_height = height - 2
+        preview_width = self.preview_width
+
+        # 区域太小则忽略
+        if preview_height < 3 or preview_width < 6:
+            return
+
+        try:
+            # 使用颜色对 2（白色前景）
+            self.stdscr.attron(curses.color_pair(2))
+    
+            # 画边框（使用 ASCII 字符，保证兼容性）
+            # 上边框
+            self.stdscr.addstr(start_y, start_x, '+' + '-' * (preview_width - 2) + '+')
+            # 下边框
+            self.stdscr.addstr(start_y + preview_height - 1, start_x, '+' + '-' * (preview_width - 2) + '+')
+            # 左右边框
+            for y in range(start_y + 1, start_y + preview_height - 1):
+                self.stdscr.addstr(y, start_x, '|')
+                self.stdscr.addstr(y, start_x + preview_width - 1, '|')
+
+            # 居中显示文本
+            x1 = start_x + (preview_width - len(line1)) // 2
+            y1 = start_y + preview_height // 2 - 1
+            self.stdscr.addstr(y1, x1, line1)
+
+            x2 = start_x + (preview_width - len(line2)) // 2
+            self.stdscr.addstr(y1 + 1, x2, line2)
+
+            self.stdscr.attroff(curses.color_pair(2))
+        except curses.error:
+            # 忽略绘制超出边界的错误（例如终端太小）
+            pass
+
+        # 标记 stdscr 需要刷新
+        self.stdscr.noutrefresh()
 
     def draw(self):
         # 关键修复6：使用redrawwin强制完整重绘，避免差异更新导致的残影
