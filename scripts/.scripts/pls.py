@@ -52,6 +52,34 @@ def extract_frames():
         cv2.imwrite(str(output_path), frame)
         print(f"提取完成: {f.name} -> {output_path.name}")
 
+def find_missing_previews(root='.'):
+    """
+    递归查找 root 下所有视频文件，检查其预览截图是否已存在，
+    输出缺失预览截图的文件路径（相对 root 的路径）。
+    """
+    root_path = Path(root).resolve()
+    missing = []
+
+    # 使用 rglob 递归匹配所有文件
+    for f in root_path.rglob('*'):
+        if not f.is_file():
+            continue
+        if f.suffix.lower() not in VIDEO_EXTENSIONS:
+            continue
+
+        preview_path = get_frame_path(f)
+        if not preview_path.exists():
+            # 输出相对路径，便于阅读
+            rel_path = f.relative_to(Path.cwd())
+            missing.append(str(rel_path))
+
+    if missing:
+        print("以下视频文件尚未生成预览截图：")
+        for path in missing:
+            print(path)
+    else:
+        print("所有视频文件均已生成预览截图。")
+
 class FileBrowser:
     """终端文件浏览器，左侧单列文件列表，右侧视频预览（修复重叠版）"""
 
@@ -503,12 +531,14 @@ if __name__ == '__main__':
         description='视频中间帧提取与预览工具',
         epilog='如果没有指定任何参数，默认进入交互模式。'
     )
-    parser.add_argument('-g', '--generate', action='store_true', help='执行帧提取')
+    parser.add_argument('-g', '--generate', action='store_true', help='执行帧提取（仅当前目录）')
     parser.add_argument('-i', '--interaction', action='store_true', help='交互模式（显式指定）')
+    parser.add_argument('-s', '--search', action='store_true', help='递归查找当前目录下所有未生成预览截图的视频文件')
     args = parser.parse_args()
     
-    if args.generate and args.interaction:
-        parser.print_help()
+    # 如果指定了多个操作，按优先级处理（search > generate > interaction）
+    if args.search:
+        find_missing_previews()
     elif args.generate:
         extract_frames()
     elif args.interaction:
