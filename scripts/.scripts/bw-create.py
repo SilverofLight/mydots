@@ -34,10 +34,14 @@ def main():
     if args.type == "":
         args.type = subprocess.run(
             "echo \"login\nnote\" | wofi --dmenu -p \"Select item type\"",
-            shell=True
-        )
+            capture_output=True,
+            shell=True,
+            text=True
+        ).stdout.strip()
     if args.type == "":
         exit(1)
+
+    notify("bw_create", f"正在创建 {args.type}", "low")
 
     # ===========
     # ===== LOGIN
@@ -62,6 +66,7 @@ def main():
                     data[key.strip()] = value.strip()
 
             if data.get("type") == "none":
+                notify("bw_create", "取消创建", "low")
                 exit(1)
             login = Login(
                 name=data.get("name", ""),
@@ -92,6 +97,7 @@ def main():
             if len(lines) >= 2:
                 ty = lines[0].split(" ")[1].strip()
                 if ty == "none":
+                    notify("bw_create", "取消创建", "low")
                     exit(1)
                 name = lines[2].strip() if len(lines) > 2 else ""
                 # Get content from line 4 to end (index 3 to end)
