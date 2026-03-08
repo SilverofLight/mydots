@@ -88,6 +88,8 @@ with open(temp_file, "w") as f:
         f.write(format_item(item))
     elif bw_type.stdout.strip() == "Note":
         f.write(item[4])
+    else:
+        exit(1)
 subprocess.run(
     f"kitty -T nvimAnywhere fish -c 'nvim {temp_file}'",
     shell=True
