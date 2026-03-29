@@ -9,6 +9,9 @@
 config.load_autoconfig(False)
 # c.content.user_stylesheets = ["~/.config/qutebrowser/styles/black.css"]
 
+# 禁用 GPU 渲染
+# c.qt.force_software_rendering = 'chromium'
+
 import catppuccin
 config.load_autoconfig()
 catppuccin.setup(c, 'mocha', True)
