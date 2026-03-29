@@ -5,10 +5,10 @@ fifo=$QUTE_FIFO
 
 if [ "$1" = "open" ]; then
     if [ "$current_url" = 'https://start.duckduckgo.com/' ]; then
-        url=$(python ~/.config/hypr/scritps/bookmark.py open)
+        url=$(python ~/mydots/mango/.config/mango/scritps/bookmark.py open)
         echo "open $url" > $fifo
     else
-        python ~/.config/hypr/scripts/bookmark.py
+        python ~/mydots/mango/.config/mango/scritps/bookmark.py
     fi
 elif [ "$1" = "add" ]; then
     url=$QUTE_URL
