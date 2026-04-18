@@ -75,13 +75,13 @@ try:
                 # print(selected_url)
                 # subprocess.run(['xdg-open', selected_url])
                 if len(sys.argv) <= 1:
-                    os.environ['QT_QPA_PLATFORM'] = 'xcb'
+                    # os.environ['QT_QPA_PLATFORM'] = 'xcb'
                     subprocess.run(['qutebrowser', selected_url])
 
                 elif sys.argv[1] == 'open':
                     print(selected_url)
                 else:
-                    os.environ['QT_QPA_PLATFORM'] = 'xcb'
+                    # os.environ['QT_QPA_PLATFORM'] = 'xcb'
                     subprocess.run(['qutebrowser', selected_url])
             else:
                 exit(0)

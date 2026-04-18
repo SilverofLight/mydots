@@ -11,6 +11,9 @@ if status is-interactive
     # ptyhon path
     # set -gx PATH $HOME/.pyenv/bin $PATH
 
+    # INFO: 尝试禁用核显
+    set -gx DRI_PRIME 1
+
     # lean path
     set -gx PATH $PATH $HOME/.elan/bin
 
