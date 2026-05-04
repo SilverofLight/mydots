@@ -63,8 +63,8 @@ download = [
 	{ run = "ya emit download %S",        desc = "Download" },
 ]
 
-swwwbg = [
-  { run = '$HOME/.scripts/swww.sh "$@"', desc = "set bg", for = "linux"},
+awwwbg = [
+  { run = '$HOME/.scripts/awww.sh "$@"', desc = "set bg", for = "linux"},
 ]
 copy = [
   { run = 'wl-copy < "$@"', desc = "wl-copy", for = "linux" },
@@ -83,7 +83,7 @@ rules = [
 	# Text
 	{ mime = "text/*", use = [ "edit", "copy", "reveal" ] },
 	# Image
-	{ mime = "image/*", use = [ "open", "swwwbg", "copy", "pinme", "reveal" ] },
+	{ mime = "image/*", use = [ "open", "awwwbg", "copy", "pinme", "reveal" ] },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
 	# Archive

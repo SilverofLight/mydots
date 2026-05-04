@@ -2,15 +2,15 @@
 
 # author: Silver Lee
 # date: 2024/12/1
-# description: use rofi to select a wallpaper in WALLPAPER_DIR, choose a random transition to display, Or use swww.sh daemon to change wallpaper every 20min
-# requirements: swww
+# description: use rofi to select a wallpaper in WALLPAPER_DIR, choose a random transition to display, Or use awww.sh daemon to change wallpaper every 20min
+# requirements: awww
 
 # 壁纸存放目录
 WALLPAPER_DIR="$HOME/Pictures/wallpaper"
 
-# 确保 swww daemon 正在运行
-if ! pgrep -x "swww-daemon" > /dev/null; then
-    swww init
+# 确保 awww daemon 正在运行
+if ! pgrep -x "awww-daemon" > /dev/null; then
+    awww init
 fi
 
 # 切换壁纸的函数
@@ -40,7 +40,7 @@ change_wallpaper() {
     RANDOM_DURATION=$((RANDOM % 3 + 1))
     
     # 使用随机效果设置壁纸
-    swww img "$WALLPAPER" \
+    awww img "$WALLPAPER" \
         --transition-fps 60 \
         --transition-type "$RANDOM_TRANSITION" \
         --transition-pos "$RANDOM_POSITION" \

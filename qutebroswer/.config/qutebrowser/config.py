@@ -16,6 +16,8 @@ import catppuccin
 config.load_autoconfig()
 catppuccin.setup(c, 'mocha', True)
 
+# 允许弹窗
+c.content.javascript.can_open_tabs_automatically = True
 
 config.source('bindings.py')
 
