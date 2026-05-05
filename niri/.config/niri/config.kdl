@@ -13,8 +13,8 @@ input {
     keyboard {
         xkb {
             // 同时 layout 和 variannt 开启 colemak
-            layout "us"
-            variant "colemak"
+            // layout "us"
+            // variant "colemak"
             options "compose:ralt,ctrl:nocaps"
         }
         numlock
@@ -36,7 +36,6 @@ input {
 }
 
 output "HDMI-A-1" {
-    off
     mode "2560x1440@100"
     scale 1
 
@@ -48,7 +47,7 @@ output "HDMI-A-1" {
 }
 
 output "eDP-1" {
-    // off
+    off
 
     mode "1920x1080@60.020"
     scale 1
