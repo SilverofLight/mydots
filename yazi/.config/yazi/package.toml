@@ -1,37 +1,37 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:jump-to-char"
-rev = "e07bf41"
-hash = "ce67445ebb1bf3d97b8e44f50904b2c5"
+rev = "1db18bb"
+hash = "7a4b4237223aaa94e589d1c01a23542a"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "e07bf41"
-hash = "270915fa8282a19908449530ff66f7e2"
+rev = "1db18bb"
+hash = "c8d30a70659f1b880407e61c564ab4e8"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "e07bf41"
-hash = "3996fc74044bc44144b323686f887e1"
+rev = "1db18bb"
+hash = "eff8ff12fa4e5f035a10d8aeeb4c258d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "e07bf41"
-hash = "8da0b15a97b5dfd13941d1ecc617ac7c"
+rev = "1db18bb"
+hash = "f0c8c378184d5f8abd1b095a443d336d"
 
 [[plugin.deps]]
 use = "Lil-Dank/lazygit"
-rev = "0e56060"
-hash = "ab2e66065a94cca4886b303518e44bd8"
+rev = "e73fd74"
+hash = "6ea5f37c7f219671ec504cb8311f889d"
 
 [[plugin.deps]]
 use = "DreamMaoMao/easyjump"
-rev = "42998d0"
-hash = "bf5817a4a60a44fbf7bf76338bb455be"
+rev = "6cea8b4"
+hash = "6974cc8d2765f4d4b234e82b2b28e949"
 
 [[plugin.deps]]
 use = "KKV9/compress"
-rev = "cb6e8ec"
-hash = "424ada4807b20ccd4fc85d1d7c26d1e4"
+rev = "46a6b9f"
+hash = "771af2becc575a3f43d0542de823969d"
 
 [flavor]
 deps = []
