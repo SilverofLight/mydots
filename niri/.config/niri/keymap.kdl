@@ -15,7 +15,7 @@ binds {
 
     Mod+Return { spawn "kitty"; }
     Mod+D { spawn-sh "killall wofi || wofi -a --show drun"; }
-    Mod+B { spawn-sh "python /home/silver/.config/niri/scripts/bookmark.py"; }
+    Mod+B { spawn-sh "/home/silver/.config/niri/scripts/bookmark.py"; }
     Mod+R { spawn-sh "killall wofi || wofi --show run"; }
     Mod+Z { spawn-sh "killall wofi || ~/.config/niri/scripts/websearch.sh"; }
     Super+Shift+B { spawn-sh "killall waybar; waybar"; }

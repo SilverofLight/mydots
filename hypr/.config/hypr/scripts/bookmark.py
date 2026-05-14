@@ -1,3 +1,5 @@
+#!/home/silver/.conda/envs/main/bin/python
+
 from sqlcipher3 import dbapi2 as sqlite
 import os
 import subprocess
