@@ -229,7 +229,7 @@ end)
 -- exec
 v.on_key("Shift-w", function()
 	local img = v.get_image()
-	os.execute('swww img "' .. img.path .. '" -t random')
+	os.execute('awww img "' .. img.path .. '" -t random')
 end)
 
 v.on_key("Shift-y", function()
@@ -300,7 +300,7 @@ end)
 
 g.on_key("Shift-w", function()
 	local img = g.get_image()
-	os.execute('swww img "' .. img.path .. '" -t random')
+	os.execute('awww img "' .. img.path .. '" -t random')
 end)
 
 g.on_key("Shift-y", function()

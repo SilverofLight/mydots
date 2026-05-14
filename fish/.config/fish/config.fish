@@ -18,7 +18,7 @@ if status is-interactive
     set -gx PATH $PATH $HOME/.elan/bin
 
     # mount print
-    set MNT /run/media/silver/
+    # set MNT /run/media/silver/
 
     # deepseek key
     set -l deep_key $(cat $HOME/Documents/keys/deepseek_key)
