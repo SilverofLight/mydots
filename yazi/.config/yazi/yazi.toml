@@ -65,7 +65,7 @@ download = [
 ]
 
 awwwbg = [
-  { run = '$HOME/.scripts/awww.sh "$s"', desc = "set bg", for = "linux"},
+  { run = '$HOME/.scripts/awww.sh %S', desc = "set bg", for = "linux"},
 ]
 copy = [
   { run = 'wl-copy < "$s"', desc = "wl-copy", for = "linux" },

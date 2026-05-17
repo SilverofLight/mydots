@@ -109,3 +109,6 @@ if status is-interactive
     #     bind -M default n down-or-search
     # end
 end
+
+# opencode
+fish_add_path /home/silver/.opencode/bin
