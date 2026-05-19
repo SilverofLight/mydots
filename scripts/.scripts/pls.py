@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/home/silver/.conda/envs/main/bin/python
 
 # 用于预生成视频预览，并使用交互式查看。可以使用 mpv 播放视频
 # require: python-opencv, kitty

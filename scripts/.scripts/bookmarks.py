@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/home/silver/.conda/envs/main/bin/python
 
 # 管理我的书签数据库
 # Requires: sqlite3, python-sqlcipher3, 
