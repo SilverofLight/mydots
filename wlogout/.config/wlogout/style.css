@@ -2,7 +2,8 @@
 /* wallust-wlogout */
 
 /* Importing wallust colors */
-@import '../../.config/hyprpanel/wallust/colors-waybar.css';
+/* @import '../../.config/hyprpanel/wallust/colors-waybar.css'; */
+@import '/home/silver/.config/hyprpanel/wallust/colors-waybar.css';
 
 window {
     font-size: 24pt;

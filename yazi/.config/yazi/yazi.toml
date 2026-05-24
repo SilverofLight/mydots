@@ -94,7 +94,7 @@ rules = [
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", use = "download" },
 	# Fallback
-	{ url = "*", use = [ "open", "edit", "reveal" ] },
+	{ url = "*", use = [ "open", "edit", "extract", "reveal" ] },
 ]
 
 [tasks]

@@ -22,7 +22,7 @@ if pgrep -x "wlogout" > /dev/null; then
 fi
 
 # Detect monitor resolution and scaling factor
-resolution=1920
+resolution=2560
 hypr_scale=1
 
 # Set parameters based on screen resolution and scaling factor

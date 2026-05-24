@@ -17,7 +17,7 @@ CMD=""
 if [[ "$word" == *" "* ]]; then
     CMD="/bin/trans en:zh -b"
 else
-    CMD="/bin/kd"
+    CMD="/home/silver/.local/bin/kd"
 fi
 
 escaped_word=$(printf '%q' "$word")

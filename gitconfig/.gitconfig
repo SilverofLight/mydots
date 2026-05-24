@@ -1,7 +1,10 @@
 [user]
 	name = SilverofLight
 	email = a2061686759@outlook.com
-[credential]
-	helper = store
 [http]
 	sslVerify = false
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
