@@ -430,7 +430,7 @@ class FileBrowser:
             subprocess.run(['kitty', '+kitten', 'icat', '--clear'],
                            capture_output=True, check=False)
             # 运行 mpv，阻塞直到退出
-            subprocess.run(['mpv', filepath], check=True)
+            subprocess.run(['mpv', '--save-position-on-quit=no', filepath], check=True)
         except FileNotFoundError:
             self.show_message("mpv not found. Please install mpv.")
         except subprocess.CalledProcessError:

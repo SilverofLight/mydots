@@ -3,6 +3,7 @@
 -- ======================
 swayimg.on_initialized(function()
 	swayimg.set_mode("viewer")
+	swayimg.viewer.reload()
 end)
 
 -- 信号绑定
@@ -22,7 +23,7 @@ swayimg.viewer.set_window_background(0xee1e1e2e)
 swayimg.viewer.set_image_background(0xff282a36)
 
 -- scale = optimal
-swayimg.viewer.set_default_scale("optimal")
+swayimg.viewer.set_default_scale("fit")
 
 -- history / preload
 swayimg.viewer.limit_history(1)
