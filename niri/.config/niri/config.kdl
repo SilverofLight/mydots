@@ -46,6 +46,17 @@ output "HDMI-A-1" {
     position x=0 y=0
 }
 
+output "DP-3" {
+    mode "3440x1440@144"
+    scale 1
+
+    layout {
+        default-column-width { proportion 0.9; }
+    }
+
+    position x=0 y=0
+}
+
 output "eDP-1" {
     off
 
