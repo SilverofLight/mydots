@@ -17,6 +17,7 @@ if status is-interactive
     export BW_SESSION=$(cat $HOME/Documents/keys/bitwarden)
 
     set -U fish_user_paths $HOME/.local/bin $fish_user_paths
+    set -U fish_user_paths /opt/anaconda/bin $fish_user_paths
 
     function ra
         set tmp (mktemp -t "yazi-cwd.XXXXXX")

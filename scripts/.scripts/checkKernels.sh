@@ -9,7 +9,7 @@
 RUNNING_KERNEL=$(uname -r)
 
 # 获取已安装的最新内核版本（使用pacman）
-LATEST_KERNEL=$(pacman -Q linux | awk '{print $2}')
+LATEST_KERNEL=$(pacman -Q linux-cachyos | awk '{print $2}')
 
 # 规范化版本号（将点号替换为横杠）
 LATEST_KERNEL=${LATEST_KERNEL//.arch/-arch}
