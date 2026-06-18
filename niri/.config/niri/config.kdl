@@ -13,8 +13,8 @@ input {
     keyboard {
         xkb {
             // 同时 layout 和 variannt 开启 colemak
-            layout "us"
-            variant "colemak"
+            // layout "us"
+            // variant "colemak"
             options "compose:ralt,ctrl:nocaps"
         }
         numlock

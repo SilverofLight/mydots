@@ -19,6 +19,9 @@ if status is-interactive
     set -U fish_user_paths $HOME/.local/bin $fish_user_paths
     set -U fish_user_paths /opt/anaconda/bin $fish_user_paths
 
+    # 解决 conda 报错
+    set -gx OPENSSL_MODULES /opt/anaconda/lib/ossl-modules
+
     function ra
         set tmp (mktemp -t "yazi-cwd.XXXXXX")
         yazi $argv --cwd-file="$tmp"
@@ -113,3 +116,16 @@ end
 
 # opencode
 fish_add_path /home/silver/.opencode/bin
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /opt/anaconda/bin/conda
+    eval /opt/anaconda/bin/conda "shell.fish" hook $argv | source
+else
+    if test -f "/opt/anaconda/etc/fish/conf.d/conda.fish"
+        . "/opt/anaconda/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH /opt/anaconda/bin $PATH
+    end
+end
+# <<< conda initialize <<<
