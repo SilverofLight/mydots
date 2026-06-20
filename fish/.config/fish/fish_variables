@@ -2,7 +2,7 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:4300
 SETUVAR __fish_webconfig_theme_notification:set\x2dtheme\x2dv1\x2d\x231
-SETUVAR fish_user_paths:/opt/anaconda/bin\x1e/home/silver/\x2elocal/bin\x1e/home/silver/\x2eopencode/bin\x1e/opt/rocm/bin
+SETUVAR fish_user_paths:/home/silver/\x2elocal/bin\x1e/opt/anaconda/bin\x1e/home/silver/\x2enix\x2dprofile/bin\x1e/home/silver/\x2eopencode/bin\x1e/opt/rocm/bin
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_check_for_new_release:false
 SETUVAR pure_color_at_sign:pure_color_mute

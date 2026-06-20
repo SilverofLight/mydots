@@ -1,7 +1,24 @@
 #!/bin/bash
 
-if [ -e /tmp/godot.nvim ]; then
-  exec /bin/nvim "$@"
+# if [ -e /tmp/godot.nvim ]; then
+#   exec /bin/nvim "$@"
+# else
+#   exec /bin/kitty -T "godot_nvim" -e nvim "$@"
+# fi
+
+
+# requirements: kitty, neovim-remote
+
+SOCKET=/tmp/godot-nvim.sock
+
+if [ -S "$SOCKET" ]; then
+    exec nvr \
+        --servername "$SOCKET" \
+        --remote-tab-silent "$1"
 else
-  exec /bin/kitty -T "godot_nvim" -e nvim "$@"
+    exec kitty \
+        -T godot_nvim \
+        -e nvim \
+        --listen "$SOCKET" \
+        "$1"
 fi
