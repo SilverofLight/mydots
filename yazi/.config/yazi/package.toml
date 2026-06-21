@@ -1,21 +1,21 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:jump-to-char"
-rev = "1db18bb"
+rev = "38efe09"
 hash = "7a4b4237223aaa94e589d1c01a23542a"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "1db18bb"
-hash = "c8d30a70659f1b880407e61c564ab4e8"
+rev = "38efe09"
+hash = "88e56a64b7ce7c4314427452343fef17"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "1db18bb"
-hash = "eff8ff12fa4e5f035a10d8aeeb4c258d"
+rev = "38efe09"
+hash = "7b625412411be411153886894d9acaf"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "1db18bb"
+rev = "38efe09"
 hash = "f0c8c378184d5f8abd1b095a443d336d"
 
 [[plugin.deps]]
@@ -30,8 +30,8 @@ hash = "6974cc8d2765f4d4b234e82b2b28e949"
 
 [[plugin.deps]]
 use = "KKV9/compress"
-rev = "46a6b9f"
-hash = "771af2becc575a3f43d0542de823969d"
+rev = "e60e122"
+hash = "fbaf0adc8efc59555b748d36aab62d40"
 
 [flavor]
 deps = []

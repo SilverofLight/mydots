@@ -14,11 +14,11 @@ SOCKET=/tmp/godot-nvim.sock
 if [ -S "$SOCKET" ]; then
     exec nvr \
         --servername "$SOCKET" \
-        --remote-tab-silent "$1"
+        --remote-tab-silent "$2"
 else
     exec kitty \
         -T godot_nvim \
         -e nvim \
         --listen "$SOCKET" \
-        "$1"
+        "$2"
 fi
